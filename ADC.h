@@ -76,6 +76,16 @@ void __ADC1_Set_Sequence_Length(ADC_REG_SEQ_LENGTH seqlength);
 
 void __ADC1_Set_Sequence_1(ADC1_CHANNEL_NUM channel);
 
+void __ADC1_StarConversion();
+
+void __ADC1_Wait_End_Of_Conversion();
+
+uint16_t __ADC1_Result_Of_Conversion();
+
 void __ADC1_2_Set_ClockMode(ADC12_CKMODE ckmode);
+
+void __ADC1_2_Enable_TempSensor();
+
+void __ADC1_2_Enable_VRef_Internal();
 
 #endif /* ADC_H_ */

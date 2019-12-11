@@ -220,6 +220,24 @@ void __ADC1_Set_Sequence_1(ADC1_CHANNEL_NUM channel){
 
 }
 
+void __ADC1_StarConversion(){
+
+	ADC1->CR |= ADC1_CR_ADSTART;
+
+}
+
+void __ADC1_Wait_End_Of_Conversion(){
+
+	while( !(ADC1->ISR & ADC1_ISR_EOC) );
+
+}
+
+uint16_t __ADC1_Result_Of_Conversion(){
+
+	return  (uint16_t)ADC1->DR;
+
+}
+
 void __ADC1_2_Set_ClockMode(ADC12_CKMODE ckmode){
 
 	//Reset ClockMode to 00 --> ADC12_CLK from PLL
@@ -251,4 +269,14 @@ void __ADC1_2_Set_ClockMode(ADC12_CKMODE ckmode){
 
 }
 
+void __ADC1_2_Enable_TempSensor(){
 
+	ADC1_2->CCR |= ADC1_2_CCR_TSEN;
+
+}
+
+void __ADC1_2_Enable_VRef_Internal(){
+
+	ADC1_2->CCR |= ADC1_2_CCR_VREFEN;
+
+}

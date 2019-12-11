@@ -132,7 +132,8 @@
 
 #define ADC1_2_CCR_CKMODE_BIT0		 BIT16
 #define ADC1_2_CCR_CKMODE_BIT1		 BIT17
-
+#define ADC1_2_CCR_TSEN				 BIT23
+#define ADC1_2_CCR_VREFEN			 BIT22
 
 /********************************************************************************/
 /*						Peripheral addresses									*/
