@@ -1,0 +1,10 @@
+17:31:54 **** Incremental Build of configuration Debug for project AIUTO ****
+make -j8 all 
+arm-none-eabi-size   AIUTO.elf 
+   text	   data	    bss	    dec	    hex	filename
+    744	      8	   1568	   2320	    910	AIUTO.elf
+Finished building: default.size.stdout
+ 
+
+17:31:54 Build Finished. 0 errors, 0 warnings. (took 446ms)
+

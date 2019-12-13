@@ -1,0 +1,1176 @@
+2019-12-05 10:32:05,725 [INFO] Activator:176 - 
+
+
+2019-12-05 10:32:05,729 [INFO] Activator:177 - !SESSION log4j initialized
+2019-12-05 10:34:09,603 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541
+2019-12-05 10:34:09,626 [INFO] DbMcusXml:68 - Set database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/
+2019-12-05 10:34:09,632 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/boardmanager/
+2019-12-05 10:34:09,633 [INFO] DbMcus:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-05 10:34:09,633 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-05 10:34:09,637 [INFO] APIGFXSelector:72 - Set database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/mcu/
+2019-12-05 10:34:09,704 [INFO] DbMcusAds:72 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-05 10:34:09,706 [INFO] DbMcusDocs:92 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-05 10:34:09,710 [INFO] DbMcusJson:59 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-05 10:34:09,712 [INFO] DbBoardsDocs:84 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-05 10:34:09,714 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-05 10:34:09,811 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/cs/
+2019-12-05 10:34:09,945 [INFO] RulesReader:52 - Compatibility file has been processed (179 Rules)
+2019-12-05 10:34:10,094 [INFO] MicroXplorer:570 - Detected Java Version = 1.8.0_202
+2019-12-05 10:34:10,094 [INFO] DbMcusXml:68 - Set database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/
+2019-12-05 10:34:10,094 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/boardmanager/
+2019-12-05 10:34:10,096 [INFO] DbMcus:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-05 10:34:10,097 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-05 10:34:10,097 [INFO] APIGFXSelector:72 - Set database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/mcu/
+2019-12-05 10:34:10,097 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-05 10:34:10,097 [INFO] DbMcusAds:72 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-05 10:34:10,097 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-05 10:34:10,097 [INFO] DbMcusDocs:92 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-05 10:34:10,097 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-05 10:34:10,098 [INFO] DbMcusJson:59 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-05 10:34:10,098 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-05 10:34:10,098 [INFO] DbBoardsDocs:84 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-05 10:34:10,098 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-05 10:34:10,098 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-05 10:34:10,098 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-05 10:34:10,098 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-05 10:34:10,099 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/cs/
+2019-12-05 10:34:10,201 [INFO] MainPanel:185 - HeapMemory: 306184192
+2019-12-05 10:34:10,361 [INFO] DbMcusXml:68 - Set database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/
+2019-12-05 10:34:10,362 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/boardmanager/
+2019-12-05 10:34:10,362 [INFO] DbMcus:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-05 10:34:10,363 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-05 10:34:10,363 [INFO] APIGFXSelector:72 - Set database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/mcu/
+2019-12-05 10:34:10,364 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-05 10:34:10,365 [INFO] DbMcusAds:72 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-05 10:34:10,365 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-05 10:34:10,365 [INFO] DbMcusDocs:92 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-05 10:34:10,366 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-05 10:34:10,366 [INFO] DbMcusJson:59 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-05 10:34:10,367 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-05 10:34:10,367 [INFO] DbBoardsDocs:84 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-05 10:34:10,367 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-05 10:34:10,367 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-05 10:34:10,368 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-05 10:34:10,368 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-05 10:34:10,369 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/cs/
+2019-12-05 10:34:10,415 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541
+2019-12-05 10:34:10,420 [INFO] PluginManage:178 - Search for loadable plugins [exclusion list=]
+2019-12-05 10:34:10,425 [INFO] PluginManage:292 - Check plugin analytics
+2019-12-05 10:34:10,461 [INFO] PluginManage:342 - Loaded plugin analytics (category:tool,tabindex:-1)
+2019-12-05 10:34:10,462 [INFO] PluginManage:292 - Check plugin clock
+2019-12-05 10:34:10,494 [INFO] PluginManage:342 - Loaded plugin clock (category:base,tabindex:2)
+2019-12-05 10:34:10,494 [INFO] PluginManage:292 - Check plugin ddr
+2019-12-05 10:34:10,525 [INFO] PluginManage:342 - Loaded plugin ddr (category:tool,tabindex:6)
+2019-12-05 10:34:10,526 [INFO] PluginManage:292 - Check plugin filemanager
+2019-12-05 10:34:10,675 [INFO] PluginManage:342 - Loaded plugin filemanager (category:base,tabindex:10)
+2019-12-05 10:34:10,675 [INFO] PluginManage:292 - Check plugin ipmanager
+2019-12-05 10:34:10,686 [INFO] PluginManage:342 - Loaded plugin ipmanager (category:base,tabindex:5)
+2019-12-05 10:34:10,687 [INFO] PluginManage:292 - Check plugin pinoutandconfiguration
+2019-12-05 10:34:10,708 [INFO] PluginManage:342 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2019-12-05 10:34:10,708 [INFO] PluginManage:292 - Check plugin pinoutconfig
+2019-12-05 10:34:10,741 [INFO] PluginManage:342 - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2019-12-05 10:34:10,741 [INFO] PluginManage:292 - Check plugin power
+2019-12-05 10:34:10,767 [INFO] PluginManage:342 - Loaded plugin power (category:power,tabindex:4)
+2019-12-05 10:34:10,767 [INFO] PluginManage:292 - Check plugin projectmanager
+2019-12-05 10:34:10,792 [INFO] PluginManage:342 - Loaded plugin projectmanager (category:projectmanager,tabindex:3)
+2019-12-05 10:34:10,792 [INFO] PluginManage:292 - Check plugin thirdparty
+2019-12-05 10:34:10,834 [INFO] ThirdPartyDb:294 - Open Third Party DataBase File (C:/Users/Luca Zambuto/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 1 ms. number of Sw pack : 0
+2019-12-05 10:34:10,853 [INFO] PluginManage:342 - Loaded plugin thirdparty (category:base,tabindex:-1)
+2019-12-05 10:34:10,853 [INFO] PluginManage:292 - Check plugin tools
+2019-12-05 10:34:10,890 [INFO] PluginManage:342 - Loaded plugin tools (category:base,tabindex:7)
+2019-12-05 10:34:10,892 [INFO] PluginManage:292 - Check plugin updater
+2019-12-05 10:34:10,910 [INFO] PluginManage:342 - Loaded plugin updater (category:base,tabindex:12)
+2019-12-05 10:34:10,910 [INFO] PluginManage:265 - PluginManage : Loaded plugins [12]
+2019-12-05 10:34:11,146 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-12-05 10:34:11,266 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,266 [INFO] PluginManager:200 - loadIPPluginJar : add adc
+2019-12-05 10:34:11,311 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,311 [INFO] PluginManager:200 - loadIPPluginJar : add aes
+2019-12-05 10:34:11,367 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,368 [INFO] PluginManager:200 - loadIPPluginJar : add can
+2019-12-05 10:34:11,392 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,392 [INFO] PluginManager:200 - loadIPPluginJar : add comp
+2019-12-05 10:34:11,433 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,433 [INFO] PluginManager:200 - loadIPPluginJar : add cryp
+2019-12-05 10:34:11,474 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,474 [INFO] PluginManager:200 - loadIPPluginJar : add dfsdm
+2019-12-05 10:34:11,489 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,492 [INFO] PluginManager:200 - loadIPPluginJar : add dma
+2019-12-05 10:34:11,510 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,511 [INFO] PluginManager:200 - loadIPPluginJar : add fatfs
+2019-12-05 10:34:11,559 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,560 [INFO] PluginManager:200 - loadIPPluginJar : add fmc
+2019-12-05 10:34:11,576 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,576 [INFO] PluginManager:200 - loadIPPluginJar : add freertos
+2019-12-05 10:34:11,597 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,597 [INFO] PluginManager:200 - loadIPPluginJar : add genericplugin
+2019-12-05 10:34:11,682 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,682 [INFO] PluginManager:200 - loadIPPluginJar : add gfxmmu
+2019-12-05 10:34:11,694 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,695 [INFO] PluginManager:200 - loadIPPluginJar : add gfxsimulator
+2019-12-05 10:34:11,821 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,822 [INFO] PluginManager:200 - loadIPPluginJar : add gic
+2019-12-05 10:34:11,833 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,834 [INFO] PluginManager:200 - loadIPPluginJar : add gpio
+2019-12-05 10:34:11,899 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,899 [INFO] PluginManager:200 - loadIPPluginJar : add gtzc
+2019-12-05 10:34:11,938 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,938 [INFO] PluginManager:200 - loadIPPluginJar : add hash
+2019-12-05 10:34:11,990 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:11,990 [INFO] PluginManager:200 - loadIPPluginJar : add i2c
+2019-12-05 10:34:12,032 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,032 [INFO] PluginManager:200 - loadIPPluginJar : add i2s
+2019-12-05 10:34:12,139 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,139 [INFO] PluginManager:200 - loadIPPluginJar : add ipddr
+2019-12-05 10:34:12,173 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,174 [INFO] PluginManager:200 - loadIPPluginJar : add ltdc
+2019-12-05 10:34:12,184 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,184 [INFO] PluginManager:200 - loadIPPluginJar : add mdma
+2019-12-05 10:34:12,195 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,196 [INFO] PluginManager:200 - loadIPPluginJar : add nvic
+2019-12-05 10:34:12,242 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,243 [INFO] PluginManager:200 - loadIPPluginJar : add opamp
+2019-12-05 10:34:12,306 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,307 [INFO] PluginManager:200 - loadIPPluginJar : add pdm2pcm
+2019-12-05 10:34:12,324 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,327 [INFO] PluginManager:200 - loadIPPluginJar : add plateformsettings
+2019-12-05 10:34:12,347 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,347 [INFO] PluginManager:200 - loadIPPluginJar : add quadspi
+2019-12-05 10:34:12,360 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,360 [INFO] PluginManager:200 - loadIPPluginJar : add resmgrutility
+2019-12-05 10:34:12,409 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,409 [INFO] PluginManager:200 - loadIPPluginJar : add sai
+2019-12-05 10:34:12,447 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,447 [INFO] PluginManager:200 - loadIPPluginJar : add spi
+2019-12-05 10:34:12,493 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,493 [INFO] PluginManager:200 - loadIPPluginJar : add stm32_wpan
+2019-12-05 10:34:12,513 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,513 [INFO] PluginManager:200 - loadIPPluginJar : add tim
+2019-12-05 10:34:12,573 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,574 [INFO] PluginManager:200 - loadIPPluginJar : add touchsensing
+2019-12-05 10:34:12,592 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,592 [INFO] PluginManager:200 - loadIPPluginJar : add tracer_emb
+2019-12-05 10:34:12,616 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,616 [INFO] PluginManager:200 - loadIPPluginJar : add ts
+2019-12-05 10:34:12,638 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,638 [INFO] PluginManager:200 - loadIPPluginJar : add tsc
+2019-12-05 10:34:12,657 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,658 [INFO] PluginManager:200 - loadIPPluginJar : add ucpd
+2019-12-05 10:34:12,704 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-05 10:34:12,704 [INFO] PluginManager:200 - loadIPPluginJar : add usart
+2019-12-05 10:34:13,394 [INFO] BoardConnectionPanel:220 - [DDR PANEL] osNameString: Windows
+2019-12-05 10:34:13,549 [INFO] BoardConnectionPanel:3149 - [DDR PANEL] STM32CubeIDE environment
+2019-12-05 10:34:13,550 [INFO] MainDdrPanel:100 - [DDR PANEL] GETTER - cubeProgrammerPath is: null
+2019-12-05 10:34:13,755 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-05 10:34:13,851 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-05 10:34:13,854 [ERROR] IntegrityCheckThread:230 - Cannot obtain thirdParties list 21
+2019-12-05 10:34:13,854 [ERROR] IntegrityCheckThread:99 - Unexpected exception IntegrityCheckThread Thread: Updater error
+2019-12-05 10:34:13,854 [INFO] ThirdPartyDb:264 - Close Third Party DataBase File (C:/Users/Luca Zambuto/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2019-12-05 10:34:14,058 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-05 10:34:14,071 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-12-05 10:34:14,072 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-05 10:34:14,082 [INFO] BoardConnectionPanel:3149 - [DDR PANEL] STM32CubeIDE environment
+2019-12-05 10:34:14,083 [INFO] MainDdrPanel:100 - [DDR PANEL] GETTER - cubeProgrammerPath is: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.1.0.201910081157\tools\bin
+2019-12-05 10:34:14,089 [INFO] ProgrammerExecThread:148 - [ProgrammerAPI] CubeProgrammer command construction: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.1.0.201910081157\tools\bin\STM32_Programmer_CLI.exe -l
+2019-12-05 10:34:14,389 [INFO] MainDdrPanel:90 - [DDR PANEL] SETTER - Set cubeProgrammerPath to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.1.0.201910081157\tools\bin
+2019-12-05 10:34:14,416 [INFO] Updater:886 - Updater Version found : 5.4.0
+2019-12-05 10:34:14,444 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541
+2019-12-05 10:34:14,493 [INFO] MainUpdater:452 - Copy updater definitions from MX database
+2019-12-05 10:34:14,536 [INFO] MainUpdater:485 - Copy flag file definitions from MX database
+2019-12-05 10:34:14,547 [INFO] MainUpdater:501 - Copy thirdparty index definitions from MX database
+2019-12-05 10:34:14,555 [INFO] MainUpdater:520 - Copy default thirdparty db definitions from MX database
+2019-12-05 10:34:14,760 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-05 10:34:14,760 [INFO] MainUpdater:2859 - Updater definition file requires update
+2019-12-05 10:34:14,762 [INFO] MainUpdater:236 - Updater Check For Update Now.
+2019-12-05 10:34:14,763 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.40
+2019-12-05 10:34:14,918 [INFO] ServerAccessManage:348 - Download File updaters.zip
+2019-12-05 10:34:15,011 [INFO] FileExtend:210 - Unzip File : updaters.zip
+2019-12-05 10:34:15,011 [INFO] FileExtend:225 - Standard Zip Deflate
+2019-12-05 10:34:16,822 [INFO] ServerAccessManage:348 - Download File PacksControlFlags.xml
+2019-12-05 10:34:17,067 [INFO] ServerAccessManage:348 - Download File cubemx.pidx
+2019-12-05 10:34:17,320 [INFO] ServerAccessManage:348 - Download File STMicroelectronics.X-CUBE-BLE1.pdsc
+2019-12-05 10:34:17,948 [ERROR] ServerAccessManage:947 - Problem, file not found on Server
+2019-12-05 10:34:18,195 [INFO] ServerAccessManage:348 - Download File STMicroelectronics.X-CUBE-MEMS1.pdsc
+2019-12-05 10:34:19,398 [INFO] ServerAccessManage:348 - Download File STMicroelectronics.X-CUBE-AI.pdsc
+2019-12-05 10:34:20,108 [INFO] ServerAccessManage:348 - Download File STMicroelectronics.X-CUBE-NFC4.pdsc
+2019-12-05 10:34:20,869 [INFO] ServerAccessManage:348 - Download File STMicroelectronics.X-CUBE-GNSS1.pdsc
+2019-12-05 10:34:21,356 [ERROR] ServerAccessManage:947 - Problem, file not found on Server
+2019-12-05 10:34:21,645 [ERROR] ServerAccessManage:947 - Problem, file not found on Server
+2019-12-05 10:34:21,872 [ERROR] ServerAccessManage:947 - Problem, file not found on Server
+2019-12-05 10:34:22,040 [ERROR] ServerAccessManage:947 - Problem, file not found on Server
+2019-12-05 10:34:22,326 [ERROR] ServerAccessManage:947 - Problem, file not found on Server
+2019-12-05 10:34:22,609 [ERROR] ServerAccessManage:947 - Problem, file not found on Server
+2019-12-05 10:34:22,645 [INFO] LoadServerUpdatesThread:287 - End of LoadServerUpdate Thread
+2019-12-05 10:34:22,646 [INFO] ThirdPartyDb:294 - Open Third Party DataBase File (C:/Users/Luca Zambuto/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 0 ms. number of Sw pack : 0
+2019-12-05 10:34:22,697 [INFO] CheckServerUpdateThread:92 - End of CheckServer Thread
+2019-12-05 10:34:22,800 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-05 10:34:22,802 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-12-05 10:34:22,831 [INFO] PopulateThirdPartyThread:82 - Ending populate Thread
+2019-12-05 10:34:22,835 [INFO] ThirdPartyDb:264 - Close Third Party DataBase File (C:/Users/Luca Zambuto/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2019-12-05 10:34:22,874 [INFO] ThirdPartyDb:294 - Open Third Party DataBase File (C:/Users/Luca Zambuto/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 4 ms. number of Sw pack : 5
+2019-12-05 10:34:22,875 [INFO] Engine:437 - softwarePackList size : 5
+2019-12-05 10:34:22,880 [INFO] Engine:449 - compute dependency for SwPack X-CUBE-BLE1 have been done, and update is requested
+2019-12-05 10:34:22,963 [INFO] Engine:449 - compute dependency for SwPack X-CUBE-MEMS1 have been done, and update is requested
+2019-12-05 10:34:22,971 [INFO] Engine:449 - compute dependency for SwPack X-CUBE-AI have been done, and update is requested
+2019-12-05 10:34:22,976 [INFO] Engine:449 - compute dependency for SwPack X-CUBE-NFC4 have been done, and update is requested
+2019-12-05 10:34:22,981 [INFO] Engine:449 - compute dependency for SwPack X-CUBE-GNSS1 have been done, and update is requested
+2019-12-05 10:34:22,987 [INFO] ThirdPartyDb:264 - Close Third Party DataBase File (C:/Users/Luca Zambuto/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2019-12-05 10:34:23,014 [INFO] ThirdPartyDb:294 - Open Third Party DataBase File (C:/Users/Luca Zambuto/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 2 ms. number of Sw pack : 5
+2019-12-05 10:34:23,015 [ERROR] Engine:78 - Software Pack is missing : STMicroelectronics.X-CUBE-BLE1.4.4.0
+2019-12-05 10:34:23,015 [ERROR] ThirdParty:717 - Engine buildDependencyDb : invalid pack or unsuported pack STMicroelectronics.X-CUBE-BLE1.4.4.0
+2019-12-05 10:34:23,015 [ERROR] Engine:78 - Software Pack is missing : STMicroelectronics.X-CUBE-MEMS1.7.0.0
+2019-12-05 10:34:23,016 [ERROR] ThirdParty:717 - Engine buildDependencyDb : invalid pack or unsuported pack STMicroelectronics.X-CUBE-MEMS1.7.0.0
+2019-12-05 10:34:23,016 [ERROR] Engine:78 - Software Pack is missing : STMicroelectronics.X-CUBE-AI.4.1.0
+2019-12-05 10:34:23,016 [ERROR] ThirdParty:717 - Engine buildDependencyDb : invalid pack or unsuported pack STMicroelectronics.X-CUBE-AI.4.1.0
+2019-12-05 10:34:23,016 [ERROR] Engine:78 - Software Pack is missing : STMicroelectronics.X-CUBE-NFC4.1.5.0
+2019-12-05 10:34:23,016 [ERROR] ThirdParty:717 - Engine buildDependencyDb : invalid pack or unsuported pack STMicroelectronics.X-CUBE-NFC4.1.5.0
+2019-12-05 10:34:23,016 [ERROR] Engine:78 - Software Pack is missing : STMicroelectronics.X-CUBE-GNSS1.3.1.0
+2019-12-05 10:34:23,016 [ERROR] ThirdParty:717 - Engine buildDependencyDb : invalid pack or unsuported pack STMicroelectronics.X-CUBE-GNSS1.3.1.0
+2019-12-05 10:34:23,066 [INFO] McuFinderGlobals:40 - Set McuFinder mode to 2 (CubeIDE integrated)
+2019-12-05 10:34:23,083 [INFO] FinderPluginLoader:86 - Searching for filters in installed packs
+2019-12-05 10:34:23,085 [INFO] DbMcusXml:106 - Load MCU database from C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/families.xml
+2019-12-05 10:34:23,683 [INFO] DbMcusJson:87 - JSON generation date=Mon Sep 23 11:35:45 CEST 2019 (1569231345)
+2019-12-05 10:34:24,699 [INFO] DbMcus:193 - Found 1544 MCUs (1504 are supported by CubeMX, 1504 are visible in CubeMX)
+2019-12-05 10:34:24,700 [INFO] ApiDb:147 - User favorites file not found: C:\Users\Luca Zambuto/.stm32cubeide/favorites.mcus.txt
+2019-12-05 10:34:24,700 [INFO] DbMcus:204 - Set 0 / 0 favorites MCUs
+2019-12-05 10:34:25,450 [INFO] DbMcusAds:130 - JSON generation date=Wed Feb 20 17:46:15 CET 2019 (1550681175)
+2019-12-05 10:34:25,453 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-05 10:34:25,467 [INFO] McuDetailPanel:180 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-05 10:34:27,165 [INFO] ServerAccessManage:348 - Download File mcusDocs.json
+2019-12-05 10:34:27,280 [INFO] LoadUrlFilesThread:134 - End of LoadUrlFiles Thread
+2019-12-05 10:34:38,292 [INFO] ServerAccessManage:348 - Download File mcusFeaturesAndDescription.json
+2019-12-05 10:34:39,222 [INFO] LoadUrlFilesThread:134 - End of LoadUrlFiles Thread
+2019-12-05 10:34:39,303 [INFO] ServerAccessManage:348 - Download File mcusAds.json
+2019-12-05 10:34:39,315 [INFO] LoadUrlFilesThread:134 - End of LoadUrlFiles Thread
+2019-12-05 10:34:42,031 [INFO] ServerAccessManage:348 - Download File boardsDocs.json
+2019-12-05 10:34:42,106 [INFO] LoadUrlFilesThread:134 - End of LoadUrlFiles Thread
+2019-12-05 10:34:42,783 [INFO] ServerAccessManage:348 - Download File boards.json
+2019-12-05 10:34:42,899 [INFO] LoadUrlFilesThread:134 - End of LoadUrlFiles Thread
+2019-12-05 10:34:43,227 [INFO] ServerAccessManage:348 - Download File crdb.zip
+2019-12-05 10:34:43,648 [INFO] FileExtend:210 - Unzip File : crdb.zip
+2019-12-05 10:34:43,649 [INFO] FileExtend:225 - Standard Zip Deflate
+2019-12-05 10:34:43,673 [INFO] LoadUrlFilesThread:134 - End of LoadUrlFiles Thread
+2019-12-05 10:34:43,677 [INFO] DbMcusDocs:126 - JSON generation date=Mon Sep 23 11:35:45 CEST 2019 (1569231345)
+2019-12-05 10:34:43,793 [INFO] DbMcusDocs:61 - Found 525 MCUs documents
+2019-12-05 10:34:43,794 [INFO] ApiDb:186 - Save user favorites file C:\Users\Luca Zambuto/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2019-12-05 10:34:43,794 [INFO] ApiDb:191 - User favorites MCUs=[]
+2019-12-05 10:34:43,795 [INFO] DbMcusXml:106 - Load MCU database from C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/families.xml
+2019-12-05 10:34:44,110 [INFO] DbMcusJson:87 - JSON generation date=Mon Sep 23 11:35:45 CEST 2019 (1569231345)
+2019-12-05 10:34:44,719 [INFO] DbMcus:193 - Found 1544 MCUs (1504 are supported by CubeMX, 1504 are visible in CubeMX)
+2019-12-05 10:34:44,719 [INFO] ApiDb:158 - Load user favorites file C:\Users\Luca Zambuto/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2019-12-05 10:34:44,719 [INFO] ApiDb:163 - User favorites MCUs=[]
+2019-12-05 10:34:44,720 [INFO] DbMcus:204 - Set 0 / 0 favorites MCUs
+2019-12-05 10:34:44,775 [INFO] McuFilterPanel:282 - Update 0 favorites MCUs
+2019-12-05 10:34:44,926 [INFO] DbBoardsDocs:118 - JSON generation date=Mon Sep 23 11:35:45 CEST 2019 (1569231345)
+2019-12-05 10:34:44,945 [INFO] DbBoardsPdsc:92 - Found 19 items
+2019-12-05 10:34:44,953 [INFO] DbBoardsPdsc:92 - Found 9 items
+2019-12-05 10:34:44,963 [INFO] DbBoardsPdsc:92 - Found 27 items
+2019-12-05 10:34:44,971 [INFO] DbBoardsPdsc:92 - Found 1 items
+2019-12-05 10:34:44,982 [INFO] DbBoardsPdsc:92 - Found 38 items
+2019-12-05 10:34:44,994 [INFO] DbBoardsPdsc:92 - Found 38 items
+2019-12-05 10:34:45,000 [INFO] DbBoardsPdsc:92 - Found 1 items
+2019-12-05 10:34:45,013 [INFO] DbBoardsJson:79 - JSON generation date=Fri Sep 27 13:37:26 CEST 2019 (1569584246)
+2019-12-05 10:34:45,016 [INFO] DbBoards:120 - Found 133 boards (132 are supported by CubeMX)
+2019-12-05 10:34:45,020 [INFO] DbBoardsDocs:118 - JSON generation date=Mon Sep 23 11:35:45 CEST 2019 (1569231345)
+2019-12-05 10:34:45,026 [INFO] DbBoardsDocs:57 - Found 160 boards documents
+2019-12-05 10:34:45,027 [WARN] DbBoards:130 - board NUCLEO-H743ZI2 has no document id list !
+2019-12-05 10:34:45,028 [WARN] DbBoards:130 - board P-NUCLEO-WB55-Nucleo has no document id list !
+2019-12-05 10:34:45,028 [WARN] DbBoards:130 - board P-NUCLEO-WB55-USBDongle has no document id list !
+2019-12-05 10:34:45,028 [WARN] DbBoards:130 - board P-NUCLEO-WB55 has no document id list !
+2019-12-05 10:34:45,028 [WARN] DbBoards:130 - board STM32F401C-DISCO has no document id list !
+2019-12-05 10:34:45,029 [WARN] DbBoards:130 - board STM32F769I-DISC1 has no document id list !
+2019-12-05 10:34:45,029 [WARN] DbBoards:130 - board STM32L-DISCOVERY has no document id list !
+2019-12-05 10:34:45,029 [WARN] DbBoards:130 - board STM32H747I-DISC1 has no document id list !
+2019-12-05 10:34:45,029 [WARN] DbBoards:130 - board STM32MP157A-DK1 has no document id list !
+2019-12-05 10:34:45,030 [WARN] DbBoards:130 - board STM32L562E-DK has no document id list !
+2019-12-05 10:34:45,030 [WARN] DbBoards:130 - board STM32100E-EVAL has no document id list !
+2019-12-05 10:34:45,030 [WARN] DbBoards:130 - board STM32303C-EVAL has no document id list !
+2019-12-05 10:34:45,030 [WARN] DbBoards:130 - board STM32L152D-EVAL has no document id list !
+2019-12-05 10:34:45,030 [WARN] DbBoards:130 - board STM32H743I-EVAL2 has no document id list !
+2019-12-05 10:34:45,030 [WARN] DbBoards:130 - board STM32H753I-EVAL2 has no document id list !
+2019-12-05 10:34:45,031 [WARN] DbBoards:130 - board STM32G474E-EVAL1 has no document id list !
+2019-12-05 10:34:45,031 [WARN] DbBoards:130 - board STM32L552E-EV has no document id list !
+2019-12-05 10:34:45,031 [WARN] DbBoards:130 - board STEVAL-MKSBOX1V1 has no document id list !
+2019-12-05 10:34:45,652 [ERROR] DbBoards:192 - Image file not found for board STM32G0316-DISCO: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/boards/stm32g0316discovery_small.jpg
+2019-12-05 10:34:46,169 [INFO] ApiDb:147 - User favorites file not found: C:\Users\Luca Zambuto/.stm32cubeide/favorites.boards.txt
+2019-12-05 10:34:46,169 [INFO] DbBoards:209 - Set 0 / 0 favorites Boards
+2019-12-05 10:34:46,174 [INFO] DbBoardsDocs:57 - Found 320 boards documents
+2019-12-05 10:34:46,175 [INFO] ApiDb:186 - Save user favorites file C:\Users\Luca Zambuto/.stm32cubeide/favorites.boards.txt: 0 item(s)
+2019-12-05 10:34:46,175 [INFO] ApiDb:191 - User favorites Boards=[]
+2019-12-05 10:34:46,177 [INFO] DbBoardsPdsc:92 - Found 19 items
+2019-12-05 10:34:46,178 [INFO] DbBoardsPdsc:92 - Found 9 items
+2019-12-05 10:34:46,180 [INFO] DbBoardsPdsc:92 - Found 27 items
+2019-12-05 10:34:46,180 [INFO] DbBoardsPdsc:92 - Found 1 items
+2019-12-05 10:34:46,182 [INFO] DbBoardsPdsc:92 - Found 38 items
+2019-12-05 10:34:46,187 [INFO] DbBoardsPdsc:92 - Found 38 items
+2019-12-05 10:34:46,188 [INFO] DbBoardsPdsc:92 - Found 1 items
+2019-12-05 10:34:46,199 [INFO] DbBoardsJson:79 - JSON generation date=Fri Sep 27 13:37:26 CEST 2019 (1569584246)
+2019-12-05 10:34:46,203 [INFO] DbBoards:120 - Found 133 boards (132 are supported by CubeMX)
+2019-12-05 10:34:46,204 [WARN] DbBoards:130 - board NUCLEO-H743ZI2 has no document id list !
+2019-12-05 10:34:46,204 [WARN] DbBoards:130 - board P-NUCLEO-WB55-Nucleo has no document id list !
+2019-12-05 10:34:46,204 [WARN] DbBoards:130 - board P-NUCLEO-WB55-USBDongle has no document id list !
+2019-12-05 10:34:46,205 [WARN] DbBoards:130 - board P-NUCLEO-WB55 has no document id list !
+2019-12-05 10:34:46,205 [WARN] DbBoards:130 - board STM32F401C-DISCO has no document id list !
+2019-12-05 10:34:46,205 [WARN] DbBoards:130 - board STM32F769I-DISC1 has no document id list !
+2019-12-05 10:34:46,205 [WARN] DbBoards:130 - board STM32L-DISCOVERY has no document id list !
+2019-12-05 10:34:46,206 [WARN] DbBoards:130 - board STM32H747I-DISC1 has no document id list !
+2019-12-05 10:34:46,206 [WARN] DbBoards:130 - board STM32MP157A-DK1 has no document id list !
+2019-12-05 10:34:46,206 [WARN] DbBoards:130 - board STM32L562E-DK has no document id list !
+2019-12-05 10:34:46,206 [WARN] DbBoards:130 - board STM32100E-EVAL has no document id list !
+2019-12-05 10:34:46,206 [WARN] DbBoards:130 - board STM32303C-EVAL has no document id list !
+2019-12-05 10:34:46,206 [WARN] DbBoards:130 - board STM32L152D-EVAL has no document id list !
+2019-12-05 10:34:46,206 [WARN] DbBoards:130 - board STM32H743I-EVAL2 has no document id list !
+2019-12-05 10:34:46,206 [WARN] DbBoards:130 - board STM32H753I-EVAL2 has no document id list !
+2019-12-05 10:34:46,207 [WARN] DbBoards:130 - board STM32G474E-EVAL1 has no document id list !
+2019-12-05 10:34:46,207 [WARN] DbBoards:130 - board STM32L552E-EV has no document id list !
+2019-12-05 10:34:46,207 [WARN] DbBoards:130 - board STEVAL-MKSBOX1V1 has no document id list !
+2019-12-05 10:34:46,517 [ERROR] DbBoards:192 - Image file not found for board STM32G0316-DISCO: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/boards/stm32g0316discovery_small.jpg
+2019-12-05 10:34:46,722 [INFO] ApiDb:158 - Load user favorites file C:\Users\Luca Zambuto/.stm32cubeide/favorites.boards.txt: 0 item(s)
+2019-12-05 10:34:46,722 [INFO] ApiDb:163 - User favorites Boards=[]
+2019-12-05 10:34:46,723 [INFO] DbBoards:209 - Set 0 / 0 favorites Boards
+2019-12-05 10:34:46,823 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-05 10:34:46,831 [INFO] McuFilterPanel:282 - Update 0 favorites MCUs
+2019-12-05 10:34:46,974 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-05 10:34:46,975 [INFO] BoardDetailPanel:179 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-05 10:34:46,996 [INFO] BoardFilterPanel:211 - Update 0 favorites Boards
+2019-12-05 10:34:47,620 [INFO] CrossSelectorPresenter:1319 - Cross Selector saved comparison directory: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder\mcu\cs_comparisons_mx
+2019-12-05 10:38:56,645 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] withoutVersionV1.11.0
+2019-12-05 14:00:33,133 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-05 14:00:33,166 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-12-05 14:00:33,237 [INFO] McuFinderGlobals:40 - Set McuFinder mode to 2 (CubeIDE integrated)
+2019-12-05 14:00:33,253 [INFO] FinderPluginLoader:86 - Searching for filters in installed packs
+2019-12-05 14:00:34,036 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-05 14:00:34,039 [INFO] McuDetailPanel:180 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-05 14:00:34,636 [INFO] McuFilterPanel:282 - Update 0 favorites MCUs
+2019-12-05 14:00:34,894 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-05 14:00:34,894 [INFO] BoardDetailPanel:179 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-05 14:00:34,907 [INFO] BoardFilterPanel:211 - Update 0 favorites Boards
+2019-12-05 14:00:34,923 [INFO] CrossSelectorPresenter:1319 - Cross Selector saved comparison directory: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder\mcu\cs_comparisons_mx
+2019-12-05 14:01:23,276 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] withoutVersionV1.11.0
+2019-12-06 11:55:21,785 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-06 11:55:21,804 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-12-06 11:55:21,868 [INFO] McuFinderGlobals:40 - Set McuFinder mode to 2 (CubeIDE integrated)
+2019-12-06 11:55:21,874 [INFO] FinderPluginLoader:86 - Searching for filters in installed packs
+2019-12-06 11:55:22,375 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-06 11:55:22,378 [INFO] McuDetailPanel:180 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-06 11:55:22,687 [INFO] McuFilterPanel:282 - Update 0 favorites MCUs
+2019-12-06 11:55:22,784 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-06 11:55:22,786 [INFO] BoardDetailPanel:179 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-06 11:55:22,798 [INFO] BoardFilterPanel:211 - Update 0 favorites Boards
+2019-12-06 11:55:22,828 [INFO] CrossSelectorPresenter:1319 - Cross Selector saved comparison directory: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder\mcu\cs_comparisons_mx
+2019-12-06 11:56:26,676 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] withoutVersionV1.11.0
+2019-12-06 12:28:29,293 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-06 12:28:29,296 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-12-06 12:28:29,322 [INFO] McuFinderGlobals:40 - Set McuFinder mode to 2 (CubeIDE integrated)
+2019-12-06 12:28:29,323 [INFO] FinderPluginLoader:86 - Searching for filters in installed packs
+2019-12-06 12:28:29,745 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-06 12:28:29,745 [INFO] McuDetailPanel:180 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-06 12:28:30,008 [INFO] McuFilterPanel:282 - Update 0 favorites MCUs
+2019-12-06 12:28:30,163 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-06 12:28:30,163 [INFO] BoardDetailPanel:179 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-06 12:28:30,169 [INFO] BoardFilterPanel:211 - Update 0 favorites Boards
+2019-12-06 12:28:30,186 [INFO] CrossSelectorPresenter:1319 - Cross Selector saved comparison directory: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder\mcu\cs_comparisons_mx
+2019-12-06 12:28:51,388 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] withoutVersionV1.11.0
+2019-12-06 12:35:02,630 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-06 12:35:02,631 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-12-06 12:35:02,653 [INFO] McuFinderGlobals:40 - Set McuFinder mode to 2 (CubeIDE integrated)
+2019-12-06 12:35:02,653 [INFO] FinderPluginLoader:86 - Searching for filters in installed packs
+2019-12-06 12:35:03,106 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-06 12:35:03,106 [INFO] McuDetailPanel:180 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-06 12:35:03,348 [INFO] McuFilterPanel:282 - Update 0 favorites MCUs
+2019-12-06 12:35:03,452 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-06 12:35:03,452 [INFO] BoardDetailPanel:179 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-06 12:35:03,458 [INFO] BoardFilterPanel:211 - Update 0 favorites Boards
+2019-12-06 12:35:03,466 [INFO] CrossSelectorPresenter:1319 - Cross Selector saved comparison directory: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder\mcu\cs_comparisons_mx
+2019-12-06 12:35:22,602 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] withoutVersionV1.11.0
+2019-12-06 15:33:52,045 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-06 15:33:52,047 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-12-06 15:33:52,091 [INFO] McuFinderGlobals:40 - Set McuFinder mode to 2 (CubeIDE integrated)
+2019-12-06 15:33:52,093 [INFO] FinderPluginLoader:86 - Searching for filters in installed packs
+2019-12-06 15:33:52,533 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-06 15:33:52,533 [INFO] McuDetailPanel:180 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-06 15:33:52,747 [INFO] McuFilterPanel:282 - Update 0 favorites MCUs
+2019-12-06 15:33:52,891 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-06 15:33:52,891 [INFO] BoardDetailPanel:179 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-06 15:33:52,898 [INFO] BoardFilterPanel:211 - Update 0 favorites Boards
+2019-12-06 15:33:52,926 [INFO] CrossSelectorPresenter:1319 - Cross Selector saved comparison directory: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder\mcu\cs_comparisons_mx
+2019-12-06 15:34:14,834 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] withoutVersionV1.11.0
+2019-12-06 15:42:47,049 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-06 15:42:47,050 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-12-06 15:42:47,070 [INFO] McuFinderGlobals:40 - Set McuFinder mode to 2 (CubeIDE integrated)
+2019-12-06 15:42:47,070 [INFO] FinderPluginLoader:86 - Searching for filters in installed packs
+2019-12-06 15:42:47,507 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-06 15:42:47,507 [INFO] McuDetailPanel:180 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-06 15:42:47,667 [INFO] McuFilterPanel:282 - Update 0 favorites MCUs
+2019-12-06 15:42:47,772 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-06 15:42:47,772 [INFO] BoardDetailPanel:179 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-06 15:42:47,779 [INFO] BoardFilterPanel:211 - Update 0 favorites Boards
+2019-12-06 15:42:47,806 [INFO] CrossSelectorPresenter:1319 - Cross Selector saved comparison directory: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder\mcu\cs_comparisons_mx
+2019-12-06 15:43:06,341 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] withoutVersionV1.11.0
+2019-12-06 16:29:19,633 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-06 16:29:19,644 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-12-06 16:29:19,701 [INFO] McuFinderGlobals:40 - Set McuFinder mode to 2 (CubeIDE integrated)
+2019-12-06 16:29:19,707 [INFO] FinderPluginLoader:86 - Searching for filters in installed packs
+2019-12-06 16:29:20,204 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-06 16:29:20,204 [INFO] McuDetailPanel:180 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-06 16:29:20,394 [INFO] McuFilterPanel:282 - Update 0 favorites MCUs
+2019-12-06 16:29:20,522 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-06 16:29:20,522 [INFO] BoardDetailPanel:179 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-06 16:29:20,530 [INFO] BoardFilterPanel:211 - Update 0 favorites Boards
+2019-12-06 16:29:20,544 [INFO] CrossSelectorPresenter:1319 - Cross Selector saved comparison directory: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder\mcu\cs_comparisons_mx
+2019-12-06 16:30:47,083 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] withoutVersionV1.11.0
+2019-12-06 16:36:04,453 [INFO] Activator:176 - 
+
+
+2019-12-06 16:36:04,457 [INFO] Activator:177 - !SESSION log4j initialized
+2019-12-06 17:45:20,137 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541
+2019-12-06 17:45:20,158 [INFO] DbMcusXml:68 - Set database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/
+2019-12-06 17:45:20,164 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/boardmanager/
+2019-12-06 17:45:20,164 [INFO] DbMcus:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-06 17:45:20,164 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-06 17:45:20,166 [INFO] APIGFXSelector:72 - Set database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/mcu/
+2019-12-06 17:45:20,182 [INFO] DbMcusAds:72 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-06 17:45:20,184 [INFO] DbMcusDocs:92 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-06 17:45:20,185 [INFO] DbMcusJson:59 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-06 17:45:20,186 [INFO] DbBoardsDocs:84 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-06 17:45:20,187 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-06 17:45:21,269 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/cs/
+2019-12-06 17:45:21,398 [INFO] RulesReader:52 - Compatibility file has been processed (179 Rules)
+2019-12-06 17:45:21,527 [INFO] MicroXplorer:570 - Detected Java Version = 1.8.0_202
+2019-12-06 17:45:21,528 [INFO] DbMcusXml:68 - Set database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/
+2019-12-06 17:45:21,528 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/boardmanager/
+2019-12-06 17:45:21,529 [INFO] DbMcus:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-06 17:45:21,529 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-06 17:45:21,529 [INFO] APIGFXSelector:72 - Set database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/mcu/
+2019-12-06 17:45:21,529 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-06 17:45:21,530 [INFO] DbMcusAds:72 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-06 17:45:21,530 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-06 17:45:21,530 [INFO] DbMcusDocs:92 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-06 17:45:21,530 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-06 17:45:21,530 [INFO] DbMcusJson:59 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-06 17:45:21,530 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-06 17:45:21,530 [INFO] DbBoardsDocs:84 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-06 17:45:21,530 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-06 17:45:21,530 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-06 17:45:21,531 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-06 17:45:21,531 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-06 17:45:21,531 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/cs/
+2019-12-06 17:45:21,631 [INFO] MainPanel:185 - HeapMemory: 342884352
+2019-12-06 17:45:21,744 [INFO] DbMcusXml:68 - Set database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/
+2019-12-06 17:45:21,744 [INFO] DbBoardsPdsc:54 - Set plugin database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/boardmanager/
+2019-12-06 17:45:21,744 [INFO] DbMcus:265 - Set plugin images path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-06 17:45:21,744 [INFO] DbBoards:232 - Set plugin images path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/
+2019-12-06 17:45:21,744 [INFO] APIGFXSelector:72 - Set database path to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/mcu/
+2019-12-06 17:45:21,745 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-06 17:45:21,745 [INFO] DbMcusAds:72 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-06 17:45:21,745 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-06 17:45:21,746 [INFO] DbMcusDocs:92 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-06 17:45:21,746 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-06 17:45:21,746 [INFO] DbMcusJson:59 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-06 17:45:21,746 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-06 17:45:21,746 [INFO] DbBoardsDocs:84 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-06 17:45:21,746 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-06 17:45:21,746 [INFO] DbBoardsJson:51 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/
+2019-12-06 17:45:21,746 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-06 17:45:21,746 [WARN] DbFile:31 - Overriding database path with different value: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder/ => C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder
+2019-12-06 17:45:21,746 [INFO] CrossReferenceDbSqlite:197 - Set database path to: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder//mcu/cs/
+2019-12-06 17:45:21,771 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541
+2019-12-06 17:45:21,773 [INFO] PluginManage:178 - Search for loadable plugins [exclusion list=]
+2019-12-06 17:45:21,776 [INFO] PluginManage:292 - Check plugin analytics
+2019-12-06 17:45:21,804 [INFO] PluginManage:342 - Loaded plugin analytics (category:tool,tabindex:-1)
+2019-12-06 17:45:21,804 [INFO] PluginManage:292 - Check plugin clock
+2019-12-06 17:45:21,825 [INFO] PluginManage:342 - Loaded plugin clock (category:base,tabindex:2)
+2019-12-06 17:45:21,826 [INFO] PluginManage:292 - Check plugin ddr
+2019-12-06 17:45:21,829 [INFO] PluginManage:342 - Loaded plugin ddr (category:tool,tabindex:6)
+2019-12-06 17:45:21,829 [INFO] PluginManage:292 - Check plugin filemanager
+2019-12-06 17:45:21,956 [INFO] PluginManage:342 - Loaded plugin filemanager (category:base,tabindex:10)
+2019-12-06 17:45:21,956 [INFO] PluginManage:292 - Check plugin ipmanager
+2019-12-06 17:45:21,969 [INFO] PluginManage:342 - Loaded plugin ipmanager (category:base,tabindex:5)
+2019-12-06 17:45:21,969 [INFO] PluginManage:292 - Check plugin pinoutandconfiguration
+2019-12-06 17:45:21,986 [INFO] PluginManage:342 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2019-12-06 17:45:21,986 [INFO] PluginManage:292 - Check plugin pinoutconfig
+2019-12-06 17:45:22,018 [INFO] PluginManage:342 - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2019-12-06 17:45:22,018 [INFO] PluginManage:292 - Check plugin power
+2019-12-06 17:45:22,039 [INFO] PluginManage:342 - Loaded plugin power (category:power,tabindex:4)
+2019-12-06 17:45:22,039 [INFO] PluginManage:292 - Check plugin projectmanager
+2019-12-06 17:45:22,054 [INFO] PluginManage:342 - Loaded plugin projectmanager (category:projectmanager,tabindex:3)
+2019-12-06 17:45:22,055 [INFO] PluginManage:292 - Check plugin thirdparty
+2019-12-06 17:45:22,116 [INFO] ThirdPartyDb:294 - Open Third Party DataBase File (C:/Users/Luca Zambuto/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml) : 17 ms. number of Sw pack : 5
+2019-12-06 17:45:22,128 [INFO] PluginManage:342 - Loaded plugin thirdparty (category:base,tabindex:-1)
+2019-12-06 17:45:22,128 [INFO] PluginManage:292 - Check plugin tools
+2019-12-06 17:45:22,164 [INFO] PluginManage:342 - Loaded plugin tools (category:base,tabindex:7)
+2019-12-06 17:45:22,165 [INFO] PluginManage:292 - Check plugin updater
+2019-12-06 17:45:22,179 [INFO] PluginManage:342 - Loaded plugin updater (category:base,tabindex:12)
+2019-12-06 17:45:22,179 [INFO] PluginManage:265 - PluginManage : Loaded plugins [12]
+2019-12-06 17:45:22,390 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-12-06 17:45:22,495 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:22,495 [INFO] PluginManager:200 - loadIPPluginJar : add adc
+2019-12-06 17:45:22,537 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:22,538 [INFO] PluginManager:200 - loadIPPluginJar : add aes
+2019-12-06 17:45:22,591 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:22,591 [INFO] PluginManager:200 - loadIPPluginJar : add can
+2019-12-06 17:45:22,616 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:22,616 [INFO] PluginManager:200 - loadIPPluginJar : add comp
+2019-12-06 17:45:22,664 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:22,664 [INFO] PluginManager:200 - loadIPPluginJar : add cryp
+2019-12-06 17:45:22,699 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:22,699 [INFO] PluginManager:200 - loadIPPluginJar : add dfsdm
+2019-12-06 17:45:22,713 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:22,713 [INFO] PluginManager:200 - loadIPPluginJar : add dma
+2019-12-06 17:45:22,731 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:22,731 [INFO] PluginManager:200 - loadIPPluginJar : add fatfs
+2019-12-06 17:45:22,775 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:22,775 [INFO] PluginManager:200 - loadIPPluginJar : add fmc
+2019-12-06 17:45:22,790 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:22,791 [INFO] PluginManager:200 - loadIPPluginJar : add freertos
+2019-12-06 17:45:22,809 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:22,810 [INFO] PluginManager:200 - loadIPPluginJar : add genericplugin
+2019-12-06 17:45:22,895 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:22,895 [INFO] PluginManager:200 - loadIPPluginJar : add gfxmmu
+2019-12-06 17:45:22,905 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:22,905 [INFO] PluginManager:200 - loadIPPluginJar : add gfxsimulator
+2019-12-06 17:45:23,011 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,012 [INFO] PluginManager:200 - loadIPPluginJar : add gic
+2019-12-06 17:45:23,022 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,023 [INFO] PluginManager:200 - loadIPPluginJar : add gpio
+2019-12-06 17:45:23,078 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,079 [INFO] PluginManager:200 - loadIPPluginJar : add gtzc
+2019-12-06 17:45:23,119 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,120 [INFO] PluginManager:200 - loadIPPluginJar : add hash
+2019-12-06 17:45:23,165 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,166 [INFO] PluginManager:200 - loadIPPluginJar : add i2c
+2019-12-06 17:45:23,201 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,201 [INFO] PluginManager:200 - loadIPPluginJar : add i2s
+2019-12-06 17:45:23,303 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,303 [INFO] PluginManager:200 - loadIPPluginJar : add ipddr
+2019-12-06 17:45:23,341 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,341 [INFO] PluginManager:200 - loadIPPluginJar : add ltdc
+2019-12-06 17:45:23,350 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,350 [INFO] PluginManager:200 - loadIPPluginJar : add mdma
+2019-12-06 17:45:23,361 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,362 [INFO] PluginManager:200 - loadIPPluginJar : add nvic
+2019-12-06 17:45:23,401 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,401 [INFO] PluginManager:200 - loadIPPluginJar : add opamp
+2019-12-06 17:45:23,457 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,457 [INFO] PluginManager:200 - loadIPPluginJar : add pdm2pcm
+2019-12-06 17:45:23,472 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,475 [INFO] PluginManager:200 - loadIPPluginJar : add plateformsettings
+2019-12-06 17:45:23,492 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,492 [INFO] PluginManager:200 - loadIPPluginJar : add quadspi
+2019-12-06 17:45:23,503 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,503 [INFO] PluginManager:200 - loadIPPluginJar : add resmgrutility
+2019-12-06 17:45:23,545 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,545 [INFO] PluginManager:200 - loadIPPluginJar : add sai
+2019-12-06 17:45:23,578 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,578 [INFO] PluginManager:200 - loadIPPluginJar : add spi
+2019-12-06 17:45:23,617 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,618 [INFO] PluginManager:200 - loadIPPluginJar : add stm32_wpan
+2019-12-06 17:45:23,636 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,636 [INFO] PluginManager:200 - loadIPPluginJar : add tim
+2019-12-06 17:45:23,687 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,688 [INFO] PluginManager:200 - loadIPPluginJar : add touchsensing
+2019-12-06 17:45:23,704 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,704 [INFO] PluginManager:200 - loadIPPluginJar : add tracer_emb
+2019-12-06 17:45:23,723 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,724 [INFO] PluginManager:200 - loadIPPluginJar : add ts
+2019-12-06 17:45:23,741 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,741 [INFO] PluginManager:200 - loadIPPluginJar : add tsc
+2019-12-06 17:45:23,758 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,758 [INFO] PluginManager:200 - loadIPPluginJar : add ucpd
+2019-12-06 17:45:23,794 [INFO] IPUIPlugin:63 - create IPUIPlugin
+2019-12-06 17:45:23,794 [INFO] PluginManager:200 - loadIPPluginJar : add usart
+2019-12-06 17:45:24,537 [INFO] BoardConnectionPanel:220 - [DDR PANEL] osNameString: Windows
+2019-12-06 17:45:24,659 [INFO] BoardConnectionPanel:3149 - [DDR PANEL] STM32CubeIDE environment
+2019-12-06 17:45:24,660 [INFO] MainDdrPanel:100 - [DDR PANEL] GETTER - cubeProgrammerPath is: null
+2019-12-06 17:45:24,864 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-06 17:45:25,127 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-06 17:45:25,129 [ERROR] IntegrityCheckThread:230 - Cannot obtain thirdParties list 21
+2019-12-06 17:45:25,129 [ERROR] IntegrityCheckThread:99 - Unexpected exception IntegrityCheckThread Thread: Updater error
+2019-12-06 17:45:25,130 [INFO] ThirdPartyDb:264 - Close Third Party DataBase File (C:/Users/Luca Zambuto/.stm32cubemx/plugins/thirdparty/db/thirdparties_db.xml)
+2019-12-06 17:45:25,234 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-06 17:45:25,242 [INFO] PinOutPanel:1367 - setPackage(No Configuration,No Configuration)
+2019-12-06 17:45:25,242 [FATAL] Updater:277 - Updater called before beeing initialized
+2019-12-06 17:45:25,247 [INFO] BoardConnectionPanel:3149 - [DDR PANEL] STM32CubeIDE environment
+2019-12-06 17:45:25,248 [INFO] MainDdrPanel:100 - [DDR PANEL] GETTER - cubeProgrammerPath is: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.1.0.201910081157\tools\bin
+2019-12-06 17:45:25,251 [INFO] ProgrammerExecThread:148 - [ProgrammerAPI] CubeProgrammer command construction: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.1.0.201910081157\tools\bin\STM32_Programmer_CLI.exe -l
+2019-12-06 17:45:25,552 [INFO] MainDdrPanel:90 - [DDR PANEL] SETTER - Set cubeProgrammerPath to: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_1.1.0.201910081157\tools\bin
+2019-12-06 17:45:25,585 [INFO] Updater:886 - Updater Version found : 5.4.0
+2019-12-06 17:45:25,606 [INFO] ApplicationProperties:181 - Using Application install path: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541
+2019-12-06 17:45:25,987 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-06 17:45:25,988 [INFO] MainUpdater:236 - Updater Check For Update Now.
+2019-12-06 17:45:25,989 [INFO] MicroXplorer:420 - Change Database Version : DB.5.0.40
+2019-12-06 17:45:26,025 [INFO] CheckServerUpdateThread:92 - End of CheckServer Thread
+2019-12-06 17:45:26,203 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-06 17:45:26,208 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-12-06 17:45:26,440 [INFO] McuFinderGlobals:40 - Set McuFinder mode to 2 (CubeIDE integrated)
+2019-12-06 17:45:26,454 [INFO] FinderPluginLoader:86 - Searching for filters in installed packs
+2019-12-06 17:45:26,456 [INFO] DbMcusXml:106 - Load MCU database from C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/families.xml
+2019-12-06 17:45:27,304 [INFO] DbMcusJson:87 - JSON generation date=Mon Sep 23 11:35:45 CEST 2019 (1569231345)
+2019-12-06 17:45:28,222 [INFO] DbMcus:193 - Found 1544 MCUs (1504 are supported by CubeMX, 1504 are visible in CubeMX)
+2019-12-06 17:45:28,223 [INFO] ApiDb:158 - Load user favorites file C:\Users\Luca Zambuto/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2019-12-06 17:45:28,223 [INFO] ApiDb:163 - User favorites MCUs=[]
+2019-12-06 17:45:28,223 [INFO] DbMcus:204 - Set 0 / 0 favorites MCUs
+2019-12-06 17:45:28,933 [INFO] DbMcusAds:130 - JSON generation date=Wed Feb 20 17:46:15 CET 2019 (1550681175)
+2019-12-06 17:45:28,935 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-06 17:45:28,971 [INFO] McuDetailPanel:180 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-06 17:45:29,430 [INFO] McuFilterPanel:282 - Update 0 favorites MCUs
+2019-12-06 17:45:29,623 [INFO] DbBoardsPdsc:92 - Found 19 items
+2019-12-06 17:45:29,633 [INFO] DbBoardsPdsc:92 - Found 9 items
+2019-12-06 17:45:29,648 [INFO] DbBoardsPdsc:92 - Found 27 items
+2019-12-06 17:45:29,657 [INFO] DbBoardsPdsc:92 - Found 1 items
+2019-12-06 17:45:29,667 [INFO] DbBoardsPdsc:92 - Found 38 items
+2019-12-06 17:45:29,680 [INFO] DbBoardsPdsc:92 - Found 38 items
+2019-12-06 17:45:29,714 [INFO] DbBoardsPdsc:92 - Found 1 items
+2019-12-06 17:45:29,750 [INFO] DbBoardsJson:79 - JSON generation date=Fri Sep 27 13:37:26 CEST 2019 (1569584246)
+2019-12-06 17:45:29,754 [INFO] DbBoards:120 - Found 133 boards (132 are supported by CubeMX)
+2019-12-06 17:45:29,771 [INFO] DbBoardsDocs:118 - JSON generation date=Mon Sep 23 11:35:45 CEST 2019 (1569231345)
+2019-12-06 17:45:29,778 [INFO] DbBoardsDocs:57 - Found 160 boards documents
+2019-12-06 17:45:29,779 [WARN] DbBoards:130 - board NUCLEO-H743ZI2 has no document id list !
+2019-12-06 17:45:29,779 [WARN] DbBoards:130 - board P-NUCLEO-WB55-Nucleo has no document id list !
+2019-12-06 17:45:29,780 [WARN] DbBoards:130 - board P-NUCLEO-WB55-USBDongle has no document id list !
+2019-12-06 17:45:29,780 [WARN] DbBoards:130 - board P-NUCLEO-WB55 has no document id list !
+2019-12-06 17:45:29,780 [WARN] DbBoards:130 - board STM32F401C-DISCO has no document id list !
+2019-12-06 17:45:29,780 [WARN] DbBoards:130 - board STM32F769I-DISC1 has no document id list !
+2019-12-06 17:45:29,780 [WARN] DbBoards:130 - board STM32L-DISCOVERY has no document id list !
+2019-12-06 17:45:29,781 [WARN] DbBoards:130 - board STM32H747I-DISC1 has no document id list !
+2019-12-06 17:45:29,781 [WARN] DbBoards:130 - board STM32MP157A-DK1 has no document id list !
+2019-12-06 17:45:29,781 [WARN] DbBoards:130 - board STM32L562E-DK has no document id list !
+2019-12-06 17:45:29,781 [WARN] DbBoards:130 - board STM32100E-EVAL has no document id list !
+2019-12-06 17:45:29,781 [WARN] DbBoards:130 - board STM32303C-EVAL has no document id list !
+2019-12-06 17:45:29,781 [WARN] DbBoards:130 - board STM32L152D-EVAL has no document id list !
+2019-12-06 17:45:29,781 [WARN] DbBoards:130 - board STM32H743I-EVAL2 has no document id list !
+2019-12-06 17:45:29,781 [WARN] DbBoards:130 - board STM32H753I-EVAL2 has no document id list !
+2019-12-06 17:45:29,781 [WARN] DbBoards:130 - board STM32G474E-EVAL1 has no document id list !
+2019-12-06 17:45:29,781 [WARN] DbBoards:130 - board STM32L552E-EV has no document id list !
+2019-12-06 17:45:29,781 [WARN] DbBoards:130 - board STEVAL-MKSBOX1V1 has no document id list !
+2019-12-06 17:45:30,345 [ERROR] DbBoards:192 - Image file not found for board STM32G0316-DISCO: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/boards/stm32g0316discovery_small.jpg
+2019-12-06 17:45:30,707 [INFO] ApiDb:158 - Load user favorites file C:\Users\Luca Zambuto/.stm32cubeide/favorites.boards.txt: 0 item(s)
+2019-12-06 17:45:30,707 [INFO] ApiDb:163 - User favorites Boards=[]
+2019-12-06 17:45:30,707 [INFO] DbBoards:209 - Set 0 / 0 favorites Boards
+2019-12-06 17:45:30,781 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-06 17:45:30,782 [INFO] BoardDetailPanel:179 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-06 17:45:30,806 [INFO] BoardFilterPanel:211 - Update 0 favorites Boards
+2019-12-06 17:45:31,400 [INFO] CrossSelectorPresenter:1319 - Cross Selector saved comparison directory: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder\mcu\cs_comparisons_mx
+2019-12-06 17:46:24,867 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] withoutVersionV1.11.0
+2019-12-09 09:32:43,421 [WARN] ServerAccessManage:1026 - Warning during Server Connexion :  timeout connect timed out
+2019-12-09 09:32:48,491 [WARN] ServerAccessManage:1026 - Warning during Server Connexion :  timeout connect timed out
+2019-12-09 09:32:53,579 [WARN] ServerAccessManage:1026 - Warning during Server Connexion :  timeout connect timed out
+2019-12-09 09:32:58,581 [WARN] ServerAccessManage:1026 - Warning during Server Connexion :  timeout connect timed out
+2019-12-09 09:32:58,594 [INFO] MainUpdater:2232 - connection check result : 22
+2019-12-09 09:32:58,608 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] proxy connection test failed
+2019-12-09 09:34:32,169 [ERROR] ServerAccessManage:1030 - Problem during Server Connexion :  IO error Connection timed out: connect
+2019-12-09 09:34:32,181 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] java.net.ConnectException: Connection timed out: connect
+2019-12-09 09:34:32,197 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+2019-12-09 09:34:32,201 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+2019-12-09 09:34:32,205 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+2019-12-09 09:34:32,209 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+2019-12-09 09:34:32,215 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+2019-12-09 09:34:32,219 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+2019-12-09 09:34:32,222 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+2019-12-09 09:34:32,224 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.Socket.connect(Socket.java:589)
+2019-12-09 09:34:32,228 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+2019-12-09 09:34:32,230 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+2019-12-09 09:34:32,232 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+2019-12-09 09:34:32,235 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+2019-12-09 09:34:32,237 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+2019-12-09 09:34:32,240 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+2019-12-09 09:34:32,246 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220)
+2019-12-09 09:34:32,248 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+2019-12-09 09:34:32,250 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+2019-12-09 09:34:32,253 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984)
+2019-12-09 09:34:32,255 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1564)
+2019-12-09 09:34:32,259 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+2019-12-09 09:34:32,263 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+2019-12-09 09:34:32,266 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.ServerAccessManage.openHttpConnexion(ServerAccessManage.java:891)
+2019-12-09 09:34:32,269 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.ServerAccessManage.getHttpFileSize(ServerAccessManage.java:571)
+2019-12-09 09:34:32,274 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.LoadServerUpdatesThread.performUpdaterHttpAccessCheck(LoadServerUpdatesThread.java:453)
+2019-12-09 09:34:32,279 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.LoadServerUpdatesThread.performConnectionCheckNoThread(LoadServerUpdatesThread.java:184)
+2019-12-09 09:34:32,282 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.MainUpdater.performConnectionCheck(MainUpdater.java:2213)
+2019-12-09 09:34:32,284 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.Updater.getSpecificTask(Updater.java:451)
+2019-12-09 09:34:32,288 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.mx.targetselector.TargetSelectorAdapter.addTargetSelector(TargetSelectorAdapter.java:151)
+2019-12-09 09:34:32,293 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.projectcreation.ui.wizard.TargetSetupPage$2.run(TargetSetupPage.java:118)
+2019-12-09 09:34:32,297 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:436)
+2019-12-09 09:34:32,301 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:352)
+2019-12-09 09:34:32,311 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:469)
+2019-12-09 09:34:32,320 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.projectcreation.ui.wizard.TargetSetupPage.createControl(TargetSetupPage.java:113)
+2019-12-09 09:34:32,323 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:179)
+2019-12-09 09:34:32,328 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:743)
+2019-12-09 09:34:32,331 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.WizardDialog.createContents(WizardDialog.java:635)
+2019-12-09 09:34:32,333 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.window.Window.create(Window.java:431)
+2019-12-09 09:34:32,336 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1094)
+2019-12-09 09:34:32,339 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.navigator.wizards.WizardShortcutAction.run(WizardShortcutAction.java:99)
+2019-12-09 09:34:32,342 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.Action.runWithEvent(Action.java:474)
+2019-12-09 09:34:32,347 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:580)
+2019-12-09 09:34:32,349 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.ActionContributionItem.lambda$4(ActionContributionItem.java:412)
+2019-12-09 09:34:32,355 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+2019-12-09 09:34:32,357 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4173)
+2019-12-09 09:34:32,360 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1057)
+2019-12-09 09:34:32,362 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3986)
+2019-12-09 09:34:32,364 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3585)
+2019-12-09 09:34:32,372 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+2019-12-09 09:34:32,374 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+2019-12-09 09:34:32,377 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+2019-12-09 09:34:32,380 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+2019-12-09 09:34:32,382 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:633)
+2019-12-09 09:34:32,384 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+2019-12-09 09:34:32,386 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+2019-12-09 09:34:32,388 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+2019-12-09 09:34:32,392 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+2019-12-09 09:34:32,395 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+2019-12-09 09:34:32,399 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+2019-12-09 09:34:32,401 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+2019-12-09 09:34:32,406 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+2019-12-09 09:34:32,408 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+2019-12-09 09:34:32,412 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2019-12-09 09:34:32,414 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+2019-12-09 09:34:32,417 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2019-12-09 09:34:32,420 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.lang.reflect.Method.invoke(Method.java:498)
+2019-12-09 09:34:32,424 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:660)
+2019-12-09 09:34:32,427 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+2019-12-09 09:34:32,430 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.run(Main.java:1468)
+2019-12-09 09:34:51,677 [ERROR] ServerAccessManage:1030 - Problem during Server Connexion :  IO error Network is unreachable: connect
+2019-12-09 09:34:51,684 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] java.net.SocketException: Network is unreachable: connect
+2019-12-09 09:34:51,688 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+2019-12-09 09:34:51,695 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+2019-12-09 09:34:51,700 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+2019-12-09 09:34:51,705 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+2019-12-09 09:34:51,712 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+2019-12-09 09:34:51,716 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+2019-12-09 09:34:51,721 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+2019-12-09 09:34:51,726 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.Socket.connect(Socket.java:589)
+2019-12-09 09:34:51,731 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+2019-12-09 09:34:51,736 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+2019-12-09 09:34:51,740 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+2019-12-09 09:34:51,743 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+2019-12-09 09:34:51,746 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+2019-12-09 09:34:51,749 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+2019-12-09 09:34:51,752 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220)
+2019-12-09 09:34:51,755 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+2019-12-09 09:34:51,762 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+2019-12-09 09:34:51,767 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984)
+2019-12-09 09:34:51,771 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1564)
+2019-12-09 09:34:51,775 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+2019-12-09 09:34:51,779 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+2019-12-09 09:34:51,784 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.ServerAccessManage.openHttpConnexion(ServerAccessManage.java:891)
+2019-12-09 09:34:51,788 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.ServerAccessManage.getHttpFileSize(ServerAccessManage.java:571)
+2019-12-09 09:34:51,793 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.LoadServerUpdatesThread.performUpdaterHttpAccessCheck(LoadServerUpdatesThread.java:453)
+2019-12-09 09:34:51,798 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.LoadServerUpdatesThread.performConnectionCheckNoThread(LoadServerUpdatesThread.java:188)
+2019-12-09 09:34:51,805 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.MainUpdater.performConnectionCheck(MainUpdater.java:2213)
+2019-12-09 09:34:51,809 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.Updater.getSpecificTask(Updater.java:451)
+2019-12-09 09:34:51,814 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.mx.targetselector.TargetSelectorAdapter.addTargetSelector(TargetSelectorAdapter.java:151)
+2019-12-09 09:34:51,817 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.projectcreation.ui.wizard.TargetSetupPage$2.run(TargetSetupPage.java:118)
+2019-12-09 09:34:51,820 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:436)
+2019-12-09 09:34:51,827 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:352)
+2019-12-09 09:34:51,830 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:469)
+2019-12-09 09:34:51,833 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.projectcreation.ui.wizard.TargetSetupPage.createControl(TargetSetupPage.java:113)
+2019-12-09 09:34:51,836 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:179)
+2019-12-09 09:34:51,839 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:743)
+2019-12-09 09:34:51,842 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.WizardDialog.createContents(WizardDialog.java:635)
+2019-12-09 09:34:51,845 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.window.Window.create(Window.java:431)
+2019-12-09 09:34:51,848 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1094)
+2019-12-09 09:34:51,850 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.navigator.wizards.WizardShortcutAction.run(WizardShortcutAction.java:99)
+2019-12-09 09:34:51,853 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.Action.runWithEvent(Action.java:474)
+2019-12-09 09:34:51,856 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:580)
+2019-12-09 09:34:51,859 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.ActionContributionItem.lambda$4(ActionContributionItem.java:412)
+2019-12-09 09:34:51,862 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+2019-12-09 09:34:51,864 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4173)
+2019-12-09 09:34:51,866 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1057)
+2019-12-09 09:34:51,871 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3986)
+2019-12-09 09:34:51,873 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3585)
+2019-12-09 09:34:51,877 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+2019-12-09 09:34:51,881 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+2019-12-09 09:34:51,886 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+2019-12-09 09:34:51,889 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+2019-12-09 09:34:51,892 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:633)
+2019-12-09 09:34:51,895 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+2019-12-09 09:34:51,898 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+2019-12-09 09:34:51,900 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+2019-12-09 09:34:51,905 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+2019-12-09 09:34:51,908 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+2019-12-09 09:34:51,911 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+2019-12-09 09:34:51,914 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+2019-12-09 09:34:51,916 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+2019-12-09 09:34:51,919 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+2019-12-09 09:34:51,921 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2019-12-09 09:34:51,924 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+2019-12-09 09:34:51,926 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2019-12-09 09:34:51,928 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.lang.reflect.Method.invoke(Method.java:498)
+2019-12-09 09:34:51,930 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:660)
+2019-12-09 09:34:51,931 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+2019-12-09 09:34:51,934 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.run(Main.java:1468)
+2019-12-09 09:34:51,937 [INFO] MainUpdater:2232 - connection check result : 22
+2019-12-09 09:35:32,169 [INFO] McuFinderGlobals:40 - Set McuFinder mode to 2 (CubeIDE integrated)
+2019-12-09 09:35:32,179 [INFO] FinderPluginLoader:86 - Searching for filters in installed packs
+2019-12-09 09:35:33,297 [INFO] McuFilterPanel:282 - Update 0 favorites MCUs
+2019-12-09 09:35:33,448 [INFO] BoardFilterPanel:211 - Update 0 favorites Boards
+2019-12-09 09:35:33,503 [INFO] CrossSelectorPresenter:1319 - Cross Selector saved comparison directory: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder\mcu\cs_comparisons_mx
+2019-12-09 09:35:51,285 [INFO] DbMcusDocs:126 - JSON generation date=Mon Sep 23 11:35:45 CEST 2019 (1569231345)
+2019-12-09 09:35:51,367 [INFO] DbMcusDocs:61 - Found 525 MCUs documents
+2019-12-09 09:36:11,555 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] withoutVersionV1.11.0
+2019-12-11 16:02:40,468 [WARN] ServerAccessManage:1026 - Warning during Server Connexion :  timeout connect timed out
+2019-12-11 16:02:45,488 [WARN] ServerAccessManage:1026 - Warning during Server Connexion :  timeout connect timed out
+2019-12-11 16:02:50,547 [WARN] ServerAccessManage:1026 - Warning during Server Connexion :  timeout connect timed out
+2019-12-11 16:02:55,548 [WARN] ServerAccessManage:1026 - Warning during Server Connexion :  timeout connect timed out
+2019-12-11 16:02:55,551 [INFO] MainUpdater:2232 - connection check result : 22
+2019-12-11 16:02:55,562 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] proxy connection test failed
+2019-12-11 16:03:42,999 [ERROR] ServerAccessManage:1030 - Problem during Server Connexion :  IO error Connection timed out: connect
+2019-12-11 16:03:43,001 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] java.net.ConnectException: Connection timed out: connect
+2019-12-11 16:03:43,006 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+2019-12-11 16:03:43,008 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+2019-12-11 16:03:43,010 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+2019-12-11 16:03:43,013 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+2019-12-11 16:03:43,016 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+2019-12-11 16:03:43,018 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+2019-12-11 16:03:43,020 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+2019-12-11 16:03:43,021 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.Socket.connect(Socket.java:589)
+2019-12-11 16:03:43,098 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+2019-12-11 16:03:43,099 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+2019-12-11 16:03:43,101 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+2019-12-11 16:03:43,103 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+2019-12-11 16:03:43,104 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+2019-12-11 16:03:43,106 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+2019-12-11 16:03:43,109 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220)
+2019-12-11 16:03:43,111 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+2019-12-11 16:03:43,113 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+2019-12-11 16:03:43,116 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984)
+2019-12-11 16:03:43,118 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1564)
+2019-12-11 16:03:43,120 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+2019-12-11 16:03:43,122 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+2019-12-11 16:03:43,124 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.ServerAccessManage.openHttpConnexion(ServerAccessManage.java:891)
+2019-12-11 16:03:43,126 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.ServerAccessManage.getHttpFileSize(ServerAccessManage.java:571)
+2019-12-11 16:03:43,129 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.LoadServerUpdatesThread.performUpdaterHttpAccessCheck(LoadServerUpdatesThread.java:453)
+2019-12-11 16:03:43,132 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.LoadServerUpdatesThread.performConnectionCheckNoThread(LoadServerUpdatesThread.java:184)
+2019-12-11 16:03:43,134 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.MainUpdater.performConnectionCheck(MainUpdater.java:2213)
+2019-12-11 16:03:43,135 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.Updater.getSpecificTask(Updater.java:451)
+2019-12-11 16:03:43,137 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.mx.targetselector.TargetSelectorAdapter.addTargetSelector(TargetSelectorAdapter.java:151)
+2019-12-11 16:03:43,140 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.projectcreation.ui.wizard.TargetSetupPage$2.run(TargetSetupPage.java:118)
+2019-12-11 16:03:43,142 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:436)
+2019-12-11 16:03:43,144 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:352)
+2019-12-11 16:03:43,146 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:469)
+2019-12-11 16:03:43,148 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.projectcreation.ui.wizard.TargetSetupPage.createControl(TargetSetupPage.java:113)
+2019-12-11 16:03:43,150 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:179)
+2019-12-11 16:03:43,152 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:743)
+2019-12-11 16:03:43,154 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.WizardDialog.createContents(WizardDialog.java:635)
+2019-12-11 16:03:43,156 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.window.Window.create(Window.java:431)
+2019-12-11 16:03:43,157 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1094)
+2019-12-11 16:03:43,159 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.navigator.wizards.WizardShortcutAction.run(WizardShortcutAction.java:99)
+2019-12-11 16:03:43,161 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.Action.runWithEvent(Action.java:474)
+2019-12-11 16:03:43,163 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:580)
+2019-12-11 16:03:43,165 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.ActionContributionItem.lambda$4(ActionContributionItem.java:412)
+2019-12-11 16:03:43,167 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+2019-12-11 16:03:43,168 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4173)
+2019-12-11 16:03:43,170 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1057)
+2019-12-11 16:03:43,171 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3986)
+2019-12-11 16:03:43,173 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3585)
+2019-12-11 16:03:43,175 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+2019-12-11 16:03:43,176 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+2019-12-11 16:03:43,178 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+2019-12-11 16:03:43,180 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+2019-12-11 16:03:43,182 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:633)
+2019-12-11 16:03:43,184 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+2019-12-11 16:03:43,186 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+2019-12-11 16:03:43,188 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+2019-12-11 16:03:43,190 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+2019-12-11 16:03:43,192 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+2019-12-11 16:03:43,194 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+2019-12-11 16:03:43,197 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+2019-12-11 16:03:43,198 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+2019-12-11 16:03:43,200 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+2019-12-11 16:03:43,202 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2019-12-11 16:03:43,204 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+2019-12-11 16:03:43,206 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2019-12-11 16:03:43,207 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.lang.reflect.Method.invoke(Method.java:498)
+2019-12-11 16:03:43,209 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:660)
+2019-12-11 16:03:43,211 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+2019-12-11 16:03:43,212 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.run(Main.java:1468)
+2019-12-11 16:04:04,228 [ERROR] ServerAccessManage:1030 - Problem during Server Connexion :  IO error Connection timed out: connect
+2019-12-11 16:04:04,229 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] java.net.ConnectException: Connection timed out: connect
+2019-12-11 16:04:04,231 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+2019-12-11 16:04:04,233 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+2019-12-11 16:04:04,235 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+2019-12-11 16:04:04,237 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+2019-12-11 16:04:04,239 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+2019-12-11 16:04:04,241 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+2019-12-11 16:04:04,243 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+2019-12-11 16:04:04,245 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.Socket.connect(Socket.java:589)
+2019-12-11 16:04:04,247 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+2019-12-11 16:04:04,249 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+2019-12-11 16:04:04,251 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+2019-12-11 16:04:04,253 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+2019-12-11 16:04:04,254 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+2019-12-11 16:04:04,256 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+2019-12-11 16:04:04,259 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220)
+2019-12-11 16:04:04,262 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+2019-12-11 16:04:04,264 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+2019-12-11 16:04:04,267 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984)
+2019-12-11 16:04:04,270 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1564)
+2019-12-11 16:04:04,273 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+2019-12-11 16:04:04,276 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+2019-12-11 16:04:04,278 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.ServerAccessManage.openHttpConnexion(ServerAccessManage.java:891)
+2019-12-11 16:04:04,282 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.ServerAccessManage.getHttpFileSize(ServerAccessManage.java:571)
+2019-12-11 16:04:04,286 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.LoadServerUpdatesThread.performUpdaterHttpAccessCheck(LoadServerUpdatesThread.java:453)
+2019-12-11 16:04:04,289 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.LoadServerUpdatesThread.performConnectionCheckNoThread(LoadServerUpdatesThread.java:188)
+2019-12-11 16:04:04,293 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.MainUpdater.performConnectionCheck(MainUpdater.java:2213)
+2019-12-11 16:04:04,296 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.Updater.getSpecificTask(Updater.java:451)
+2019-12-11 16:04:04,299 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.mx.targetselector.TargetSelectorAdapter.addTargetSelector(TargetSelectorAdapter.java:151)
+2019-12-11 16:04:04,301 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.projectcreation.ui.wizard.TargetSetupPage$2.run(TargetSetupPage.java:118)
+2019-12-11 16:04:04,304 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:436)
+2019-12-11 16:04:04,306 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:352)
+2019-12-11 16:04:04,309 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:469)
+2019-12-11 16:04:04,311 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.projectcreation.ui.wizard.TargetSetupPage.createControl(TargetSetupPage.java:113)
+2019-12-11 16:04:04,313 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:179)
+2019-12-11 16:04:04,316 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:743)
+2019-12-11 16:04:04,319 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.WizardDialog.createContents(WizardDialog.java:635)
+2019-12-11 16:04:04,320 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.window.Window.create(Window.java:431)
+2019-12-11 16:04:04,322 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1094)
+2019-12-11 16:04:04,325 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.navigator.wizards.WizardShortcutAction.run(WizardShortcutAction.java:99)
+2019-12-11 16:04:04,326 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.Action.runWithEvent(Action.java:474)
+2019-12-11 16:04:04,329 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:580)
+2019-12-11 16:04:04,331 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.ActionContributionItem.lambda$4(ActionContributionItem.java:412)
+2019-12-11 16:04:04,332 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+2019-12-11 16:04:04,333 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4173)
+2019-12-11 16:04:04,334 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1057)
+2019-12-11 16:04:04,336 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3986)
+2019-12-11 16:04:04,337 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3585)
+2019-12-11 16:04:04,339 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+2019-12-11 16:04:04,341 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+2019-12-11 16:04:04,344 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+2019-12-11 16:04:04,346 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+2019-12-11 16:04:04,347 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:633)
+2019-12-11 16:04:04,349 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+2019-12-11 16:04:04,351 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+2019-12-11 16:04:04,353 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+2019-12-11 16:04:04,354 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+2019-12-11 16:04:04,356 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+2019-12-11 16:04:04,358 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+2019-12-11 16:04:04,361 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+2019-12-11 16:04:04,363 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+2019-12-11 16:04:04,365 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+2019-12-11 16:04:04,367 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2019-12-11 16:04:04,369 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+2019-12-11 16:04:04,371 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2019-12-11 16:04:04,372 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.lang.reflect.Method.invoke(Method.java:498)
+2019-12-11 16:04:04,374 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:660)
+2019-12-11 16:04:04,376 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+2019-12-11 16:04:04,378 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.run(Main.java:1468)
+2019-12-11 16:04:04,380 [INFO] MainUpdater:2232 - connection check result : 22
+2019-12-11 16:15:31,799 [ERROR] ServerAccessManage:1030 - Problem during Server Connexion :  IO error Connection timed out: connect
+2019-12-11 16:15:31,800 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] java.net.ConnectException: Connection timed out: connect
+2019-12-11 16:15:31,802 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+2019-12-11 16:15:31,804 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+2019-12-11 16:15:31,806 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+2019-12-11 16:15:31,808 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+2019-12-11 16:15:31,810 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+2019-12-11 16:15:31,812 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+2019-12-11 16:15:31,814 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+2019-12-11 16:15:31,815 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.Socket.connect(Socket.java:589)
+2019-12-11 16:15:31,817 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+2019-12-11 16:15:31,819 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+2019-12-11 16:15:31,820 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+2019-12-11 16:15:31,822 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+2019-12-11 16:15:31,823 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+2019-12-11 16:15:31,824 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+2019-12-11 16:15:31,826 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220)
+2019-12-11 16:15:31,829 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+2019-12-11 16:15:31,831 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+2019-12-11 16:15:31,833 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984)
+2019-12-11 16:15:31,834 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1564)
+2019-12-11 16:15:31,836 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+2019-12-11 16:15:31,838 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+2019-12-11 16:15:31,840 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.ServerAccessManage.openHttpConnexion(ServerAccessManage.java:891)
+2019-12-11 16:15:31,843 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.ServerAccessManage.getHttpFileSize(ServerAccessManage.java:571)
+2019-12-11 16:15:31,845 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.LoadServerUpdatesThread.performUpdaterHttpAccessCheck(LoadServerUpdatesThread.java:453)
+2019-12-11 16:15:31,848 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.LoadServerUpdatesThread.performConnectionCheckNoThread(LoadServerUpdatesThread.java:184)
+2019-12-11 16:15:31,851 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.MainUpdater.performConnectionCheck(MainUpdater.java:2213)
+2019-12-11 16:15:31,853 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.Updater.getSpecificTask(Updater.java:451)
+2019-12-11 16:15:31,855 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.mx.targetselector.TargetSelectorAdapter.addTargetSelector(TargetSelectorAdapter.java:151)
+2019-12-11 16:15:31,858 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.projectcreation.ui.wizard.TargetSetupPage$2.run(TargetSetupPage.java:118)
+2019-12-11 16:15:31,860 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:436)
+2019-12-11 16:15:31,861 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:352)
+2019-12-11 16:15:31,863 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:469)
+2019-12-11 16:15:31,866 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.projectcreation.ui.wizard.TargetSetupPage.createControl(TargetSetupPage.java:113)
+2019-12-11 16:15:31,868 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:179)
+2019-12-11 16:15:31,870 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:743)
+2019-12-11 16:15:31,872 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.WizardDialog.createContents(WizardDialog.java:635)
+2019-12-11 16:15:31,873 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.window.Window.create(Window.java:431)
+2019-12-11 16:15:31,874 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1094)
+2019-12-11 16:15:31,876 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.navigator.wizards.WizardShortcutAction.run(WizardShortcutAction.java:99)
+2019-12-11 16:15:31,878 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.Action.runWithEvent(Action.java:474)
+2019-12-11 16:15:31,880 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:580)
+2019-12-11 16:15:31,883 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.ActionContributionItem.lambda$4(ActionContributionItem.java:412)
+2019-12-11 16:15:31,885 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+2019-12-11 16:15:31,886 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4173)
+2019-12-11 16:15:31,888 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1057)
+2019-12-11 16:15:31,891 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3986)
+2019-12-11 16:15:31,893 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3585)
+2019-12-11 16:15:31,895 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+2019-12-11 16:15:31,897 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+2019-12-11 16:15:31,899 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+2019-12-11 16:15:31,902 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+2019-12-11 16:15:31,903 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:633)
+2019-12-11 16:15:31,905 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+2019-12-11 16:15:31,907 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+2019-12-11 16:15:31,909 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+2019-12-11 16:15:31,911 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+2019-12-11 16:15:31,913 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+2019-12-11 16:15:31,915 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+2019-12-11 16:15:31,920 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+2019-12-11 16:15:31,922 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+2019-12-11 16:15:31,926 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+2019-12-11 16:15:31,928 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2019-12-11 16:15:31,931 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+2019-12-11 16:15:31,933 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2019-12-11 16:15:31,935 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.lang.reflect.Method.invoke(Method.java:498)
+2019-12-11 16:15:31,937 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:660)
+2019-12-11 16:15:31,938 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+2019-12-11 16:15:31,940 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.run(Main.java:1468)
+2019-12-11 16:15:52,944 [ERROR] ServerAccessManage:1030 - Problem during Server Connexion :  IO error Connection timed out: connect
+2019-12-11 16:15:52,946 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] java.net.ConnectException: Connection timed out: connect
+2019-12-11 16:15:52,948 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+2019-12-11 16:15:52,950 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+2019-12-11 16:15:52,952 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+2019-12-11 16:15:52,954 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+2019-12-11 16:15:52,956 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+2019-12-11 16:15:52,957 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+2019-12-11 16:15:52,959 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+2019-12-11 16:15:52,960 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.Socket.connect(Socket.java:589)
+2019-12-11 16:15:52,962 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+2019-12-11 16:15:52,963 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+2019-12-11 16:15:52,965 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+2019-12-11 16:15:52,967 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+2019-12-11 16:15:52,968 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+2019-12-11 16:15:52,969 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+2019-12-11 16:15:52,970 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1220)
+2019-12-11 16:15:52,972 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+2019-12-11 16:15:52,974 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+2019-12-11 16:15:52,976 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:984)
+2019-12-11 16:15:52,978 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1564)
+2019-12-11 16:15:52,981 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+2019-12-11 16:15:52,982 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+2019-12-11 16:15:52,985 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.ServerAccessManage.openHttpConnexion(ServerAccessManage.java:891)
+2019-12-11 16:15:52,988 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.ServerAccessManage.getHttpFileSize(ServerAccessManage.java:571)
+2019-12-11 16:15:52,991 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.LoadServerUpdatesThread.performUpdaterHttpAccessCheck(LoadServerUpdatesThread.java:453)
+2019-12-11 16:15:52,993 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.LoadServerUpdatesThread.performConnectionCheckNoThread(LoadServerUpdatesThread.java:188)
+2019-12-11 16:15:52,995 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.engine.MainUpdater.performConnectionCheck(MainUpdater.java:2213)
+2019-12-11 16:15:52,997 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.microxplorer.plugins.updater.Updater.getSpecificTask(Updater.java:451)
+2019-12-11 16:15:52,999 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.mx.targetselector.TargetSelectorAdapter.addTargetSelector(TargetSelectorAdapter.java:151)
+2019-12-11 16:15:53,001 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.projectcreation.ui.wizard.TargetSetupPage$2.run(TargetSetupPage.java:118)
+2019-12-11 16:15:53,003 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:436)
+2019-12-11 16:15:53,005 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:352)
+2019-12-11 16:15:53,007 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:469)
+2019-12-11 16:15:53,010 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at com.st.stm32cube.common.projectcreation.ui.wizard.TargetSetupPage.createControl(TargetSetupPage.java:113)
+2019-12-11 16:15:53,012 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.Wizard.createPageControls(Wizard.java:179)
+2019-12-11 16:15:53,014 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.WizardDialog.createPageControls(WizardDialog.java:743)
+2019-12-11 16:15:53,016 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.wizard.WizardDialog.createContents(WizardDialog.java:635)
+2019-12-11 16:15:53,018 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.window.Window.create(Window.java:431)
+2019-12-11 16:15:53,019 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1094)
+2019-12-11 16:15:53,022 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.navigator.wizards.WizardShortcutAction.run(WizardShortcutAction.java:99)
+2019-12-11 16:15:53,023 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.Action.runWithEvent(Action.java:474)
+2019-12-11 16:15:53,026 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:580)
+2019-12-11 16:15:53,028 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.jface.action.ActionContributionItem.lambda$4(ActionContributionItem.java:412)
+2019-12-11 16:15:53,030 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+2019-12-11 16:15:53,032 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4173)
+2019-12-11 16:15:53,033 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1057)
+2019-12-11 16:15:53,034 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3986)
+2019-12-11 16:15:53,036 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3585)
+2019-12-11 16:15:53,038 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+2019-12-11 16:15:53,040 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+2019-12-11 16:15:53,043 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+2019-12-11 16:15:53,045 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+2019-12-11 16:15:53,047 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:633)
+2019-12-11 16:15:53,049 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+2019-12-11 16:15:53,051 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+2019-12-11 16:15:53,053 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+2019-12-11 16:15:53,055 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+2019-12-11 16:15:53,057 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+2019-12-11 16:15:53,059 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+2019-12-11 16:15:53,061 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+2019-12-11 16:15:53,063 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+2019-12-11 16:15:53,065 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+2019-12-11 16:15:53,067 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2019-12-11 16:15:53,068 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+2019-12-11 16:15:53,071 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2019-12-11 16:15:53,072 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.lang.reflect.Method.invoke(Method.java:498)
+2019-12-11 16:15:53,074 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:660)
+2019-12-11 16:15:53,075 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:597)
+2019-12-11 16:15:53,076 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at org.eclipse.equinox.launcher.Main.run(Main.java:1468)
+2019-12-11 16:15:53,078 [INFO] MainUpdater:2232 - connection check result : 22
+2019-12-11 17:02:39,912 [INFO] McuFinderGlobals:40 - Set McuFinder mode to 2 (CubeIDE integrated)
+2019-12-11 17:02:39,919 [INFO] FinderPluginLoader:86 - Searching for filters in installed packs
+2019-12-11 17:02:41,113 [INFO] McuFilterPanel:282 - Update 0 favorites MCUs
+2019-12-11 17:02:41,288 [INFO] BoardFilterPanel:211 - Update 0 favorites Boards
+2019-12-11 17:02:41,312 [INFO] CrossSelectorPresenter:1319 - Cross Selector saved comparison directory: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder\mcu\cs_comparisons_mx
+2019-12-13 09:49:23,244 [INFO] MainUpdater:2232 - connection check result : 10
+2019-12-13 09:49:23,252 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Successfull proxy connection.
+2019-12-13 09:49:23,305 [INFO] McuFinderGlobals:40 - Set McuFinder mode to 2 (CubeIDE integrated)
+2019-12-13 09:49:23,306 [INFO] FinderPluginLoader:86 - Searching for filters in installed packs
+2019-12-13 09:49:24,147 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-13 09:49:24,148 [INFO] McuDetailPanel:180 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-13 09:49:26,156 [INFO] ServerAccessManage:348 - Download File mcusDocs.json
+2019-12-13 09:49:26,346 [INFO] LoadUrlFilesThread:134 - End of LoadUrlFiles Thread
+2019-12-13 09:49:35,359 [INFO] ServerAccessManage:348 - Download File mcusFeaturesAndDescription.json
+2019-12-13 09:49:42,424 [INFO] LoadUrlFilesThread:134 - End of LoadUrlFiles Thread
+2019-12-13 09:49:42,595 [INFO] ServerAccessManage:348 - Download File mcusAds.json
+2019-12-13 09:49:42,644 [INFO] LoadUrlFilesThread:134 - End of LoadUrlFiles Thread
+2019-12-13 09:49:44,268 [INFO] ServerAccessManage:348 - Download File boardsDocs.json
+2019-12-13 09:49:44,444 [INFO] LoadUrlFilesThread:134 - End of LoadUrlFiles Thread
+2019-12-13 09:49:44,949 [INFO] ServerAccessManage:348 - Download File boards.json
+2019-12-13 09:49:45,439 [INFO] LoadUrlFilesThread:134 - End of LoadUrlFiles Thread
+2019-12-13 09:49:45,774 [INFO] ServerAccessManage:348 - Download File crdb.zip
+2019-12-13 09:49:46,357 [INFO] FileExtend:210 - Unzip File : crdb.zip
+2019-12-13 09:49:46,359 [INFO] FileExtend:225 - Standard Zip Deflate
+2019-12-13 09:49:46,457 [INFO] LoadUrlFilesThread:134 - End of LoadUrlFiles Thread
+2019-12-13 09:49:46,535 [INFO] DbMcusDocs:126 - JSON generation date=Wed Dec 11 12:27:49 CET 2019 (1576063669)
+2019-12-13 09:49:46,629 [INFO] DbMcusDocs:61 - Found 525 MCUs documents
+2019-12-13 09:49:46,631 [INFO] ApiDb:186 - Save user favorites file C:\Users\Luca Zambuto/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2019-12-13 09:49:46,631 [INFO] ApiDb:191 - User favorites MCUs=[]
+2019-12-13 09:49:46,634 [INFO] DbMcusXml:106 - Load MCU database from C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/mcu/families.xml
+2019-12-13 09:49:47,579 [INFO] DbMcusJson:87 - JSON generation date=Wed Dec 11 12:27:49 CET 2019 (1576063669)
+2019-12-13 09:49:48,549 [INFO] DbMcus:193 - Found 1544 MCUs (1504 are supported by CubeMX, 1504 are visible in CubeMX)
+2019-12-13 09:49:48,550 [INFO] ApiDb:158 - Load user favorites file C:\Users\Luca Zambuto/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2019-12-13 09:49:48,550 [INFO] ApiDb:163 - User favorites MCUs=[]
+2019-12-13 09:49:48,550 [INFO] DbMcus:204 - Set 0 / 0 favorites MCUs
+2019-12-13 09:49:48,680 [INFO] McuFilterPanel:282 - Update 0 favorites MCUs
+2019-12-13 09:49:48,994 [INFO] DbBoardsDocs:118 - JSON generation date=Wed Dec 11 12:27:49 CET 2019 (1576063669)
+2019-12-13 09:49:49,005 [INFO] DbBoardsDocs:57 - Found 160 boards documents
+2019-12-13 09:49:49,006 [INFO] ApiDb:186 - Save user favorites file C:\Users\Luca Zambuto/.stm32cubeide/favorites.boards.txt: 0 item(s)
+2019-12-13 09:49:49,007 [INFO] ApiDb:191 - User favorites Boards=[]
+2019-12-13 09:49:49,023 [INFO] DbBoardsPdsc:92 - Found 19 items
+2019-12-13 09:49:49,036 [INFO] DbBoardsPdsc:92 - Found 9 items
+2019-12-13 09:49:49,047 [INFO] DbBoardsPdsc:92 - Found 27 items
+2019-12-13 09:49:49,057 [INFO] DbBoardsPdsc:92 - Found 1 items
+2019-12-13 09:49:49,073 [INFO] DbBoardsPdsc:92 - Found 38 items
+2019-12-13 09:49:49,090 [INFO] DbBoardsPdsc:92 - Found 38 items
+2019-12-13 09:49:49,101 [INFO] DbBoardsPdsc:92 - Found 1 items
+2019-12-13 09:49:49,126 [INFO] DbBoardsJson:79 - JSON generation date=Wed Dec 11 08:35:31 CET 2019 (1576049731)
+2019-12-13 09:49:49,133 [INFO] DbBoards:120 - Found 133 boards (132 are supported by CubeMX)
+2019-12-13 09:49:49,135 [WARN] DbBoards:130 - board NUCLEO-H743ZI2 has no document id list !
+2019-12-13 09:49:49,137 [WARN] DbBoards:130 - board P-NUCLEO-WB55-Nucleo has no document id list !
+2019-12-13 09:49:49,137 [WARN] DbBoards:130 - board P-NUCLEO-WB55-USBDongle has no document id list !
+2019-12-13 09:49:49,137 [WARN] DbBoards:130 - board P-NUCLEO-WB55 has no document id list !
+2019-12-13 09:49:49,138 [WARN] DbBoards:130 - board STM32F401C-DISCO has no document id list !
+2019-12-13 09:49:49,138 [WARN] DbBoards:130 - board STM32F769I-DISC1 has no document id list !
+2019-12-13 09:49:49,139 [WARN] DbBoards:130 - board STM32L-DISCOVERY has no document id list !
+2019-12-13 09:49:49,140 [WARN] DbBoards:130 - board STM32H747I-DISC1 has no document id list !
+2019-12-13 09:49:49,141 [WARN] DbBoards:130 - board STM32MP157A-DK1 has no document id list !
+2019-12-13 09:49:49,141 [WARN] DbBoards:130 - board STM32L562E-DK has no document id list !
+2019-12-13 09:49:49,141 [WARN] DbBoards:130 - board STM32100E-EVAL has no document id list !
+2019-12-13 09:49:49,141 [WARN] DbBoards:130 - board STM32303C-EVAL has no document id list !
+2019-12-13 09:49:49,142 [WARN] DbBoards:130 - board STM32L152D-EVAL has no document id list !
+2019-12-13 09:49:49,142 [WARN] DbBoards:130 - board STM32H743I-EVAL2 has no document id list !
+2019-12-13 09:49:49,143 [WARN] DbBoards:130 - board STM32H753I-EVAL2 has no document id list !
+2019-12-13 09:49:49,143 [WARN] DbBoards:130 - board STM32G474E-EVAL1 has no document id list !
+2019-12-13 09:49:49,143 [WARN] DbBoards:130 - board STM32L552E-EV has no document id list !
+2019-12-13 09:49:49,143 [WARN] DbBoards:130 - board STEVAL-MKSBOX1V1 has no document id list !
+2019-12-13 09:49:49,983 [ERROR] DbBoards:192 - Image file not found for board STM32G0316-DISCO: C:\ST\STM32CubeIDE_1.1.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_5.4.0.201910091541\\db\/plugins/mcufinder/images/boards/stm32g0316discovery_small.jpg
+2019-12-13 09:49:50,635 [INFO] ApiDb:158 - Load user favorites file C:\Users\Luca Zambuto/.stm32cubeide/favorites.boards.txt: 0 item(s)
+2019-12-13 09:49:50,635 [INFO] ApiDb:163 - User favorites Boards=[]
+2019-12-13 09:49:50,635 [INFO] DbBoards:209 - Set 0 / 0 favorites Boards
+2019-12-13 09:49:50,641 [INFO] BoardFilterPanel:211 - Update 0 favorites Boards
+2019-12-13 09:49:50,799 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-13 09:49:50,807 [INFO] McuFilterPanel:282 - Update 0 favorites MCUs
+2019-12-13 09:49:51,003 [INFO] LoadUrlFilesThread:161 - End of LoadServerUrlFiles without Thread
+2019-12-13 09:49:51,003 [INFO] BoardDetailPanel:179 - Set advertising image to C:/Users/Luca Zambuto/STM32Cube/Repository/\PRSTM32MP10219-01-med.jpg
+2019-12-13 09:49:51,017 [INFO] BoardFilterPanel:211 - Update 0 favorites Boards
+2019-12-13 09:49:51,044 [INFO] CrossSelectorPresenter:1319 - Cross Selector saved comparison directory: C:\Users\Luca Zambuto\.stmcufinder\plugins\mcufinder\mcu\cs_comparisons_mx
+2019-12-13 09:50:10,732 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] withoutVersionV1.11.0

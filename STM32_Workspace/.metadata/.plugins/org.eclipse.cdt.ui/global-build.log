@@ -1,0 +1,49 @@
+11:07:07 **** Incremental Build of configuration Debug for project driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F30 -DSTM32 -DSTM32F3 -DDEBUG -DSTM32F303RETx -DNUCLEO_F303RE -c -I../Inc -I"C:/Users/Luca Zambuto/Desktop/STM32 Nucleo Board/STM32_Workspace/Embedded-Software/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Luca Zambuto\Desktop\STM32 Nucleo Board\STM32_Workspace\driver\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: driver.elf
+ 
+arm-none-eabi-objdump -h -S  driver.elf  > "driver.list"
+arm-none-eabi-size   driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+    668	      8	   1568	   2244	    8c4	driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: driver.list
+ 
+11:08:25 **** Incremental Build of configuration Debug for project driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F30 -DSTM32 -DSTM32F3 -DDEBUG -DSTM32F303RETx -DNUCLEO_F303RE -c -I../Inc -I"C:/Users/Luca Zambuto/Desktop/STM32 Nucleo Board/STM32_Workspace/Embedded-Software/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Luca Zambuto\Desktop\STM32 Nucleo Board\STM32_Workspace\driver\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: driver.elf
+ 
+arm-none-eabi-objdump -h -S  driver.elf  > "driver.list"
+arm-none-eabi-size   driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3468	    108	   1580	   5156	   1424	driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: driver.list
+ 
+11:08:49 **** Incremental Build of configuration Debug for project driver ****
+make -j8 all 
+arm-none-eabi-size   driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3468	    108	   1580	   5156	   1424	driver.elf
+Finished building: default.size.stdout
+ 
+11:10:12 **** Incremental Build of configuration Debug for project driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32F30 -DSTM32 -DSTM32F3 -DDEBUG -DSTM32F303RETx -DNUCLEO_F303RE -c -I../Inc -I"C:/Users/Luca Zambuto/Desktop/STM32 Nucleo Board/STM32_Workspace/Embedded-Software/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Luca Zambuto\Desktop\STM32 Nucleo Board\STM32_Workspace\driver\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: driver.elf
+ 
+arm-none-eabi-objdump -h -S  driver.elf  > "driver.list"
+arm-none-eabi-size   driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4968	    108	   1588	   6664	   1a08	driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: driver.list
+ 

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;driver&apos; to &apos;STM32F303RE_driver&apos;" description="Rename resource &apos;driver&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/driver" name="STM32F303RE_driver" stamp="1576245210357" updateReferences="true"/>
+</session>
