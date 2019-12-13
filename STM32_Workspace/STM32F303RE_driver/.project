@@ -29,16 +29,4 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>driver/inc</name>
-			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Embedded-Software/inc</locationURI>
-		</link>
-		<link>
-			<name>driver/src</name>
-			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Embedded-Software/src</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>

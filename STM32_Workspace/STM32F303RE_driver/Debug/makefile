@@ -23,21 +23,21 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-driver.elf \
+STM32F303RE_driver.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-driver.list \
+STM32F303RE_driver.list \
 
 
 # All Target
-all: driver.elf secondary-outputs
+all: STM32F303RE_driver.elf secondary-outputs
 
 # Tool invocations
-driver.elf: $(OBJS) $(USER_OBJS) C:\Users\Luca\ Zambuto\Desktop\STM32\ Nucleo\ Board\STM32_Workspace\driver\STM32F303RETX_FLASH.ld
-	arm-none-eabi-gcc -o "driver.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Luca Zambuto\Desktop\STM32 Nucleo Board\STM32_Workspace\driver\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+STM32F303RE_driver.elf: $(OBJS) $(USER_OBJS) C:\Users\Luca\ Zambuto\Desktop\STM32\ Nucleo\ Board\Embedded-Software\STM32_Workspace\STM32F303RE_driver\STM32F303RETX_FLASH.ld
+	arm-none-eabi-gcc -o "STM32F303RE_driver.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Luca Zambuto\Desktop\STM32 Nucleo Board\Embedded-Software\STM32_Workspace\STM32F303RE_driver\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F303RE_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -46,8 +46,8 @@ default.size.stdout: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-driver.list: $(EXECUTABLES)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "driver.list"
+STM32F303RE_driver.list: $(EXECUTABLES)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "STM32F303RE_driver.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 

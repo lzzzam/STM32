@@ -926,7 +926,7 @@ LOAD c:/st/stm32cubeide_1.1.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000000000622       0x34 c:/st/stm32cubeide_1.1.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-isattyr.o)
  .ARM.attributes
                 0x0000000000000656       0x22 c:/st/stm32cubeide_1.1.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
-OUTPUT(driver.elf elf32-littlearm)
+OUTPUT(STM32F303RE_driver.elf elf32-littlearm)
 
 .debug_info     0x0000000000000000     0x2111
  .debug_info    0x0000000000000000      0x8d6 Src/main.o
@@ -1010,21 +1010,21 @@ OUTPUT(driver.elf elf32-littlearm)
  .debug_macro   0x0000000000002727      0x1ae Src/sysmem.o
  .debug_macro   0x00000000000028d5      0x23b Src/sysmem.o
 
-.debug_line     0x0000000000000000     0x12ed
- .debug_line    0x0000000000000000      0x5b7 Src/main.o
- .debug_line    0x00000000000005b7      0x759 Src/syscalls.o
- .debug_line    0x0000000000000d10      0x559 Src/sysmem.o
- .debug_line    0x0000000000001269       0x84 Startup/startup_stm32f303retx.o
+.debug_line     0x0000000000000000     0x1307
+ .debug_line    0x0000000000000000      0x5d1 Src/main.o
+ .debug_line    0x00000000000005d1      0x759 Src/syscalls.o
+ .debug_line    0x0000000000000d2a      0x559 Src/sysmem.o
+ .debug_line    0x0000000000001283       0x84 Startup/startup_stm32f303retx.o
 
-.debug_str      0x0000000000000000     0x979e
- .debug_str     0x0000000000000000     0x847d Src/main.o
-                                       0x865a (size before relaxing)
- .debug_str     0x000000000000847d     0x12bf Src/syscalls.o
-                                       0x89aa (size before relaxing)
- .debug_str     0x000000000000973c       0x31 Src/sysmem.o
-                                       0x7b1b (size before relaxing)
- .debug_str     0x000000000000976d       0x31 Startup/startup_stm32f303retx.o
-                                         0x7f (size before relaxing)
+.debug_str      0x0000000000000000     0x97bc
+ .debug_str     0x0000000000000000     0x849b Src/main.o
+                                       0x8678 (size before relaxing)
+ .debug_str     0x000000000000849b     0x12bf Src/syscalls.o
+                                       0x89c8 (size before relaxing)
+ .debug_str     0x000000000000975a       0x31 Src/sysmem.o
+                                       0x7b39 (size before relaxing)
+ .debug_str     0x000000000000978b       0x31 Startup/startup_stm32f303retx.o
+                                         0x9d (size before relaxing)
 
 .comment        0x0000000000000000       0x7b
  .comment       0x0000000000000000       0x7b Src/main.o

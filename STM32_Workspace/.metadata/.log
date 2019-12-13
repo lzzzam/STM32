@@ -1603,3 +1603,50 @@ java.io.FileNotFoundException: C:\Users\Luca Zambuto\Desktop\STM32 Nucleo Board\
 
 !ENTRY org.eclipse.cdt.core 1 0 2019-12-13 14:53:34.166
 !MESSAGE Indexed 'STM32F303RE_driver' (3 sources, 49 headers) in 2.26 sec: 1,907 declarations; 2,550 references; 1 unresolved inclusions; 1 syntax errors; 1 unresolved names (0.022%)
+!SESSION 2019-12-13 15:07:03.090 -----------------------------------------------
+eclipse.buildId=Version 1.1.0
+java.version=1.8.0_202
+java.vendor=AdoptOpenJdk
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=it_IT
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2019-12-13 15:07:32.863
+!MESSAGE Log4j initialized with config file C:\Users\Luca Zambuto\Desktop\STM32 Nucleo Board\Embedded-Software\STM32_Workspace\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-12-13 15:07:34.998
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-12-13 15:07:35.021
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-12-13 15:07:35.173
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-12-13 15:07:35.194
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-12-13 15:07:35.215
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-12-13 15:07:35.235
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-12-13 15:07:35.256
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-12-13 15:07:35.277
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2019-12-13 15:07:41.476
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2019-12-13 15:07:42.111
+!MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties
+
+!ENTRY org.eclipse.core.net 4 0 2019-12-13 15:07:44.579
+!MESSAGE WinHttp.DetectAutoProxyConfigUrl for wpad failed with error 'Impossibile trovare l'URL di configurazione automatica del proxy.
+' #12180.
+
+!ENTRY org.eclipse.core.net 4 0 2019-12-13 15:07:44.669
+!MESSAGE WinHttp.GetProxyForUrl for pac failed with error 'Impossibile scaricare lo script di configurazione automatica del proxy
+' #12167.
