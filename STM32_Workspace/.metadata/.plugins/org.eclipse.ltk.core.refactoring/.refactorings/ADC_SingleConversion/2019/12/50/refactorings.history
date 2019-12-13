@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;ADC_SingleConversion/Src/STM32F303RE&apos; to &apos;STM32F303RE.h&apos;" description="Rename resource &apos;STM32F303RE&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Src/STM32F303RE" name="STM32F303RE.h" stamp="1575897236694" updateReferences="true"/>
-</session>

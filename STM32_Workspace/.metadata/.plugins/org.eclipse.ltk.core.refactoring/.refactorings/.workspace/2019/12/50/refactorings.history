@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;driver&apos; to &apos;STM32F303RE_driver&apos;" description="Rename resource &apos;driver&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/driver" name="STM32F303RE_driver" stamp="1576245210357" updateReferences="true"/>&#x0A;<refactoring comment="Delete 2 resources" deleteContents="false" description="Delete 2 resources" element1="/STM32F303RE_driver/driver/inc" element2="/STM32F303RE_driver/driver/src" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="2" stamp="1576246331815"/>
-</session>
