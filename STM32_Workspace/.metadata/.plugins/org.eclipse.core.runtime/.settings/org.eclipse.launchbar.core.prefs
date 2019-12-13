@@ -12,3 +12,4 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:BHA\ Debug/activeLaunchMode=deb
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:BHA\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LED_Pulse_1Hz\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:driver\ Debug/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:driver\ Debug/activeLaunchTarget=null\:---

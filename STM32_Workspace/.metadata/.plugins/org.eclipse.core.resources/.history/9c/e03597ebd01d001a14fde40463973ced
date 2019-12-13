@@ -12,7 +12,6 @@ uint8_t flag = 0;
 
 int main(void)
 {
-	/******CULOOOOOOOO*****/
 	printf("flag = %d\n", flag);
 	for(;;);
 }

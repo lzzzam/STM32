@@ -1650,3 +1650,2023 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 !ENTRY org.eclipse.core.net 4 0 2019-12-13 15:07:44.669
 !MESSAGE WinHttp.GetProxyForUrl for pac failed with error 'Impossibile scaricare lo script di configurazione automatica del proxy
 ' #12167.
+!SESSION 2019-12-13 18:10:59.847 -----------------------------------------------
+eclipse.buildId=Version 1.1.0
+java.version=1.8.0_202
+java.vendor=AdoptOpenJdk
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-12-13 18:11:19.462
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2019-12-13 18:11:33.563
+!MESSAGE Log4j initialized with config file C:\Users\luca\Documents\GitHub\Embedded-Software\STM32_Workspace\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-12-13 18:11:38.081
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-12-13 18:11:38.097
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-12-13 18:11:38.331
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-12-13 18:11:38.347
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-12-13 18:11:38.378
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-12-13 18:11:38.410
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2019-12-13 18:11:38.425
+!MESSAGE Type or version is empty: ; 
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 2 2 2019-12-13 18:11:38.456
+!MESSAGE Falling back to default toolchain
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2019-12-13 18:11:48.003
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2019-12-13 18:11:48.784
+!MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:03.785
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:291)
+	at sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:295)
+	at sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:141)
+	at java.io.OutputStreamWriter.flush(OutputStreamWriter.java:229)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:254)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:03.825
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:291)
+	at sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:295)
+	at sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:141)
+	at java.io.OutputStreamWriter.flush(OutputStreamWriter.java:229)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:254)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:03.865
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:291)
+	at sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:295)
+	at sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:141)
+	at java.io.OutputStreamWriter.flush(OutputStreamWriter.java:229)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:254)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:03.913
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:291)
+	at sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:295)
+	at sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:141)
+	at java.io.OutputStreamWriter.flush(OutputStreamWriter.java:229)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:254)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:03.961
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:291)
+	at sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:295)
+	at sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:141)
+	at java.io.OutputStreamWriter.flush(OutputStreamWriter.java:229)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:254)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.021
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:291)
+	at sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:295)
+	at sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:141)
+	at java.io.OutputStreamWriter.flush(OutputStreamWriter.java:229)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:254)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.073
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:291)
+	at sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:295)
+	at sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:141)
+	at java.io.OutputStreamWriter.flush(OutputStreamWriter.java:229)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:254)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.109
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:291)
+	at sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:295)
+	at sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:141)
+	at java.io.OutputStreamWriter.flush(OutputStreamWriter.java:229)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:254)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.189
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:291)
+	at sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:295)
+	at sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:141)
+	at java.io.OutputStreamWriter.flush(OutputStreamWriter.java:229)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:254)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.221
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:291)
+	at sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:295)
+	at sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:141)
+	at java.io.OutputStreamWriter.flush(OutputStreamWriter.java:229)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:254)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.289
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:291)
+	at sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:295)
+	at sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:141)
+	at java.io.OutputStreamWriter.flush(OutputStreamWriter.java:229)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:254)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.333
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.373
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.433
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.469
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.501
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.537
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.573
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.609
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.665
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.701
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.733
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.769
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.805
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:04.997
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:05.845
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:06.325
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:06.537
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:06.601
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:06.669
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:06.773
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:06.853
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:06.977
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:07.037
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:07.097
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:07.149
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:07.189
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:07.237
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:07.285
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:07.497
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:07.737
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:07.861
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:08.181
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:08.289
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:08.637
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:08.777
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:08.881
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:08.963
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:09.010
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:09.057
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:09.135
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:09.182
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:09.229
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:09.276
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:09.322
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:09.385
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:09.447
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:09.510
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:09.588
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:09.635
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:09.697
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:09.776
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:09.885
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:09.963
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:10.057
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:10.119
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:10.197
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:10.244
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:10.322
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:10.369
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:10.432
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:10.479
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:10.541
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:10.604
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 2 0 2019-12-13 18:12:10.651
+!MESSAGE Error while determining symbol addresses
+!STACK 0
+java.io.IOException: T
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write0(Native Method)
+	at org.eclipse.cdt.utils.spawner.SpawnerOutputStream.write(SpawnerOutputStream.java:48)
+	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:221)
+	at sun.nio.cs.StreamEncoder.implWrite(StreamEncoder.java:282)
+	at sun.nio.cs.StreamEncoder.write(StreamEncoder.java:125)
+	at java.io.OutputStreamWriter.write(OutputStreamWriter.java:207)
+	at java.io.BufferedWriter.flushBuffer(BufferedWriter.java:129)
+	at java.io.BufferedWriter.flush(BufferedWriter.java:253)
+	at org.eclipse.cdt.utils.Addr2line.getOutput(Addr2line.java:64)
+	at org.eclipse.cdt.utils.Addr2line.getLine(Addr2line.java:72)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$6(StackAnalyzerView.java:857)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:865)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.st.stm32cube.ide.mcu.stackanalyzer 4 0 2019-12-13 18:12:10.838
+!MESSAGE Stackanalyzer failed to analyze input
+!STACK 0
+java.lang.Exception: File: C:\Users\luca\Documents\GitHub\Embedded-Software\STM32_Workspace\STM32F303RE_driver\Debug\STM32F303RE_driver.elfdo not exists
+	at com.st.stm32cube.ide.mcu.utils.assembly.Disassembler.<init>(Disassembler.java:58)
+	at com.st.stm32cube.ide.mcu.utils.assembly.Disassembler.<init>(Disassembler.java:86)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.inputChanged(StackAnalyzerView.java:893)
+	at com.st.stm32cube.ide.mcu.stackanalyzer.ui.StackAnalyzerView.lambda$15(StackAnalyzerView.java:1223)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY ilg.gnuarmeclipse.packs.data 4 1 2019-12-13 18:13:57.970
+!MESSAGE File .repos.xml does not exist, using defaults.
+
+!ENTRY org.eclipse.jface 2 0 2019-12-13 18:15:40.083
+!MESSAGE Ignored reentrant call while viewer is busy. This is only logged once per viewer instance, but similar calls will still be ignored.
+!STACK 0
+java.lang.RuntimeException
+	at org.eclipse.jface.viewers.ColumnViewer.checkBusy(ColumnViewer.java:764)
+	at org.eclipse.jface.viewers.ColumnViewer.update(ColumnViewer.java:543)
+	at org.eclipse.ui.navigator.CommonViewer.update(CommonViewer.java:515)
+	at org.eclipse.jface.viewers.StructuredViewer.update(StructuredViewer.java:1965)
+	at org.eclipse.ui.internal.navigator.resources.nested.NestedProjectsLabelProvider.lambda$2(NestedProjectsLabelProvider.java:87)
+	at java.util.concurrent.CompletableFuture.uniAccept(CompletableFuture.java:656)
+	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:632)
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:474)
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1595)
+	at java.lang.Thread.run(Thread.java:748)

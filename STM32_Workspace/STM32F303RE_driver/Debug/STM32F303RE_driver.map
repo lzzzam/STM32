@@ -1010,21 +1010,21 @@ OUTPUT(STM32F303RE_driver.elf elf32-littlearm)
  .debug_macro   0x0000000000002727      0x1ae Src/sysmem.o
  .debug_macro   0x00000000000028d5      0x23b Src/sysmem.o
 
-.debug_line     0x0000000000000000     0x1307
- .debug_line    0x0000000000000000      0x5d1 Src/main.o
- .debug_line    0x00000000000005d1      0x759 Src/syscalls.o
- .debug_line    0x0000000000000d2a      0x559 Src/sysmem.o
- .debug_line    0x0000000000001283       0x84 Startup/startup_stm32f303retx.o
+.debug_line     0x0000000000000000     0x12f5
+ .debug_line    0x0000000000000000      0x5bf Src/main.o
+ .debug_line    0x00000000000005bf      0x759 Src/syscalls.o
+ .debug_line    0x0000000000000d18      0x559 Src/sysmem.o
+ .debug_line    0x0000000000001271       0x84 Startup/startup_stm32f303retx.o
 
-.debug_str      0x0000000000000000     0x97bc
- .debug_str     0x0000000000000000     0x849b Src/main.o
-                                       0x8678 (size before relaxing)
- .debug_str     0x000000000000849b     0x12bf Src/syscalls.o
-                                       0x89c8 (size before relaxing)
- .debug_str     0x000000000000975a       0x31 Src/sysmem.o
-                                       0x7b39 (size before relaxing)
- .debug_str     0x000000000000978b       0x31 Startup/startup_stm32f303retx.o
-                                         0x9d (size before relaxing)
+.debug_str      0x0000000000000000     0x97aa
+ .debug_str     0x0000000000000000     0x8489 Src/main.o
+                                       0x8666 (size before relaxing)
+ .debug_str     0x0000000000008489     0x12bf Src/syscalls.o
+                                       0x89b6 (size before relaxing)
+ .debug_str     0x0000000000009748       0x31 Src/sysmem.o
+                                       0x7b27 (size before relaxing)
+ .debug_str     0x0000000000009779       0x31 Startup/startup_stm32f303retx.o
+                                         0x8b (size before relaxing)
 
 .comment        0x0000000000000000       0x7b
  .comment       0x0000000000000000       0x7b Src/main.o
