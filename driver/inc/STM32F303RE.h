@@ -2,6 +2,8 @@
 
 #define __STM32F303_DEVICE_HEADER__
 
+#include <stdio.h>
+
 #define __IO	volatile
 
 /********************************************************************************/
