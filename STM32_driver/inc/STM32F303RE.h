@@ -5,7 +5,34 @@
 #include <stdio.h>
 
 #define __IO	volatile
+#define TRUE	1
+#define FALSE	0
+#define EN		TRUE
+#define DIS		FALSE
 
+/********************************************************************************/
+/*						Cortex-M4 CORE											*/
+/********************************************************************************/
+#define NUM_PRIORITY_BITS 4
+
+//EXTIx's IRQ Position for the NVIC
+#define EXTI0_IRQ_NUM				6
+#define EXTI1_IRQ_NUM				7
+#define EXTI2_IRQ_NUM				8
+#define EXTI3_IRQ_NUM				9
+#define EXTI4_IRQ_NUM				10
+#define EXTI9_5_IRQ_NUM				23
+#define EXTI15_10_IRQ_NUM			40
+
+//NVIC Control Register
+#define NVIC_ISER0			*((uint32_t *)0xE000E100U)
+#define NVIC_ISER1			*((uint32_t *)0xE000E104U)
+#define NVIC_ISER2			*((uint32_t *)0xE000E108U)
+#define NVIC_ICER0			*((uint32_t *)0xE000E180U)
+#define NVIC_ICER1			*((uint32_t *)0xE000E184U)
+#define NVIC_ICER2			*((uint32_t *)0xE000E188U)
+#define NVIC_IPR			 ((uint32_t *)0xE000E400U)
+#define NVIC_STIR			*((uint32_t *)0xE000EF00U)
 /********************************************************************************/
 /*						Bit access 												*/
 /********************************************************************************/
@@ -68,6 +95,56 @@
 
 #define RCC_AHBENR_ADC12EN			 BIT28
 #define RCC_AHBENR_ADC34EN			 BIT29
+
+
+//Enable Peripheral clock
+#define RCC_EN_CLK_GPIOA()			(RCC->AHBENR |= (1 << 17))
+#define RCC_EN_CLK_GPIOB()			(RCC->AHBENR |= (1 << 18))
+#define RCC_EN_CLK_GPIOC()			(RCC->AHBENR |= (1 << 19))
+#define RCC_EN_CLK_GPIOD()			(RCC->AHBENR |= (1 << 20))
+#define RCC_EN_CLK_GPIOE()			(RCC->AHBENR |= (1 << 21))
+#define RCC_EN_CLK_GPIOF()			(RCC->AHBENR |= (1 << 22))
+#define RCC_EN_CLK_GPIOG()			(RCC->AHBENR |= (1 << 23))
+#define RCC_EN_CLK_GPIOH()			(RCC->AHBENR |= (1 << 16))
+#define RCC_EN_CLK_ADC12()			(RCC->AHBENR |= (1 << 28))
+#define RCC_EN_CLK_ADC34()			(RCC->AHBENR |= (1 << 29))
+
+//@GPIO_PinMode
+#define GPIO_MODE_IN				0
+#define GPIO_MODE_OUT				1
+#define GPIO_MODE_AF				2
+#define GPIO_MODE_AN				3
+#define GPIO_MODE_INT_R				4
+#define GPIO_MODE_INT_F				5
+#define GPIO_MODE_INT_RF			6
+//@GPIO_PinType
+#define GPIO_OTYPE_PP				0
+#define GPIO_OTYPE_OD				1
+//@GPIO_PinSpeed
+#define GPIO_SPEED_LOW				0
+#define GPIO_SPEED_MED				1
+#define GPIO_SPEED_HIGH				3
+//@GPIO_PinPuPd
+#define GPIO_NO_PUPD				0
+#define GPIO_PULL_UP				1
+#define GPIO_PULL_DOWN				2
+//@GPIO_PinAltFnc
+#define GPIO_ALT_FNC_0				0
+#define GPIO_ALT_FNC_1				1
+#define GPIO_ALT_FNC_2				2
+#define GPIO_ALT_FNC_3				3
+#define GPIO_ALT_FNC_4				4
+#define GPIO_ALT_FNC_5				5
+#define GPIO_ALT_FNC_6				6
+#define GPIO_ALT_FNC_7				7
+#define GPIO_ALT_FNC_8				8
+#define GPIO_ALT_FNC_9				9
+#define GPIO_ALT_FNC_10				10
+#define GPIO_ALT_FNC_11				11
+#define GPIO_ALT_FNC_12				12
+#define GPIO_ALT_FNC_13				13
+#define GPIO_ALT_FNC_14				14
+#define GPIO_ALT_FNC_15				15
 
 /*********ADC Peripheral***********/
 #define ADC1_ISR_ADRDY				 BIT0
@@ -141,36 +218,68 @@
 /*						Peripheral addresses									*/
 /********************************************************************************/
 //Peripheral base addresses
-#define RCC_BASE_ADDR			0x40021000UL
-#define ADC12_BASE_ADDR			0x50000000UL
-#define ADC34_BASE_ADDR			0x50000400UL
+#define RCC_BASE_ADDR			0x40021000U
+#define GPIOx_BASE_ADDR			0x48000000U
+#define ADC12_BASE_ADDR			0x50000000U
+#define ADC34_BASE_ADDR			0x50000400U
+#define EXTI_BASE_ADDR			0x40010400U
+#define SYSCFG_BASE_ADDR		0x40010000U
 
 //Peripheral address offset
-#define RCC_OFFSET				0x00000000UL
-#define ADC_MASTER_OFFSET		0x00000000UL
-#define ADC_SLAVE_OFFSET		0x00000100UL
-#define ADC_COMM_OFFSET			0x00000300UL
+#define RCC_OFFSET				0x00000000U
+#define GPIOA_OFFSET			0x00000000U
+#define GPIOB_OFFSET			0x00000400U
+#define GPIOC_OFFSET			0x00000800U
+#define GPIOD_OFFSET			0x00000C00U
+#define GPIOE_OFFSET			0x00001000U
+#define GPIOF_OFFSET			0x00001400U
+#define GPIOG_OFFSET			0x00001800U
+#define GPIOH_OFFSET			0x00001C00U
+#define ADC_MASTER_OFFSET		0x00000000U
+#define ADC_SLAVE_OFFSET		0x00000100U
+#define ADC_COMM_OFFSET			0x00000300U
+#define EXTI_OFFSET				0x00000000U
+#define SYSCFG_OFFSET			0x00000000U
+
 
 //Peripheral address
 #define RCC_ADDR				(RCC_BASE_ADDR + RCC_OFFSET)
+#define GPIOA_ADDR				(GPIOx_BASE_ADDR + GPIOA_OFFSET)
+#define GPIOB_ADDR				(GPIOx_BASE_ADDR + GPIOB_OFFSET)
+#define GPIOC_ADDR				(GPIOx_BASE_ADDR + GPIOC_OFFSET)
+#define GPIOD_ADDR				(GPIOx_BASE_ADDR + GPIOD_OFFSET)
+#define GPIOE_ADDR				(GPIOx_BASE_ADDR + GPIOE_OFFSET)
+#define GPIOF_ADDR				(GPIOx_BASE_ADDR + GPIOF_OFFSET)
+#define GPIOG_ADDR				(GPIOx_BASE_ADDR + GPIOG_OFFSET)
+#define GPIOH_ADDR				(GPIOx_BASE_ADDR + GPIOH_OFFSET)
 #define ADC1_ADDR				(ADC12_BASE_ADDR + ADC_MASTER_OFFSET)
 #define ADC2_ADDR				(ADC12_BASE_ADDR + ADC_SLAVE_OFFSET)
 #define ADC3_ADDR				(ADC34_BASE_ADDR + ADC_MASTER_OFFSET)
 #define ADC4_ADDR				(ADC34_BASE_ADDR + ADC_SLAVE_OFFSET)
 #define ADC12_COMM_ADDR			(ADC12_BASE_ADDR + ADC_COMM_OFFSET)
 #define ADC34_COMM_ADDR			(ADC34_BASE_ADDR + ADC_COMM_OFFSET)
-
-
+#define EXTI_ADDR				(EXTI_BASE_ADDR + EXTI_OFFSET)
+#define SYSCFG_ADDR				(SYSCFG_BASE_ADDR + SYSCFG_OFFSET)
 /********************************************************************************/
 /*						Peripheral access method								*/
 /********************************************************************************/
 #define RCC		((RCC_t *)RCC_ADDR)
+#define GPIOA	((GPIO_t *)GPIOA_ADDR)
+#define GPIOB	((GPIO_t *)GPIOB_ADDR)
+#define GPIOC	((GPIO_t *)GPIOC_ADDR)
+#define GPIOD	((GPIO_t *)GPIOD_ADDR)
+#define GPIOE	((GPIO_t *)GPIOE_ADDR)
+#define GPIOF	((GPIO_t *)GPIOF_ADDR)
+#define GPIOG	((GPIO_t *)GPIOG_ADDR)
+#define GPIOH	((GPIO_t *)GPIOH_ADDR)
 #define ADC1	((ADC_t *)ADC1_ADDR)
 #define ADC2	((ADC_t *)ADC2_ADDR)
 #define ADC3	((ADC_t *)ADC3_ADDR)
 #define ADC4	((ADC_t *)ADC4_ADDR)
 #define ADC1_2	((ADC_common_t *)ADC12_COMM_ADDR)
 #define ADC3_4	((ADC_common_t *)ADC34_COMM_ADDR)
+#define EXTI	((EXTI_t *)EXTI_ADDR)
+#define SYSCFG  ((SYSCFG_t *)SYSCFG_ADDR)
 
 /********************************************************************************/
 /*						Peripheral structure overlay							*/
@@ -192,6 +301,47 @@ typedef struct {
 	__IO uint32_t	CFGR2;
 	__IO uint32_t	CFGR3;
 }RCC_t;
+
+//GPIOx
+typedef struct {
+	__IO uint32_t 	MODER;
+	__IO uint32_t	OTYPER;
+	__IO uint32_t	OSPEEDR;
+	__IO uint32_t	PUPDR;
+	__IO uint32_t	IDR;
+	__IO uint32_t	ODR;
+	__IO uint32_t	BSRR;
+	__IO uint32_t	LCKR;
+	__IO uint32_t	AFRL;
+	__IO uint32_t	AFRH;
+	__IO uint32_t	BRR;
+}GPIO_t;
+
+//EXTI
+typedef struct{
+	__IO uint32_t 	IMR1;
+	__IO uint32_t	EMR1;
+	__IO uint32_t	RTSR1;
+	__IO uint32_t	FTSR1;
+	__IO uint32_t	SWIER1;
+	__IO uint32_t	PR1;
+	__IO uint32_t	IMR2;
+	__IO uint32_t	EMR2;
+	__IO uint32_t	RTSR2;
+	__IO uint32_t	FTSR2;
+	__IO uint32_t	SWIER2;
+	__IO uint32_t	PR2;
+}EXTI_t;
+
+//System Configuration Controller
+typedef struct{
+	__IO uint32_t 	CFGR1;
+	__IO uint32_t	RCR;
+	__IO uint32_t	EXTICR[4];
+	__IO uint32_t	CFGR2;
+	__IO uint32_t	CFGR3;
+	__IO uint32_t	CFGR4;
+}SYSCFG_t;
 
 //ADC
 typedef struct {
