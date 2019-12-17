@@ -25,14 +25,14 @@
 #define EXTI15_10_IRQ_NUM			40
 
 //NVIC Control Register
-#define NVIC_ISER0			*((uint32_t *)0xE000E100U)
-#define NVIC_ISER1			*((uint32_t *)0xE000E104U)
-#define NVIC_ISER2			*((uint32_t *)0xE000E108U)
-#define NVIC_ICER0			*((uint32_t *)0xE000E180U)
-#define NVIC_ICER1			*((uint32_t *)0xE000E184U)
-#define NVIC_ICER2			*((uint32_t *)0xE000E188U)
-#define NVIC_IPR			 ((uint32_t *)0xE000E400U)
-#define NVIC_STIR			*((uint32_t *)0xE000EF00U)
+#define NVIC_ISER0			*((volatile uint32_t *)0xE000E100U)
+#define NVIC_ISER1			*((volatile uint32_t *)0xE000E104U)
+#define NVIC_ISER2			*((volatile uint32_t *)0xE000E108U)
+#define NVIC_ICER0			*((volatile uint32_t *)0xE000E180U)
+#define NVIC_ICER1			*((volatile uint32_t *)0xE000E184U)
+#define NVIC_ICER2			*((volatile uint32_t *)0xE000E188U)
+#define NVIC_IPR			 ((volatile uint32_t *)0xE000E400U)
+#define NVIC_STIR			*((volatile uint32_t *)0xE000EF00U)
 /********************************************************************************/
 /*						Bit access 												*/
 /********************************************************************************/
@@ -312,8 +312,7 @@ typedef struct {
 	__IO uint32_t	ODR;
 	__IO uint32_t	BSRR;
 	__IO uint32_t	LCKR;
-	__IO uint32_t	AFRL;
-	__IO uint32_t	AFRH;
+	__IO uint32_t	AFR[2];
 	__IO uint32_t	BRR;
 }GPIO_t;
 
