@@ -269,25 +269,5 @@ void __GPIO_IRQhandling(uint8_t PinNumber)
 {
 	//Clear Pending Request inside EXTI
 	EXTI->PR1 |= (1 << PinNumber);
-
-//	uint8_t irq = GPIO_EXTI_IRQ_NUM(PinNumber);
-//
-//	uint8_t Reg_num = irq / 32;
-//	uint8_t offset  = irq % 32;
-//
-//	//Clear Pending Request inside NVIC
-//	if(Reg_num == 0)
-//	{
-//		NVIC_ICER0 |= (1 << offset);
-//	}
-//	else if(Reg_num == 1)
-//	{
-//		NVIC_ICER1 |= (1 << offset);
-//	}
-//	else if(Reg_num == 2)
-//	{
-//		NVIC_ICER2 |= (1 << offset);
-//	}
-
 }
 
