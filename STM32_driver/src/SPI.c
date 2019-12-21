@@ -29,7 +29,7 @@ void __SPI_EnPCLK(SPI_t *pSPIx){
 
 void __SPI_init(SPI_Handle *pSPIx_h){
 
-	uint16_t reg_CR1 = 0;
+	uint32_t reg_CR1 = 0;
 
 	//Set Master\Slave mode
 	reg_CR1 |= (pSPIx_h->pSPIx_conf.Mode << SPI_CR1_MSTR);
@@ -72,11 +72,13 @@ void __SPI_init(SPI_Handle *pSPIx_h){
 	reg_CR1 |= (pSPIx_h->pSPIx_conf.CPha << SPI_CR1_CPHA);
 
 	//Write to CR1
-	pSPIx_h->pSPIx->CR1 |= reg_CR1;
+	pSPIx_h->pSPIx->CR1 = reg_CR1;
 
 	//Set Data Size
 	pSPIx_h->pSPIx->CR2 |= (pSPIx_h->pSPIx_conf.DataSize << SPI_CR2_DS);
-
+	//Set RXFIFO Threshold
+	if(pSPIx_h->pSPIx_conf.DataSize <= SPI_DS_8BIT)
+		pSPIx_h->pSPIx->CR2 |= (1 << SPI_CR2_FRXTH); //RXNE Flag is set when RXFIFO level >= of 1/4 (8Bit)
 }
 
 
@@ -128,7 +130,7 @@ uint8_t __SPI_get_SRflag(SPI_Handle *pSPIx_h, uint8_t flag){
 }
 
 
-void __SPI_sendData(SPI_Handle *pSPIx_h, uint8_t *pTxBuf, uint16_t Len){
+void __SPI_sendData(SPI_Handle *pSPIx_h, uint8_t *pTxBuf, int16_t Len){
 
 	while(Len > 0){
 
@@ -138,14 +140,14 @@ void __SPI_sendData(SPI_Handle *pSPIx_h, uint8_t *pTxBuf, uint16_t Len){
 		//Write into TXFIFO buffer
 		if(pSPIx_h->pSPIx_conf.DataSize > SPI_DS_8BIT)
 		{
-			pSPIx_h->pSPIx->DR = *((uint16_t *)pTxBuf);
+			*((uint16_t *)&pSPIx_h->pSPIx->DR) = *((uint16_t *)pTxBuf);
 			(uint16_t *)pTxBuf++;
 			Len--;
 			Len--;
 		}
 		else
 		{
-			pSPIx_h->pSPIx->DR = *((uint8_t *)pTxBuf);
+			*((uint8_t *)&pSPIx_h->pSPIx->DR) = *((uint8_t *)pTxBuf);
 			(uint8_t *)pTxBuf++;
 			Len--;
 		}
@@ -179,4 +181,54 @@ void __SPI_receiveData(SPI_Handle *pSPIx_h, uint8_t *pRxBuf, uint16_t Len){
 
 	}
 
+}
+
+
+
+
+
+void __SPI_IRQconfig(uint8_t IRQ, uint8_t EnOrDis, uint8_t Priority){
+
+	uint8_t Reg_num = IRQ / 32;
+	uint8_t Reg_offset = IRQ % 32;
+
+	if(EnOrDis == EN)
+	{
+		//Enable IRQ
+		if(Reg_num == 0)
+		{
+			//Interrupt Set-Enable Reg 0
+			NVIC_ISER0 |= (1 << Reg_offset);
+		}else if(Reg_num == 1)
+		{
+			//Interrupt Set-Enable Reg 1
+			NVIC_ISER1 |= (1 << Reg_offset);
+		}else if(Reg_num == 2)
+		{
+			//Interrupt Set-Enable Reg 2
+			NVIC_ISER2 |= (1 << Reg_offset);
+		}
+	}
+	else if(EnOrDis == DIS)
+	{
+		//Disable IRQ
+		if(Reg_num == 0)
+		{
+			//Interrupt Clear-Enable Reg 0
+			NVIC_ICER0 |= (1 << Reg_offset);
+		}else if(Reg_num == 1)
+		{
+			//Interrupt Clear-Enable Reg 1
+			NVIC_ICER1 |= (1 << Reg_offset);
+		}else if(Reg_num == 2)
+		{
+			//Interrupt Clear-Enable Reg 2
+			NVIC_ICER2 |= (1 << Reg_offset);
+		}
+	}
+
+	//Set IRQ priority
+	uint8_t iprx = IRQ / 4;
+	uint8_t shift_amount = ((IRQ % 4)*8) + (8 - NUM_PRIORITY_BITS);
+	*(NVIC_IPR + iprx) |= (Priority << shift_amount);
 }

@@ -122,9 +122,9 @@ void __SPI_reset(SPI_t *pSPIx);
 void __SPI_enable(SPI_Handle *pSPIx_h);
 void __SPI_disable(SPI_Handle *pSPIx_h);
 uint8_t __SPI_get_SRflag(SPI_Handle *pSPIx_h, uint8_t flag);	//flag @SPI_Status_Register_Flag
-void __SPI_sendData(SPI_Handle *pSPIx_h, uint8_t *pTxBuf, uint16_t Len);
+void __SPI_sendData(SPI_Handle *pSPIx_h, uint8_t *pTxBuf, int16_t Len);
 void __SPI_receiveData(SPI_Handle *pSPIx_h, uint8_t *pRxBuf, uint16_t Len);
-void __SPI_IRQconfig(void);
+void __SPI_IRQconfig(uint8_t IRQ, uint8_t EnOrDis, uint8_t Priority);
 void __SPI_IRQhandle(void);
 
 
