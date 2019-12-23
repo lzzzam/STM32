@@ -183,12 +183,41 @@ void __SPI_receiveData(SPI_Handle *pSPIx_h, uint8_t *pRxBuf, uint16_t Len){
 
 }
 
+uint8_t __SPI_sendData_IT(SPI_Handle *pSPIx_h, uint8_t *pTxBuf, int16_t Len){
+
+	if(pSPIx_h->TxState == SPI_TX_FREE)
+	{
+		//Update SPI handle TX buffer
+		pSPIx_h->TxBuffer = pTxBuf;
+		pSPIx_h->TxLen = Len;
+		pSPIx_h->TxState = SPI_TX_BUSY;
+
+		//Enable  TXE Interrupt
+		pSPIx_h->pSPIx->CR2 |= (1 << SPI_CR2_TXEIE);
+	}
+
+	return pSPIx_h->TxState;
+}
+
+uint8_t __SPI_receiveData_IT(SPI_Handle *pSPIx_h, uint8_t *pRxBuf, uint16_t Len){
+
+	if(pSPIx_h->RxState == SPI_RX_FREE){
+		//Update SPI handle TX buffer
+		pSPIx_h->RxBuffer = pRxBuf;
+		pSPIx_h->RxLen = Len;
+		pSPIx_h->RxState = SPI_RX_BUSY;
+
+		//Enable  TXE Interrupt
+		pSPIx_h->pSPIx->CR2 |= (1 << SPI_CR2_RXNEIE);
+	}
+
+	return pSPIx_h->RxState;
+}
 
 
+void __SPI_IRQconfig(SPI_Handle *pSPIx_h, uint8_t EnOrDis, uint8_t Priority){
 
-
-void __SPI_IRQconfig(uint8_t IRQ, uint8_t EnOrDis, uint8_t Priority){
-
+	uint8_t IRQ = SPI_IRQ_NUM(pSPIx_h->pSPIx);
 	uint8_t Reg_num = IRQ / 32;
 	uint8_t Reg_offset = IRQ % 32;
 
@@ -231,4 +260,103 @@ void __SPI_IRQconfig(uint8_t IRQ, uint8_t EnOrDis, uint8_t Priority){
 	uint8_t iprx = IRQ / 4;
 	uint8_t shift_amount = ((IRQ % 4)*8) + (8 - NUM_PRIORITY_BITS);
 	*(NVIC_IPR + iprx) |= (Priority << shift_amount);
+}
+
+static void __SPI_handleTXE_IT(SPI_Handle *pSPIx_h){
+
+	//Write into TXFIFO buffer
+	if(pSPIx_h->pSPIx_conf.DataSize > SPI_DS_8BIT)
+	{
+		*((uint16_t *)&pSPIx_h->pSPIx->DR) = *((uint16_t *)pSPIx_h->TxBuffer);
+		(uint16_t *)pSPIx_h->TxBuffer++;
+		pSPIx_h->TxLen--;
+		pSPIx_h->TxLen--;
+	}
+	else
+	{
+		*((uint8_t *)&pSPIx_h->pSPIx->DR) = *((uint8_t *)pSPIx_h->TxBuffer);
+		(uint8_t *)pSPIx_h->TxBuffer++;
+		pSPIx_h->TxLen--;
+	}
+
+
+	if(pSPIx_h->TxLen == 0){
+
+		//Close Transmission
+		pSPIx_h->TxBuffer = NULL;
+		pSPIx_h->TxLen = 0;
+		pSPIx_h->TxState = SPI_TX_FREE;
+
+		//Disable TXE Interrupt
+		pSPIx_h->pSPIx->CR2 &= ~(1 << SPI_CR2_TXEIE);
+
+		//Inform Application transmission is complete
+		__SPI_AppEventCallback(pSPIx_h, SPI_EVENT_TX_COMPLETE);
+	}
+
+}
+
+
+static void __SPI_handleRXNE_IT(SPI_Handle *pSPIx_h){
+
+	//Read RXFIFO buffer
+	if(pSPIx_h->pSPIx_conf.DataSize > SPI_DS_8BIT)
+	{
+		*((uint16_t *)pSPIx_h->RxBuffer) = pSPIx_h->pSPIx->DR;
+		(uint16_t *)pSPIx_h->RxBuffer++;
+		pSPIx_h->RxLen--;
+		pSPIx_h->RxLen--;
+	}
+	else
+	{
+		*((uint8_t *)pSPIx_h->RxBuffer) = pSPIx_h->pSPIx->DR;
+		(uint8_t *)pSPIx_h->RxBuffer++;
+		pSPIx_h->RxLen--;
+	}
+
+
+	if(pSPIx_h->RxLen == 0){
+
+		//Close reception
+		pSPIx_h->RxBuffer = NULL;
+		pSPIx_h->RxLen = 0;
+		pSPIx_h->RxState = SPI_RX_FREE;
+
+		//Disable RXNE Interrupt
+		pSPIx_h->pSPIx->CR2 &= ~(1 << SPI_CR2_RXNEIE);
+
+		//Inform Application reception is complete
+		__SPI_AppEventCallback(pSPIx_h, SPI_EVENT_RX_COMPLETE);
+	}
+
+}
+
+void __SPI_IRQhandling(SPI_Handle *pSPIx_h){
+
+	uint8_t temp1;
+	uint8_t temp2;
+
+	temp1 = __SPI_get_SRflag(pSPIx_h, SPI_SR_TXE);
+	temp2 = pSPIx_h->pSPIx->CR2 & (1 << SPI_CR2_TXEIE);
+
+	//Handle TXFIFO empty
+	if(temp1 && temp2){
+		//Handle TXE interrupt
+		__SPI_handleTXE_IT(pSPIx_h);
+	}
+
+	temp1 = __SPI_get_SRflag(pSPIx_h, SPI_SR_RXNE);
+	temp2 = pSPIx_h->pSPIx->CR2 & (1 << SPI_CR2_RXNEIE);
+
+	//Handle RXFIFO not empty
+	if(temp1 && temp2){
+		//Handle RXNE interrupt
+		__SPI_handleRXNE_IT(pSPIx_h);
+	}
+
+}
+
+__weak void __SPI_AppEventCallback(SPI_Handle *pSPIx_h, uint8_t AppEv)
+{
+	//This function should be defined by the application
 }

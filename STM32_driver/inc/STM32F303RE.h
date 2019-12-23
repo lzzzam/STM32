@@ -4,7 +4,9 @@
 
 #include <stdio.h>
 
+#define NULL 	((void *)0)
 #define __IO	volatile
+#define __weak  __attribute__((weak))
 #define TRUE	1
 #define FALSE	0
 #define EN		TRUE
@@ -23,6 +25,11 @@
 #define EXTI4_IRQ_NUM				10
 #define EXTI9_5_IRQ_NUM				23
 #define EXTI15_10_IRQ_NUM			40
+//SPIx's IRQ Position for the NVIC
+#define SPI1_IRQ_NUM				35
+#define SPI2_IRQ_NUM				36
+#define SPI3_IRQ_NUM				51
+#define SPI4_IRQ_NUM				84
 
 //NVIC Control Register
 #define NVIC_ISER0			*((volatile uint32_t *)0xE000E100U)

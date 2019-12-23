@@ -98,7 +98,19 @@
 #define SPI_DS_15BIT	14
 #define SPI_DS_16BIT	15
 
+#define SPI_IRQ_NUM(x)	((x== SPI1) ? SPI1_IRQ_NUM : \
+						 (x== SPI2) ? SPI2_IRQ_NUM : \
+						 (x== SPI3) ? SPI3_IRQ_NUM : \
+						 (x== SPI4) ? SPI4_IRQ_NUM : SPI1_IRQ_NUM)
 
+//SPIx Tx and Rx State for Interrupt based communication
+#define SPI_TX_FREE		0
+#define SPI_TX_BUSY		1
+#define SPI_RX_FREE		0
+#define SPI_RX_BUSY		1
+//SPIx TX and RX complete event
+#define SPI_EVENT_TX_COMPLETE	0
+#define SPI_EVENT_RX_COMPLETE	1
 
 typedef struct{
 	uint8_t Mode;		//@Mode
@@ -113,6 +125,12 @@ typedef struct{
 typedef struct{
 	SPI_t *pSPIx;
 	SPI_Config pSPIx_conf;
+	uint8_t *TxBuffer;
+	uint16_t TxLen;
+	uint8_t  TxState;
+	uint8_t *RxBuffer;
+	uint16_t RxLen;
+	uint8_t  RxState;
 }SPI_Handle;
 
 
@@ -124,8 +142,11 @@ void __SPI_disable(SPI_Handle *pSPIx_h);
 uint8_t __SPI_get_SRflag(SPI_Handle *pSPIx_h, uint8_t flag);	//flag @SPI_Status_Register_Flag
 void __SPI_sendData(SPI_Handle *pSPIx_h, uint8_t *pTxBuf, int16_t Len);
 void __SPI_receiveData(SPI_Handle *pSPIx_h, uint8_t *pRxBuf, uint16_t Len);
-void __SPI_IRQconfig(uint8_t IRQ, uint8_t EnOrDis, uint8_t Priority);
+uint8_t __SPI_sendData_IT(SPI_Handle *pSPIx_h, uint8_t *pTxBuf, int16_t Len);
+uint8_t __SPI_receiveData_IT(SPI_Handle *pSPIx_h, uint8_t *pRxBuf, uint16_t Len);
+void __SPI_IRQconfig(SPI_Handle *pSPIx_h, uint8_t EnOrDis, uint8_t Priority);
 void __SPI_IRQhandle(void);
+__weak void __SPI_AppEventCallback(SPI_Handle *pSPIx_h, uint8_t AppEv);
 
 
 #endif /* INC_SPI_H_ */
