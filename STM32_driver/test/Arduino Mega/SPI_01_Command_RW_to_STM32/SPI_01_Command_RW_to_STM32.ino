@@ -91,6 +91,7 @@ void loop()
 {
 
   char str[] = "Ciao io sono Arduino Mega\n";
+  char read_str[50];
   uint8_t str_size = sizeof(str);
   uint8_t  i;
   uint16_t val = 0; 
@@ -102,7 +103,9 @@ void loop()
    if(val == 0x1C ){
       val = SPI_SlaveReceive();
       for(i=0; i<val; i++)
-        Serial.print((char)SPI_SlaveReceive());
+        read_str[i] = (char)SPI_SlaveReceive();
+        
+      Serial.print(read_str);
    }
    else if(val == 0x1D ){
       op1  = SPI_SlaveReceive();
