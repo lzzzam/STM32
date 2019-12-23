@@ -296,7 +296,6 @@ static void __SPI_handleTXE_IT(SPI_Handle *pSPIx_h){
 
 }
 
-
 static void __SPI_handleRXNE_IT(SPI_Handle *pSPIx_h){
 
 	//Read RXFIFO buffer
