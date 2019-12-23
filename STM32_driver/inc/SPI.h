@@ -160,7 +160,7 @@ typedef struct{
  *
  * @note			- Call before __SPI_init
  ****************************************************************************/
-void __SPI_EnPCLK(SPI_t *pSPIx);
+void __SPI_EnPCLK(SPI_t *pSPIx);	/*SPIx with x = 1,2,3,4					*/
 
 
 
@@ -171,7 +171,7 @@ void __SPI_EnPCLK(SPI_t *pSPIx);
  * @param[*pSPIx_h] - SPIx handle address
  *
  ****************************************************************************/
-void __SPI_init(SPI_Handle *pSPIx_h);
+void __SPI_init(SPI_Handle *pSPIx_h);	/*SPIx handle address				*/
 
 
 /****************************************************************************
@@ -182,7 +182,7 @@ void __SPI_init(SPI_Handle *pSPIx_h);
  * @param[*pSPIx] 			- SPIx base address
  *
  ****************************************************************************/
-void __SPI_reset(SPI_t *pSPIx);
+void __SPI_reset(SPI_t *pSPIx);		/*SPIx with x = 1,2,3,4					*/
 
 
 /****************************************************************************
@@ -193,7 +193,7 @@ void __SPI_reset(SPI_t *pSPIx);
  *
  * @note					- Call before sending or receiving data
  ****************************************************************************/
-void __SPI_enable(SPI_Handle *pSPIx_h);
+void __SPI_enable(SPI_Handle *pSPIx_h);	/*SPIx handle address				*/
 
 
 /****************************************************************************
@@ -204,7 +204,7 @@ void __SPI_enable(SPI_Handle *pSPIx_h);
  *
  * @note					- Call after communication is complete
  ****************************************************************************/
-void __SPI_disable(SPI_Handle *pSPIx_h);
+void __SPI_disable(SPI_Handle *pSPIx_h);/*SPIx handle address				*/
 
 /****************************************************************************
  * @fn						- __SPI_get_SRflag
@@ -217,7 +217,8 @@ void __SPI_disable(SPI_Handle *pSPIx_h);
  * @note					- Used to read BSY, TXE, RXNE, OVR, MODF, FRE
  * 							  flags
  ****************************************************************************/
-uint8_t __SPI_get_SRflag(SPI_Handle *pSPIx_h, uint8_t flag);
+uint8_t __SPI_get_SRflag(SPI_Handle *pSPIx_h,	/*SPIx handle address		*/
+						 uint8_t 	flag);		/*@SPI_Status_Register_Flag	*/
 
 /****************************************************************************
  * @fn						- __SPI_sendData
@@ -229,7 +230,9 @@ uint8_t __SPI_get_SRflag(SPI_Handle *pSPIx_h, uint8_t flag);
  *
  * @note					- Wait until all bytes are transmitted
  ****************************************************************************/
-void __SPI_sendData(SPI_Handle *pSPIx_h, uint8_t *pTxBuf, int16_t Len);
+void __SPI_sendData(SPI_Handle *pSPIx_h,	/*SPIx handle address			*/
+					uint8_t    *pTxBuf,		/*uint8_t vector[]				*/
+					int16_t 	Len);		/*0-65535						*/
 
 
 /****************************************************************************
@@ -242,7 +245,9 @@ void __SPI_sendData(SPI_Handle *pSPIx_h, uint8_t *pTxBuf, int16_t Len);
  *
  * @note					- Wait until all bytes are received
  ****************************************************************************/
-void __SPI_receiveData(SPI_Handle *pSPIx_h, uint8_t *pRxBuf, uint16_t Len);
+void __SPI_receiveData(SPI_Handle *pSPIx_h,	/*SPIx handle address			*/
+					   uint8_t    *pRxBuf,	/*uint8_t vector[]				*/
+					   uint16_t    Len);	/*0-65535						*/
 
 /****************************************************************************
  * @fn						- __SPI_sendData_IT
@@ -257,7 +262,9 @@ void __SPI_receiveData(SPI_Handle *pSPIx_h, uint8_t *pRxBuf, uint16_t Len);
  *							  is set and a SPIx global interrupt is executed.
  *							  Then a new data is transmitted
  ****************************************************************************/
-uint8_t __SPI_sendData_IT(SPI_Handle *pSPIx_h, uint8_t *pTxBuf, int16_t Len);
+uint8_t __SPI_sendData_IT(SPI_Handle *pSPIx_h,	/*SPIx handle address		*/
+						  uint8_t    *pTxBuf,	/*uint8_t vector[]			*/
+						  int16_t     Len);		/*0-65535					*/
 
 /****************************************************************************
  * @fn						- __SPI_receiveData_IT
@@ -272,7 +279,9 @@ uint8_t __SPI_sendData_IT(SPI_Handle *pSPIx_h, uint8_t *pTxBuf, int16_t Len);
  *							  is set and a SPIx global interrupt is executed.
  *							  Then a new data is received
  ****************************************************************************/
-uint8_t __SPI_receiveData_IT(SPI_Handle *pSPIx_h, uint8_t *pRxBuf, uint16_t Len);
+uint8_t __SPI_receiveData_IT(SPI_Handle *pSPIx_h,	/*SPIx handle address	*/
+							 uint8_t    *pRxBuf,	/*uint8_t vector[]		*/
+							 uint16_t    Len);		/*0-65535				*/
 
 /****************************************************************************
  * @fn						- __SPI_IRQconfig
@@ -287,7 +296,9 @@ uint8_t __SPI_receiveData_IT(SPI_Handle *pSPIx_h, uint8_t *pRxBuf, uint16_t Len)
  * @note					- Must be used before calling
  * 							  __SPI_sendData_IT and __SPI_receiveData_IT
  ****************************************************************************/
-void __SPI_IRQconfig(SPI_Handle *pSPIx_h, uint8_t EnOrDis, uint8_t Priority);
+void __SPI_IRQconfig(SPI_Handle *pSPIx_h,	/*SPIx handle address			*/
+					 uint8_t     EnOrDis,	/*EN or DIS						*/
+					 uint8_t     Priority);	/*0-15 where 0 is Highest  		*/
 
 
 /****************************************************************************
@@ -302,7 +313,7 @@ void __SPI_IRQconfig(SPI_Handle *pSPIx_h, uint8_t EnOrDis, uint8_t Priority);
  * @note					- Must be called inside the SPIx ISR function
  * 							  (SPI1_IRQHandler)
  ****************************************************************************/
-void __SPI_IRQhandle(SPI_Handle *pSPIx_h);
+void __SPI_IRQhandle(SPI_Handle *pSPIx_h);	/*SPIx handle address			*/
 
 
 /****************************************************************************
@@ -323,7 +334,8 @@ void __SPI_IRQhandle(SPI_Handle *pSPIx_h);
  * 							  to do proper operation after each TX and RX
  * 							  operation is complete.
  ****************************************************************************/
-void __SPI_AppEventCallback(SPI_Handle *pSPIx_h, uint8_t AppEv);
+void __SPI_AppEventCallback(SPI_Handle *pSPIx_h,	/*SPIx handle address	*/
+							uint8_t     AppEv);		/*@SPI_EVENT			*/
 
 
 #endif /* INC_SPI_H_ */
