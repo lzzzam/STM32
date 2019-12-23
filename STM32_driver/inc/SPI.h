@@ -145,8 +145,8 @@ void __SPI_receiveData(SPI_Handle *pSPIx_h, uint8_t *pRxBuf, uint16_t Len);
 uint8_t __SPI_sendData_IT(SPI_Handle *pSPIx_h, uint8_t *pTxBuf, int16_t Len);
 uint8_t __SPI_receiveData_IT(SPI_Handle *pSPIx_h, uint8_t *pRxBuf, uint16_t Len);
 void __SPI_IRQconfig(SPI_Handle *pSPIx_h, uint8_t EnOrDis, uint8_t Priority);
-void __SPI_IRQhandle(void);
-__weak void __SPI_AppEventCallback(SPI_Handle *pSPIx_h, uint8_t AppEv);
+void __SPI_IRQhandle(SPI_Handle *pSPIx_h);
+void __SPI_AppEventCallback(SPI_Handle *pSPIx_h, uint8_t AppEv);
 
 
 #endif /* INC_SPI_H_ */

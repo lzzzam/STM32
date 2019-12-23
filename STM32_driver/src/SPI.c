@@ -331,7 +331,7 @@ static void __SPI_handleRXNE_IT(SPI_Handle *pSPIx_h){
 
 }
 
-void __SPI_IRQhandling(SPI_Handle *pSPIx_h){
+void __SPI_IRQhandle(SPI_Handle *pSPIx_h){
 
 	uint8_t temp1;
 	uint8_t temp2;
