@@ -87,9 +87,11 @@ void __I2C_disable(I2C_handle *pI2Cx_h)
 	pI2Cx_h->pI2Cx->CR1 &= ~(1 << 0);
 }
 
-uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t *pTxBuf, uint16_t Len, uint8_t SAddr)
+uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t SAddr)
 {
 
+	uint8_t *pTxBuf = pI2Cx_h->pTxBuf;
+	uint16_t Len    = pI2Cx_h->TxLen;
 	uint16_t nTxBytes = 0;
 
 	while(Len > 0)
@@ -185,4 +187,208 @@ uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t *pTxBuf, uint16_t Len, ui
 
 
 	return nTxBytes;
+}
+
+
+
+uint16_t __I2C_MasterReceive(I2C_handle *pI2Cx_h, uint8_t SAddr)
+{
+	uint8_t *pRxBuf = pI2Cx_h->pRxBuf;
+	uint16_t Len = pI2Cx_h->RxLen;
+	uint16_t nRxBytes = 0;
+
+	while(Len > 0)
+	{
+		uint32_t CR2_tmp = 0;
+
+		//Set Slave Address
+		CR2_tmp |= SAddr;
+		CR2_tmp |= (1 << 10); //Set Read operation
+
+
+		//Read with RELOAD mode
+		if(Len > 255)
+		{
+			//Update Length
+			Len = Len - 255;
+
+			//Set 255 as Number of Bytes to be transferred
+			CR2_tmp |= (0xFF << 16);
+
+			//Set RELOAD bit
+			CR2_tmp |= (1 << 24);
+
+			//Set CR2 register
+			pI2Cx_h->pI2Cx->CR2 = CR2_tmp;
+
+			//Start communication
+			pI2Cx_h->pI2Cx->CR2 |= (1 << 13);
+
+			//Wait until Start phase is completed
+			while( pI2Cx_h->pI2Cx->CR2 & (1 << 13) );
+
+			//While TCR flag is set
+			while( !(pI2Cx_h->pI2Cx->ISR & (1 >> 7)) )
+			{
+				//Wait until RXDR is not empty (check RXNE flag)
+				while( !(pI2Cx_h->pI2Cx->ISR & (1 << 2)) );
+
+				//Read new data from RX Data register
+				*((uint8_t *)pRxBuf) = *((uint8_t *)&pI2Cx_h->pI2Cx->RXDR);
+				pRxBuf++;
+				nRxBytes++;
+			}
+		}
+		//Read with AUTO-END mode
+		else
+		{
+			//Set Number of Bytes to be received
+			CR2_tmp |= ((Len & 0xFF) << 16);
+
+			//Set Auto-End mode
+			CR2_tmp |= (1 << 25);
+
+			//Set CR2 register
+			pI2Cx_h->pI2Cx->CR2 = CR2_tmp;
+
+			//Start communication
+			pI2Cx_h->pI2Cx->CR2 |= (1 << 13);
+
+			//Wait until Start phase is completed
+			while( pI2Cx_h->pI2Cx->CR2 & (1 << 13) );
+
+			while(Len > 0){
+
+				//Wait until RXDR is not empty (check RXNE flag)
+				while( !(pI2Cx_h->pI2Cx->ISR & (1 << 2)) );
+
+				//Read new data from RX Data register
+				*((uint8_t *)pRxBuf) = *((uint8_t *)&pI2Cx_h->pI2Cx->RXDR);
+				pRxBuf++;
+				Len--;
+				nRxBytes++;
+			}
+		}
+	}
+
+
+	return nRxBytes;
+}
+
+
+void __I2C_SlaveOperation(I2C_handle *pI2Cx_h)
+{
+	//Enable Own Address1
+	pI2Cx_h->pI2Cx->OAR1 |= (1 << 15);
+
+	//Wait until Slave is selected (Check ADDR flag)
+	while( !(pI2Cx_h->pI2Cx->ISR & (1 << 3)) );
+
+	//Check Direction
+	if( !(pI2Cx_h->pI2Cx->ISR & (1 << 16)) )
+	{
+		__I2C_SlaveReceiver(pI2Cx_h);
+	}
+	else
+	{
+		__I2C_SlaveTransmitter(pI2Cx_h);
+	}
+
+
+}
+
+void __I2C_SlaveTransmitter(I2C_handle *pI2Cx_h)
+{
+	//Flush TXDR
+	pI2Cx_h->pI2Cx->ISR |= ( 1 << 0 );
+
+	//Clear ADDR Flag
+	pI2Cx_h->pI2Cx->ICR |= (1 << 3);
+	pI2Cx_h->pI2Cx->ICR &= ~(1 << 3);
+
+	uint8_t *pTxBuf = pI2Cx_h->pTxBuf;
+	uint16_t Len = pI2Cx_h->TxLen;
+
+	while(Len > 0)
+	{
+		//Wait until TXDR is empty (check TXIS flag)
+		while( !(pI2Cx_h->pI2Cx->ISR & (1 << 1)) );
+
+		//Write new data into TX Data register
+		*((uint8_t *)&pI2Cx_h->pI2Cx->TXDR) = *((uint8_t *)pTxBuf);
+		pTxBuf++;
+		Len--;
+	}
+
+}
+
+
+void __I2C_SlaveReceiver(I2C_handle *pI2Cx_h)
+{
+
+	//Clear ADDR Flag
+	pI2Cx_h->pI2Cx->ICR |= (1 << 3);
+	pI2Cx_h->pI2Cx->ICR &= ~(1 << 3);
+
+	uint8_t *pRxBuf = pI2Cx_h->pRxBuf;
+	uint16_t Len = pI2Cx_h->RxLen;
+
+	while(Len > 0)
+	{
+		//Wait until RXDR is not empty (check RXNE flag)
+		while( !(pI2Cx_h->pI2Cx->ISR & (1 << 2)) );
+
+		//Read new data from RX Data register
+		*((uint8_t *)pRxBuf) = *((uint8_t *)&pI2Cx_h->pI2Cx->RXDR);
+		pRxBuf++;
+		Len--;
+	}
+
+}
+
+void __I2C_IRQconfig(I2C_handle *pI2Cx_h, uint8_t EnOrDis, uint8_t Priority)
+{
+	uint8_t IRQ = I2C_IRQ_NUM(pI2Cx_h->pI2Cx);
+	uint8_t Reg_num = IRQ / 32;
+	uint8_t Reg_offset = IRQ % 32;
+
+	if(EnOrDis == EN)
+	{
+		//Enable IRQ
+		if(Reg_num == 0)
+		{
+			//Interrupt Set-Enable Reg 0
+			NVIC_ISER0 |= (1 << Reg_offset);
+		}else if(Reg_num == 1)
+		{
+			//Interrupt Set-Enable Reg 1
+			NVIC_ISER1 |= (1 << Reg_offset);
+		}else if(Reg_num == 2)
+		{
+			//Interrupt Set-Enable Reg 2
+			NVIC_ISER2 |= (1 << Reg_offset);
+		}
+	}
+	else if(EnOrDis == DIS)
+	{
+		//Disable IRQ
+		if(Reg_num == 0)
+		{
+			//Interrupt Clear-Enable Reg 0
+			NVIC_ICER0 |= (1 << Reg_offset);
+		}else if(Reg_num == 1)
+		{
+			//Interrupt Clear-Enable Reg 1
+			NVIC_ICER1 |= (1 << Reg_offset);
+		}else if(Reg_num == 2)
+		{
+			//Interrupt Clear-Enable Reg 2
+			NVIC_ICER2 |= (1 << Reg_offset);
+		}
+	}
+
+	//Set IRQ priority
+	uint8_t iprx = IRQ / 4;
+	uint8_t shift_amount = ((IRQ % 4)*8) + (8 - NUM_PRIORITY_BITS);
+	*(NVIC_IPR + iprx) |= (Priority << shift_amount);
 }

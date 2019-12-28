@@ -30,6 +30,10 @@
 #define SPI2_IRQ_NUM				36
 #define SPI3_IRQ_NUM				51
 #define SPI4_IRQ_NUM				84
+//I2Cx's IRQ Position for the NVIC
+#define I2C1_IRQ_NUM				31
+#define I2C2_IRQ_NUM				33
+#define I2C3_IRQ_NUM				72
 
 //NVIC Control Register
 #define NVIC_ISER0			*((volatile uint32_t *)0xE000E100U)
