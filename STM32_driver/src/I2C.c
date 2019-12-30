@@ -159,22 +159,19 @@ uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t SAddr)
 			//While TCR flag is reset
 			while( ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_TCR) )
 			{
+				//Wait as long as TXDR is empty and NACK is not received
+				while( ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_TXIS) &&
+					   ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_NACKF));
+
 				//Check  if NACK is received
 				if( __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_NACKF) ){
 					//return number of byte transferred
 					return nTxBytes;
 				}
-				//transmit new byte
-				else
-				{
-					//Wait until TXDR is empty (check TXIS flag)
-					while(  ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_TXIS) );
-
-					//Write new data into TX Data register
-					*((uint8_t *)&pI2Cx_h->pI2Cx->TXDR) = *((uint8_t *)pTxBuf);
-					pTxBuf++;
-					nTxBytes++;
-				}
+				//Write new data into TX Data register
+				*((uint8_t *)&pI2Cx_h->pI2Cx->TXDR) = *((uint8_t *)pTxBuf);
+				pTxBuf++;
+				nTxBytes++;
 			}
 
 		}
@@ -196,24 +193,23 @@ uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t SAddr)
 			//Wait until Start phase is completed
 			while( __I2C_get_CR2flag(pI2Cx_h, I2C_CR2_START) );
 
-			while(Len > 0){
+			while(Len > 0)
+			{
+				//Wait as long as TXDR is empty and NACK is not received
+				while( ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_TXIS) &&
+					   ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_NACKF));
 
 				//Check  if NACK is received
 				if( __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_NACKF) ){
 					//return number of byte transferred
 					return nTxBytes;
 				}
-				else
-				{
-					//Wait until TXDR is empty (check TXIS flag)
-					while( ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_TXIS) );
 
-					//Write new data into TX Data register
-					*((uint8_t *)&pI2Cx_h->pI2Cx->TXDR) = *((uint8_t *)pTxBuf);
-					pTxBuf++;
-					Len--;
-					nTxBytes++;
-				}
+				//Write new data into TX Data register
+				*((uint8_t *)&pI2Cx_h->pI2Cx->TXDR) = *((uint8_t *)pTxBuf);
+				pTxBuf++;
+				Len--;
+				nTxBytes++;
 			}
 		}
 	}

@@ -20,20 +20,23 @@
  * transmitted\received in the same I2C communication it will be discarded
  */
 
+#define OWN_SLAVEADDR	0x69
+
 void delay();
 void PushButton(void);
 
 int main(void)
 {
-	uint8_t SAddr = 0x68;
 	uint8_t pTxBuf[32] = {0};
 	uint8_t pRxBuf[32] = {0};
+	uint8_t string[] = "Ciao sono STM32F303RE!\n";
+	uint8_t ssize = sizeof(string);
 
 	I2C_handle I2C1_handle;
 
 	I2C1_handle.pI2Cx = I2C1;
 	I2C1_handle.pI2Cx_conf.Speed = 100000; //100kHz
-	I2C1_handle.pI2Cx_conf.Addr  = 0x0;
+	I2C1_handle.pI2Cx_conf.Addr  = OWN_SLAVEADDR;
 	I2C1_handle.pTxBuf = pTxBuf;
 	I2C1_handle.pRxBuf = pRxBuf;
 	I2C1_handle.TxLen  = 0;
@@ -44,11 +47,11 @@ int main(void)
 	__I2C_init(&I2C1_handle);
 
 	//Enable GPIOx peripheral clock
+	__GPIO_EnPCLK(GPIOA);
 	__GPIO_EnPCLK(GPIOB);
-	__GPIO_EnPCLK(GPIOC);
 
-	//Configure User Button as Input
-	__GPIO_init(GPIOC, 13, GPIO_MODE_IN, GPIO_OTYPE_PP, GPIO_SPEED_LOW, GPIO_NO_PUPD, GPIO_ALT_FNC_0);
+	//Configure Led pin as output
+	__GPIO_init(GPIOA, 5, GPIO_MODE_OUT, GPIO_OTYPE_PP, GPIO_SPEED_LOW, GPIO_NO_PUPD, GPIO_ALT_FNC_0);
 
 	//Configure SCL
 	__GPIO_init(GPIOB, 8, GPIO_MODE_AF, GPIO_OTYPE_OD, GPIO_SPEED_HIGH, GPIO_NO_PUPD, GPIO_ALT_FNC_4);
@@ -66,33 +69,38 @@ int main(void)
 
 	while(1){
 
-		uint8_t str_size = 0;
-
-		PushButton();
+		uint8_t command = 0;
 
 		//Enable I2C1
 		__I2C_enable(&I2C1_handle);
 
-		//Send Command
-		pTxBuf[0] = 0x51;	//Send string size
-		I2C1_handle.TxLen = 1;
+		//Receive Command
 		I2C1_handle.RxLen = 1;
-		__I2C_MasterSend(&I2C1_handle, SAddr);
-		__I2C_MasterReceive(&I2C1_handle, SAddr);
-		str_size = pRxBuf[0];
+		__I2C_SlaveReceive(&I2C1_handle);
+		command = pRxBuf[0];
 
-		//Send Command
-		pTxBuf[0] = 0x52;
-		I2C1_handle.TxLen = 1; //Send string
-		I2C1_handle.RxLen = str_size;
-		__I2C_MasterSend(&I2C1_handle, SAddr);
-		__I2C_MasterReceive(&I2C1_handle, SAddr);
+		//Decode command
+		if(command == 0x51)	//Send string size
+		{
+			pTxBuf[0] = ssize;
+			I2C1_handle.pTxBuf = pTxBuf;
+			I2C1_handle.TxLen  = 1;
+			__I2C_SlaveSend(&I2C1_handle);
+		}
+		else if(command == 0x52) //Send string
+		{
+			I2C1_handle.pTxBuf = string;
+			I2C1_handle.TxLen = ssize;
+			__I2C_SlaveSend(&I2C1_handle);
+		}
+		else if(command == 0x53) //toogle LED
+		{
+			__GPIO_tooglePin(GPIOA, 5);
+		}
+
 
 		//Disable I2C1
 		__I2C_disable(&I2C1_handle);
-
-		//Print on SWV console
-		printf("%s",(char *)pRxBuf);
 	}
 
 }
