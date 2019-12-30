@@ -232,7 +232,7 @@ uint16_t __I2C_MasterReceive(I2C_handle *pI2Cx_h, uint8_t SAddr)
 		uint32_t CR2_tmp = 0;
 
 		//Set Slave Address
-		CR2_tmp |= SAddr;
+		CR2_tmp |= (SAddr << 1);
 		CR2_tmp |= (1 << 10); //Set Read operation
 
 
