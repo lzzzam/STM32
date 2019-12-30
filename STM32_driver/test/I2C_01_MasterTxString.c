@@ -16,6 +16,8 @@
  * SCL debug  --> PB6
  * SDA debug  --> PB7
  * IMPORTANT: arduino Mega PULLUP resistor is already present on SDA and SCL
+ * IMPORTANT: arduino Wire Lib. use a 32 byte rx\tx buffer, if more byte are
+ * transmitted\received in the same I2C communication it will be discarded
  */
 
 
@@ -32,7 +34,7 @@ int main(void)
 	I2C_handle I2C1_handle;
 
 	I2C1_handle.pI2Cx = I2C1;
-	I2C1_handle.pI2Cx_conf.Speed = 1000; //1kHz
+	I2C1_handle.pI2Cx_conf.Speed = 100000; //100kHz
 	I2C1_handle.pI2Cx_conf.Addr  = 0x0;
 	I2C1_handle.pTxBuf = pTxBuf;
 	I2C1_handle.pRxBuf = pRxBuf;
@@ -44,7 +46,6 @@ int main(void)
 	__I2C_init(&I2C1_handle);
 
 	//Enable GPIOx peripheral clock
-	__GPIO_EnPCLK(GPIOA);
 	__GPIO_EnPCLK(GPIOB);
 	__GPIO_EnPCLK(GPIOC);
 
