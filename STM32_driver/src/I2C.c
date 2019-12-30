@@ -7,6 +7,7 @@
 
 #include <I2C.h>
 
+
 void __I2C_EnPCLK(I2C_t *pI2Cx){
 
 	if(pI2Cx == I2C1)
@@ -83,8 +84,33 @@ void __I2C_enable(I2C_handle *pI2Cx_h)
 
 void __I2C_disable(I2C_handle *pI2Cx_h)
 {
+	//Wait if I2Cx is BUSY
+	while( __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_BUSY) );
+
 	//Clear PE bit in CR1 register
 	pI2Cx_h->pI2Cx->CR1 &= ~(1 << 0);
+}
+
+
+uint8_t __I2C_get_ISRflag(I2C_handle *pI2Cx_h, uint8_t flag)
+{
+	if(pI2Cx_h->pI2Cx->ISR & (1 << flag))
+	{
+		return TRUE;
+	}
+
+	return FALSE;
+
+}
+
+uint8_t __I2C_get_CR2flag(I2C_handle *pI2Cx_h, uint8_t flag)
+{
+	if(pI2Cx_h->pI2Cx->CR2 & (1 << flag))
+	{
+		return TRUE;
+	}
+
+	return FALSE;
 }
 
 uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t SAddr)
@@ -99,7 +125,7 @@ uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t SAddr)
 		uint32_t CR2_tmp = 0;
 
 		//Set Slave Address
-		CR2_tmp |= SAddr;
+		CR2_tmp |= (SAddr << 1);
 		CR2_tmp &= ~(1 << 10); //Set Write operation
 
 
@@ -112,6 +138,9 @@ uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t SAddr)
 			//Set 255 as Number of Bytes to be transferred
 			CR2_tmp |= (0xFF << 16);
 
+			//Clear TCR bit
+			pI2Cx_h->pI2Cx->ISR &= ~(1 << 7);
+
 			//Set RELOAD bit
 			CR2_tmp |= (1 << 24);
 
@@ -122,13 +151,13 @@ uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t SAddr)
 			pI2Cx_h->pI2Cx->CR2 |= (1 << 13);
 
 			//Wait until Start phase is completed
-			while( pI2Cx_h->pI2Cx->CR2 & (1 << 13) );
+			while( __I2C_get_CR2flag(pI2Cx_h, I2C_CR2_START) );
 
-			//While TCR flag is set
-			while( !(pI2Cx_h->pI2Cx->ISR & (1 >> 7)) )
+			//While TCR flag is reset
+			while( ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_TCR) )
 			{
 				//Check  if NACK is received
-				if(pI2Cx_h->pI2Cx->ISR & (1 << 4)){
+				if( __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_NACKF) ){
 					//return number of byte transferred
 					return nTxBytes;
 				}
@@ -136,7 +165,7 @@ uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t SAddr)
 				else
 				{
 					//Wait until TXDR is empty (check TXIS flag)
-					while( !(pI2Cx_h->pI2Cx->ISR & (1 << 1)) );
+					while(  ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_TXIS) );
 
 					//Write new data into TX Data register
 					*((uint8_t *)&pI2Cx_h->pI2Cx->TXDR) = *((uint8_t *)pTxBuf);
@@ -144,12 +173,13 @@ uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t SAddr)
 					nTxBytes++;
 				}
 			}
+
 		}
 		//Send with AUTO-END mode
 		else
 		{
 			//Set Number of Bytes to be transferred
-			CR2_tmp |= ((Len & 0xFF) << 16);
+			CR2_tmp |= ((uint8_t)(Len & 0xFF) << 16);
 
 			//Set Auto-End mode
 			CR2_tmp |= (1 << 25);
@@ -161,19 +191,19 @@ uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t SAddr)
 			pI2Cx_h->pI2Cx->CR2 |= (1 << 13);
 
 			//Wait until Start phase is completed
-			while( pI2Cx_h->pI2Cx->CR2 & (1 << 13) );
+			while( __I2C_get_CR2flag(pI2Cx_h, I2C_CR2_START) );
 
 			while(Len > 0){
 
 				//Check  if NACK is received
-				if(pI2Cx_h->pI2Cx->ISR & (1 << 4)){
+				if( __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_NACKF) ){
 					//return number of byte transferred
 					return nTxBytes;
 				}
 				else
 				{
 					//Wait until TXDR is empty (check TXIS flag)
-					while( !(pI2Cx_h->pI2Cx->ISR & (1 << 1)) );
+					while( ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_TXIS) );
 
 					//Write new data into TX Data register
 					*((uint8_t *)&pI2Cx_h->pI2Cx->TXDR) = *((uint8_t *)pTxBuf);
@@ -215,6 +245,9 @@ uint16_t __I2C_MasterReceive(I2C_handle *pI2Cx_h, uint8_t SAddr)
 			//Set 255 as Number of Bytes to be transferred
 			CR2_tmp |= (0xFF << 16);
 
+			//Clear TCR bit
+			pI2Cx_h->pI2Cx->ISR &= ~(1 << 7);
+
 			//Set RELOAD bit
 			CR2_tmp |= (1 << 24);
 
@@ -225,13 +258,13 @@ uint16_t __I2C_MasterReceive(I2C_handle *pI2Cx_h, uint8_t SAddr)
 			pI2Cx_h->pI2Cx->CR2 |= (1 << 13);
 
 			//Wait until Start phase is completed
-			while( pI2Cx_h->pI2Cx->CR2 & (1 << 13) );
+			while( __I2C_get_CR2flag(pI2Cx_h, I2C_CR2_START) );
 
 			//While TCR flag is set
-			while( !(pI2Cx_h->pI2Cx->ISR & (1 >> 7)) )
+			while( ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_TCR) )
 			{
 				//Wait until RXDR is not empty (check RXNE flag)
-				while( !(pI2Cx_h->pI2Cx->ISR & (1 << 2)) );
+				while( ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_RXNE) );
 
 				//Read new data from RX Data register
 				*((uint8_t *)pRxBuf) = *((uint8_t *)&pI2Cx_h->pI2Cx->RXDR);
@@ -255,12 +288,12 @@ uint16_t __I2C_MasterReceive(I2C_handle *pI2Cx_h, uint8_t SAddr)
 			pI2Cx_h->pI2Cx->CR2 |= (1 << 13);
 
 			//Wait until Start phase is completed
-			while( pI2Cx_h->pI2Cx->CR2 & (1 << 13) );
+			while( __I2C_get_CR2flag(pI2Cx_h, I2C_CR2_START) );
 
 			while(Len > 0){
 
 				//Wait until RXDR is not empty (check RXNE flag)
-				while( !(pI2Cx_h->pI2Cx->ISR & (1 << 2)) );
+				while( ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_RXNE) );
 
 				//Read new data from RX Data register
 				*((uint8_t *)pRxBuf) = *((uint8_t *)&pI2Cx_h->pI2Cx->RXDR);
@@ -275,29 +308,7 @@ uint16_t __I2C_MasterReceive(I2C_handle *pI2Cx_h, uint8_t SAddr)
 	return nRxBytes;
 }
 
-
-void __I2C_SlaveOperation(I2C_handle *pI2Cx_h)
-{
-	//Enable Own Address1
-	pI2Cx_h->pI2Cx->OAR1 |= (1 << 15);
-
-	//Wait until Slave is selected (Check ADDR flag)
-	while( !(pI2Cx_h->pI2Cx->ISR & (1 << 3)) );
-
-	//Check Direction
-	if( !(pI2Cx_h->pI2Cx->ISR & (1 << 16)) )
-	{
-		__I2C_SlaveReceiver(pI2Cx_h);
-	}
-	else
-	{
-		__I2C_SlaveTransmitter(pI2Cx_h);
-	}
-
-
-}
-
-void __I2C_SlaveTransmitter(I2C_handle *pI2Cx_h)
+static void __I2C_SlaveTransmitter(I2C_handle *pI2Cx_h)
 {
 	//Flush TXDR
 	pI2Cx_h->pI2Cx->ISR |= ( 1 << 0 );
@@ -312,7 +323,7 @@ void __I2C_SlaveTransmitter(I2C_handle *pI2Cx_h)
 	while(Len > 0)
 	{
 		//Wait until TXDR is empty (check TXIS flag)
-		while( !(pI2Cx_h->pI2Cx->ISR & (1 << 1)) );
+		while( ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_TXIS) );
 
 		//Write new data into TX Data register
 		*((uint8_t *)&pI2Cx_h->pI2Cx->TXDR) = *((uint8_t *)pTxBuf);
@@ -323,7 +334,7 @@ void __I2C_SlaveTransmitter(I2C_handle *pI2Cx_h)
 }
 
 
-void __I2C_SlaveReceiver(I2C_handle *pI2Cx_h)
+static void __I2C_SlaveReceiver(I2C_handle *pI2Cx_h)
 {
 
 	//Clear ADDR Flag
@@ -336,7 +347,7 @@ void __I2C_SlaveReceiver(I2C_handle *pI2Cx_h)
 	while(Len > 0)
 	{
 		//Wait until RXDR is not empty (check RXNE flag)
-		while( !(pI2Cx_h->pI2Cx->ISR & (1 << 2)) );
+		while( ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_RXNE) );
 
 		//Read new data from RX Data register
 		*((uint8_t *)pRxBuf) = *((uint8_t *)&pI2Cx_h->pI2Cx->RXDR);
@@ -345,6 +356,28 @@ void __I2C_SlaveReceiver(I2C_handle *pI2Cx_h)
 	}
 
 }
+
+void __I2C_SlaveOperation(I2C_handle *pI2Cx_h)
+{
+	//Enable Own Address1
+	pI2Cx_h->pI2Cx->OAR1 |= (1 << 15);
+
+	//Wait until Slave is selected (Check ADDR flag)
+	while( ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_ADDR) );
+
+	//Check Direction
+	if( ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_DIR) )
+	{
+		__I2C_SlaveReceiver(pI2Cx_h);
+	}
+	else
+	{
+		__I2C_SlaveTransmitter(pI2Cx_h);
+	}
+
+
+}
+
 
 void __I2C_IRQconfig(I2C_handle *pI2Cx_h, uint8_t EnOrDis, uint8_t Priority)
 {
