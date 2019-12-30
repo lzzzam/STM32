@@ -30,6 +30,10 @@
 #define SPI2_IRQ_NUM				36
 #define SPI3_IRQ_NUM				51
 #define SPI4_IRQ_NUM				84
+//I2Cx's IRQ Position for the NVIC
+#define I2C1_IRQ_NUM				31
+#define I2C2_IRQ_NUM				33
+#define I2C3_IRQ_NUM				72
 
 //NVIC Control Register
 #define NVIC_ISER0			*((volatile uint32_t *)0xE000E100U)
@@ -119,6 +123,11 @@
 #define RCC_EN_CLK_SPI2()			(RCC->APB1ENR |= (1 << 14))
 #define RCC_EN_CLK_SPI3()			(RCC->APB1ENR |= (1 << 15))
 #define RCC_EN_CLK_SPI4()			(RCC->APB2ENR |= (1 << 15))
+#define RCC_EN_CLK_I2C1()			(RCC->APB1ENR |= (1 << 21))
+#define RCC_EN_CLK_I2C2()			(RCC->APB1ENR |= (1 << 22))
+#define RCC_EN_CLK_I2C3()			(RCC->APB1ENR |= (1 << 30))
+
+
 
 //@GPIO_PinMode
 #define GPIO_MODE_IN				0
@@ -239,6 +248,9 @@
 #define SPI2_I2S2_BASE_ADDR		0x40003800U
 #define SPI3_I2S3_BASE_ADDR		0x40003C00U
 #define SPI4_BASE_ADDR			0x40013C00U
+#define I2C1_BASE_ADDR			0x40005400U
+#define I2C2_BASE_ADDR			0x40005800U
+#define I2C3_BASE_ADDR			0x40007800U
 
 //Peripheral address offset
 #define RCC_OFFSET				0x00000000U
@@ -259,6 +271,10 @@
 #define SPI2_I2S2_OFFSET		0x00000000U
 #define SPI3_I2S3_OFFSET		0x00000000U
 #define SPI4_OFFSET				0x00000000U
+#define I2C1_OFFSET				0x00000000U
+#define I2C2_OFFSET				0x00000000U
+#define I2C3_OFFSET				0x00000000U
+
 
 //Peripheral address
 #define RCC_ADDR				(RCC_BASE_ADDR + RCC_OFFSET)
@@ -282,6 +298,9 @@
 #define SPI2_I2S2_ADDR			(SPI2_I2S2_BASE_ADDR + SPI2_I2S2_OFFSET)
 #define SPI3_I2S3_ADDR			(SPI3_I2S3_BASE_ADDR + SPI3_I2S3_OFFSET)
 #define SPI4_ADDR				(SPI4_BASE_ADDR + SPI4_OFFSET)
+#define I2C1_ADDR				(I2C1_BASE_ADDR + I2C1_OFFSET)
+#define I2C2_ADDR				(I2C2_BASE_ADDR + I2C2_OFFSET)
+#define I2C3_ADDR				(I2C3_BASE_ADDR + I2C3_OFFSET)
 /********************************************************************************/
 /*						Peripheral access method								*/
 /********************************************************************************/
@@ -306,6 +325,10 @@
 #define SPI2	((SPI_t *)SPI2_I2S2_ADDR)
 #define SPI3	((SPI_t *)SPI3_I2S3_ADDR)
 #define SPI4	((SPI_t *)SPI4_ADDR)
+#define I2C1	((I2C_t *)I2C1_ADDR)
+#define I2C2	((I2C_t *)I2C2_ADDR)
+#define I2C3	((I2C_t *)I2C3_ADDR)
+
 /********************************************************************************/
 /*						Peripheral structure overlay							*/
 /********************************************************************************/
@@ -378,6 +401,20 @@ typedef struct{
 	__IO uint32_t	I2SCFGR;
 	__IO uint32_t	I2SPR;
 }SPI_t;
+
+typedef struct{
+	__IO uint32_t 	CR1;
+	__IO uint32_t	CR2;
+	__IO uint32_t	OAR1;
+	__IO uint32_t	OAR2;
+	__IO uint32_t	TIMINGR;
+	__IO uint32_t	TIMEOUTR;
+	__IO uint32_t	ISR;
+	__IO uint32_t	ICR;
+	__IO uint32_t	PECR;
+	__IO uint32_t	RXDR;
+	__IO uint32_t	TXDR;
+}I2C_t;
 
 //ADC
 typedef struct {
