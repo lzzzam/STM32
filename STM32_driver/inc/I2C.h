@@ -82,7 +82,8 @@ uint8_t __I2C_get_ISRflag(I2C_handle *pI2Cx_h, uint8_t flag);
 uint8_t __I2C_get_CR2flag(I2C_handle *pI2Cx_h, uint8_t flag);
 uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t SAddr);
 uint16_t __I2C_MasterReceive(I2C_handle *pI2Cx_h, uint8_t SAddr);
-void __I2C_SlaveOperation(I2C_handle *pI2Cx_h);
+void __I2C_SlaveSend(I2C_handle *pI2Cx_h);
+void __I2C_SlaveReceive(I2C_handle *pI2Cx_h);
 void __I2C_IRQconfig(I2C_handle *pI2Cx_h, 	/*I2Cx handle address			*/
 		 	 	 	 uint8_t     EnOrDis,	/*EN or DIS						*/
 					 uint8_t     Priority);	/*0-15 where 0 is Highest  		*/
