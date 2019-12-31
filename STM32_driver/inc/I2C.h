@@ -14,6 +14,13 @@
 /****************************************************************************
  *  							I2C Registers Bit
  ****************************************************************************/
+#define I2C_CR1_TXIE		1
+#define I2C_CR1_RXIE		2
+#define I2C_CR1_ADDRIE		3
+#define I2C_CR1_NACKIE		4
+#define I2C_CR1_STOPIE		5
+#define I2C_CR1_TCIE		6
+
 #define I2C_CR2_RD_WRN		10
 #define I2C_CR2_ADD10		11
 #define I2C_CR2_START		13
@@ -44,6 +51,14 @@
 #define I2C_ICR_NACKCF		4
 #define I2C_ICR_STOPCF		5
 
+//I2Cx state for Interrupt-based transaction
+#define I2C_FREE			0
+#define I2C_BUSY_IN_TX		1
+#define I2C_BUSY_IN_RX		2
+
+//Start Repeat disable\enable
+#define I2C_DISABLE_SR		0
+#define I2C_ENABLE_SR		1
 /****************************************************************************
  *  	 			I2Cx Configuration and Handle structure
  ****************************************************************************/
@@ -59,6 +74,7 @@ typedef struct{
 	uint8_t *pRxBuf;
 	uint16_t TxLen;
 	uint16_t RxLen;
+	uint8_t  I2Cx_state;
 }I2C_handle;
 
 /****************************************************************************
@@ -80,14 +96,14 @@ void __I2C_enable(I2C_handle *pI2Cx_h);
 void __I2C_disable(I2C_handle *pI2Cx_h);
 uint8_t __I2C_get_ISRflag(I2C_handle *pI2Cx_h, uint8_t flag);
 uint8_t __I2C_get_CR2flag(I2C_handle *pI2Cx_h, uint8_t flag);
-uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t SAddr);
-uint16_t __I2C_MasterReceive(I2C_handle *pI2Cx_h, uint8_t SAddr);
-void __I2C_SlaveSend(I2C_handle *pI2Cx_h);
-void __I2C_SlaveReceive(I2C_handle *pI2Cx_h);
+uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t *pTxBuf, uint32_t Len, uint8_t SAddr, uint8_t StartRpt);
+uint16_t __I2C_MasterReceive(I2C_handle *pI2Cx_h, uint8_t *pRxBuf, uint32_t Len, uint8_t SAddr, uint8_t StartRpt);
+void __I2C_SlaveSend(I2C_handle *pI2Cx_h, uint8_t *pTxBuf, uint32_t Len);
+void __I2C_SlaveReceive(I2C_handle *pI2Cx_h, uint8_t *pRxBuf, uint32_t Len);
 void __I2C_IRQconfig(I2C_handle *pI2Cx_h, 	/*I2Cx handle address			*/
 		 	 	 	 uint8_t     EnOrDis,	/*EN or DIS						*/
 					 uint8_t     Priority);	/*0-15 where 0 is Highest  		*/
-void __I2C_IRQhandle();
+void __I2C_IRQhandle(I2C_handle *pI2Cx_h);
 
 
 

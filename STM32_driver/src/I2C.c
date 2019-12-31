@@ -106,6 +106,16 @@ uint8_t __I2C_get_ISRflag(I2C_handle *pI2Cx_h, uint8_t flag)
 
 }
 
+uint8_t __I2C_get_CR1flag(I2C_handle *pI2Cx_h, uint8_t flag)
+{
+	if(pI2Cx_h->pI2Cx->CR1 & (1 << flag))
+	{
+		return TRUE;
+	}
+
+	return FALSE;
+}
+
 uint8_t __I2C_get_CR2flag(I2C_handle *pI2Cx_h, uint8_t flag)
 {
 	if(pI2Cx_h->pI2Cx->CR2 & (1 << flag))
@@ -116,11 +126,8 @@ uint8_t __I2C_get_CR2flag(I2C_handle *pI2Cx_h, uint8_t flag)
 	return FALSE;
 }
 
-uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t SAddr)
+uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t *pTxBuf, uint32_t Len, uint8_t SAddr, uint8_t StartRpt)
 {
-
-	uint8_t *pTxBuf = pI2Cx_h->pTxBuf;
-	uint16_t Len    = pI2Cx_h->TxLen;
 	uint16_t nTxBytes = 0;
 
 	while(Len > 0)
@@ -130,7 +137,6 @@ uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t SAddr)
 		//Set Slave Address
 		CR2_tmp |= (SAddr << 1);
 		CR2_tmp &= ~(1 << 10); //Set Write operation
-
 
 		//Send with RELOAD mode
 		if(Len > 255)
@@ -168,6 +174,7 @@ uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t SAddr)
 					//return number of byte transferred
 					return nTxBytes;
 				}
+
 				//Write new data into TX Data register
 				*((uint8_t *)&pI2Cx_h->pI2Cx->TXDR) = *((uint8_t *)pTxBuf);
 				pTxBuf++;
@@ -175,14 +182,16 @@ uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t SAddr)
 			}
 
 		}
-		//Send with AUTO-END mode
+		//Send without RELOAD mode
 		else
 		{
 			//Set Number of Bytes to be transferred
 			CR2_tmp |= ((uint8_t)(Len & 0xFF) << 16);
 
-			//Set Auto-End mode
-			CR2_tmp |= (1 << 25);
+			//Master release I2C bus if SR is disabled
+			if(StartRpt == I2C_DISABLE_SR)
+				//Set Auto-End mode
+				CR2_tmp |= (1 << 25); //Auto STOP after last byte is transmitted
 
 			//Set CR2 register
 			pI2Cx_h->pI2Cx->CR2 = CR2_tmp;
@@ -220,10 +229,8 @@ uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t SAddr)
 
 
 
-uint16_t __I2C_MasterReceive(I2C_handle *pI2Cx_h, uint8_t SAddr)
+uint16_t __I2C_MasterReceive(I2C_handle *pI2Cx_h, uint8_t *pRxBuf, uint32_t Len, uint8_t SAddr, uint8_t StartRpt)
 {
-	uint8_t *pRxBuf = pI2Cx_h->pRxBuf;
-	uint16_t Len = pI2Cx_h->RxLen;
 	uint16_t nRxBytes = 0;
 
 	while(Len > 0)
@@ -233,7 +240,6 @@ uint16_t __I2C_MasterReceive(I2C_handle *pI2Cx_h, uint8_t SAddr)
 		//Set Slave Address
 		CR2_tmp |= (SAddr << 1);
 		CR2_tmp |= (1 << 10); //Set Read operation
-
 
 		//Read with RELOAD mode
 		if(Len > 255)
@@ -271,14 +277,16 @@ uint16_t __I2C_MasterReceive(I2C_handle *pI2Cx_h, uint8_t SAddr)
 				nRxBytes++;
 			}
 		}
-		//Read with AUTO-END mode
+		//Read without RELOAD mode
 		else
 		{
 			//Set Number of Bytes to be received
 			CR2_tmp |= ((Len & 0xFF) << 16);
 
-			//Set Auto-End mode
-			CR2_tmp |= (1 << 25);
+			//Master release I2C bus if SR is disabled
+			if(StartRpt == I2C_DISABLE_SR)
+				//Set Auto-End mode
+				CR2_tmp |= (1 << 25); //Auto STOP after last byte is received
 
 			//Set CR2 register
 			pI2Cx_h->pI2Cx->CR2 = CR2_tmp;
@@ -307,7 +315,7 @@ uint16_t __I2C_MasterReceive(I2C_handle *pI2Cx_h, uint8_t SAddr)
 	return nRxBytes;
 }
 
-void __I2C_SlaveSend(I2C_handle *pI2Cx_h)
+void __I2C_SlaveSend(I2C_handle *pI2Cx_h, uint8_t *pTxBuf, uint32_t Len)
 {
 	//Wait until Slave is selected (Check ADDR flag)
 	while( ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_ADDR) );
@@ -318,9 +326,6 @@ void __I2C_SlaveSend(I2C_handle *pI2Cx_h)
 	//Clear ADDR Flag
 	pI2Cx_h->pI2Cx->ICR |= (1 << 3);
 	pI2Cx_h->pI2Cx->ICR &= ~(1 << 3);
-
-	uint8_t *pTxBuf = pI2Cx_h->pTxBuf;
-	uint16_t Len = pI2Cx_h->TxLen;
 
 	while(Len > 0)
 	{
@@ -335,7 +340,7 @@ void __I2C_SlaveSend(I2C_handle *pI2Cx_h)
 
 }
 
-void __I2C_SlaveReceive(I2C_handle *pI2Cx_h)
+void __I2C_SlaveReceive(I2C_handle *pI2Cx_h, uint8_t *pRxBuf, uint32_t Len)
 {
 	//Wait until Slave is selected (Check ADDR flag)
 	while( ! __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_ADDR) );
@@ -343,9 +348,6 @@ void __I2C_SlaveReceive(I2C_handle *pI2Cx_h)
 	//Clear ADDR Flag
 	pI2Cx_h->pI2Cx->ICR |= (1 << 3);
 	pI2Cx_h->pI2Cx->ICR &= ~(1 << 3);
-
-	uint8_t *pRxBuf = pI2Cx_h->pRxBuf;
-	uint16_t Len = pI2Cx_h->RxLen;
 
 	while(Len > 0)
 	{
@@ -358,6 +360,66 @@ void __I2C_SlaveReceive(I2C_handle *pI2Cx_h)
 		Len--;
 	}
 }
+
+void __I2C_MasterSend_IT(I2C_handle *pI2Cx_h, uint8_t SAddr)
+{
+	//Set Slave Address
+	pI2Cx_h->pI2Cx->CR2 |= (SAddr << 1);
+	pI2Cx_h->pI2Cx->CR2 &= ~(1 << 10); //Set Write operation
+
+	//Send with RELOAD mode
+	if(pI2Cx_h->TxLen > 255)
+	{
+		//Update Length
+		pI2Cx_h->TxLen -= 255;
+
+		//Set 255 as Number of Bytes to be transferred
+		pI2Cx_h->pI2Cx->CR2 |= (0xFF << 16);
+
+		//Clear TCR bit
+		pI2Cx_h->pI2Cx->ISR &= ~(1 << 7);
+
+		//Set RELOAD bit
+		pI2Cx_h->pI2Cx->CR2 |= (1 << 24);
+
+	}
+	//Send with AUTO-END mode
+	else
+	{
+		//Set Number of Bytes to be transferred
+		pI2Cx_h->pI2Cx->CR2 |= ((uint8_t)(pI2Cx_h->TxLen & 0xFF) << 16);
+
+		//Set Auto-End mode
+		pI2Cx_h->pI2Cx->CR2 |= (1 << 25);
+	}
+
+	//Update peripheral state
+	pI2Cx_h->I2Cx_state = I2C_BUSY_IN_TX;
+
+	//Start communication
+	pI2Cx_h->pI2Cx->CR2 |= (1 << 13);
+}
+
+static void __I2C_handleTXIS_IT(I2C_handle *pI2Cx_h)
+{
+
+}
+
+static void __I2C_handleRXNE_IT(I2C_handle *pI2Cx_h)
+{
+
+}
+
+static void __I2C_handleADDR_IT(I2C_handle *pI2Cx_h)
+{
+
+}
+
+static void __I2C_handleTC_IT(I2C_handle *pI2Cx_h)
+{
+
+}
+
 
 
 void __I2C_IRQconfig(I2C_handle *pI2Cx_h, uint8_t EnOrDis, uint8_t Priority)
@@ -405,4 +467,47 @@ void __I2C_IRQconfig(I2C_handle *pI2Cx_h, uint8_t EnOrDis, uint8_t Priority)
 	uint8_t iprx = IRQ / 4;
 	uint8_t shift_amount = ((IRQ % 4)*8) + (8 - NUM_PRIORITY_BITS);
 	*(NVIC_IPR + iprx) |= (Priority << shift_amount);
+}
+
+void __I2C_IRQhandle(I2C_handle *pI2Cx_h)
+{
+	uint8_t temp1;
+	uint8_t temp2;
+
+	temp1 = __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_TXIS);
+	temp2 = __I2C_get_CR1flag(pI2Cx_h, I2C_CR1_TXIE);
+
+	//Handle TXIS interrupt
+	if(temp1 && temp2)
+	{
+		__I2C_handleTXIS_IT(pI2Cx_h);
+	}
+
+	temp1 = __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_RXNE);
+	temp2 = __I2C_get_CR1flag(pI2Cx_h, I2C_CR1_RXIE);
+
+	//Handle RXNE interrupt
+	if(temp1 && temp2)
+	{
+		__I2C_handleRXNE_IT(pI2Cx_h);
+	}
+
+	temp1 = __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_ADDR);
+	temp2 = __I2C_get_CR1flag(pI2Cx_h, I2C_CR1_ADDRIE);
+
+	//Handle ADDR interrupt
+	if(temp1 && temp2)
+	{
+		__I2C_handleADDR_IT(pI2Cx_h);
+	}
+
+	temp1 = __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_TC);
+	temp2 = __I2C_get_CR1flag(pI2Cx_h, I2C_CR1_TCIE);
+
+	//Handle ADDR interrupt
+	if(temp1 && temp2)
+	{
+		__I2C_handleTC_IT(pI2Cx_h);
+	}
+
 }

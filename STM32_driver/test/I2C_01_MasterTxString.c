@@ -27,17 +27,16 @@ void PushButton(void);
 int main(void)
 {
 	uint8_t SAddr = 0x68;
-	uint8_t pTxBuf[] = "Ciao sono STM32F303RE!!";
-	uint8_t pRxBuf[32] = {0};
-	uint8_t ssize = sizeof(pTxBuf);
+	uint8_t String[] = "Ciao sono STM32F303RE!!";
+	uint8_t ssize = sizeof(String);
 
 	I2C_handle I2C1_handle;
 
 	I2C1_handle.pI2Cx = I2C1;
 	I2C1_handle.pI2Cx_conf.Speed = 100000; //100kHz
 	I2C1_handle.pI2Cx_conf.Addr  = 0x0;
-	I2C1_handle.pTxBuf = pTxBuf;
-	I2C1_handle.pRxBuf = pRxBuf;
+	I2C1_handle.pTxBuf = NULL;
+	I2C1_handle.pRxBuf = NULL;
 	I2C1_handle.TxLen  = 0;
 	I2C1_handle.RxLen  = 0;
 
@@ -76,11 +75,13 @@ int main(void)
 		__I2C_enable(&I2C1_handle);
 
 		//Send String
-		I2C1_handle.TxLen = ssize;
-		txed = __I2C_MasterSend(&I2C1_handle, SAddr);
+		txed = __I2C_MasterSend(&I2C1_handle, String, ssize, SAddr, I2C_DISABLE_SR);//Transmit and close communication
 
 		//Disable I2C1
 		__I2C_disable(&I2C1_handle);
+
+		//to avoid unused variable warning
+		(void)txed;
 	}
 
 }

@@ -34,8 +34,8 @@ int main(void)
 	I2C1_handle.pI2Cx = I2C1;
 	I2C1_handle.pI2Cx_conf.Speed = 100000; //100kHz
 	I2C1_handle.pI2Cx_conf.Addr  = 0x0;
-	I2C1_handle.pTxBuf = pTxBuf;
-	I2C1_handle.pRxBuf = pRxBuf;
+	I2C1_handle.pTxBuf = NULL;
+	I2C1_handle.pRxBuf = NULL;
 	I2C1_handle.TxLen  = 0;
 	I2C1_handle.RxLen  = 0;
 
@@ -75,18 +75,14 @@ int main(void)
 
 		//Send Command
 		pTxBuf[0] = 0x51;	//Send string size
-		I2C1_handle.TxLen = 1;
-		I2C1_handle.RxLen = 1;
-		__I2C_MasterSend(&I2C1_handle, SAddr);
-		__I2C_MasterReceive(&I2C1_handle, SAddr);
+		__I2C_MasterSend(&I2C1_handle, pTxBuf, 1, SAddr, I2C_ENABLE_SR);
+		__I2C_MasterReceive(&I2C1_handle, pRxBuf, 1, SAddr, I2C_ENABLE_SR);
 		str_size = pRxBuf[0];
 
 		//Send Command
 		pTxBuf[0] = 0x52;
-		I2C1_handle.TxLen = 1; //Send string
-		I2C1_handle.RxLen = str_size;
-		__I2C_MasterSend(&I2C1_handle, SAddr);
-		__I2C_MasterReceive(&I2C1_handle, SAddr);
+		__I2C_MasterSend(&I2C1_handle, pTxBuf, 1, SAddr, I2C_ENABLE_SR);
+		__I2C_MasterReceive(&I2C1_handle, pRxBuf, str_size, SAddr, I2C_DISABLE_SR); //Receive and close communication
 
 		//Disable I2C1
 		__I2C_disable(&I2C1_handle);

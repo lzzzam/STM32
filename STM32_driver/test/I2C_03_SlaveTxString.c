@@ -37,8 +37,8 @@ int main(void)
 	I2C1_handle.pI2Cx = I2C1;
 	I2C1_handle.pI2Cx_conf.Speed = 100000; //100kHz
 	I2C1_handle.pI2Cx_conf.Addr  = OWN_SLAVEADDR;
-	I2C1_handle.pTxBuf = pTxBuf;
-	I2C1_handle.pRxBuf = pRxBuf;
+	I2C1_handle.pTxBuf = NULL;
+	I2C1_handle.pRxBuf = NULL;
 	I2C1_handle.TxLen  = 0;
 	I2C1_handle.RxLen  = 0;
 
@@ -75,23 +75,18 @@ int main(void)
 		__I2C_enable(&I2C1_handle);
 
 		//Receive Command
-		I2C1_handle.RxLen = 1;
-		__I2C_SlaveReceive(&I2C1_handle);
+		__I2C_SlaveReceive(&I2C1_handle, pRxBuf, 1);
 		command = pRxBuf[0];
 
 		//Decode command
 		if(command == 0x51)	//Send string size
 		{
 			pTxBuf[0] = ssize;
-			I2C1_handle.pTxBuf = pTxBuf;
-			I2C1_handle.TxLen  = 1;
-			__I2C_SlaveSend(&I2C1_handle);
+			__I2C_SlaveSend(&I2C1_handle, pTxBuf, 1);
 		}
 		else if(command == 0x52) //Send string
 		{
-			I2C1_handle.pTxBuf = string;
-			I2C1_handle.TxLen = ssize;
-			__I2C_SlaveSend(&I2C1_handle);
+			__I2C_SlaveSend(&I2C1_handle, string, ssize);
 		}
 		else if(command == 0x53) //toogle LED
 		{
