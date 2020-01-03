@@ -103,7 +103,6 @@ uint8_t __I2C_get_ISRflag(I2C_handle *pI2Cx_h, uint8_t flag)
 	}
 
 	return FALSE;
-
 }
 
 uint8_t __I2C_get_CR1flag(I2C_handle *pI2Cx_h, uint8_t flag)
@@ -223,7 +222,6 @@ uint16_t __I2C_MasterSend(I2C_handle *pI2Cx_h, uint8_t *pTxBuf, uint32_t Len, ui
 		}
 	}
 
-
 	return nTxBytes;
 }
 
@@ -311,7 +309,6 @@ uint16_t __I2C_MasterReceive(I2C_handle *pI2Cx_h, uint8_t *pRxBuf, uint32_t Len,
 		}
 	}
 
-
 	return nRxBytes;
 }
 
@@ -361,65 +358,310 @@ void __I2C_SlaveReceive(I2C_handle *pI2Cx_h, uint8_t *pRxBuf, uint32_t Len)
 	}
 }
 
-void __I2C_MasterSend_IT(I2C_handle *pI2Cx_h, uint8_t SAddr)
+void __I2C_MasterSend_IT(I2C_handle *pI2Cx_h, uint8_t *pTxBuf, uint32_t Len, uint8_t SAddr, uint8_t StartRpt)
 {
-	//Set Slave Address
-	pI2Cx_h->pI2Cx->CR2 |= (SAddr << 1);
-	pI2Cx_h->pI2Cx->CR2 &= ~(1 << 10); //Set Write operation
-
-	//Send with RELOAD mode
-	if(pI2Cx_h->TxLen > 255)
+	if(pI2Cx_h->I2Cx_state == I2C_FREE)
 	{
-		//Update Length
-		pI2Cx_h->TxLen -= 255;
+		//Copy TX data into I2Cx handle
+		pI2Cx_h->pTxBuf = pTxBuf;
+		pI2Cx_h->TxLen  = Len;
+		pI2Cx_h->StartRpt = StartRpt;
 
-		//Set 255 as Number of Bytes to be transferred
-		pI2Cx_h->pI2Cx->CR2 |= (0xFF << 16);
+		//Set Slave Address
+		pI2Cx_h->pI2Cx->CR2 |= (SAddr << 1);
+		pI2Cx_h->pI2Cx->CR2 &= ~(1 << 10); //Set Write operation
 
-		//Clear TCR bit
-		pI2Cx_h->pI2Cx->ISR &= ~(1 << 7);
+		//Send with RELOAD mode
+		if(pI2Cx_h->TxLen > 255)
+		{
+			//Set 255 as Number of Bytes to be transferred
+			pI2Cx_h->pI2Cx->CR2 |= (0xFF << 16);
 
-		//Set RELOAD bit
-		pI2Cx_h->pI2Cx->CR2 |= (1 << 24);
+			//Clear TCR bit
+			pI2Cx_h->pI2Cx->ISR &= ~(1 << 7);
 
+			//Set RELOAD bit
+			pI2Cx_h->pI2Cx->CR2 |= (1 << 24);
+
+		}
+		//Send without RELOAD mode
+		else
+		{
+			//Clear RELOAD bit
+			pI2Cx_h->pI2Cx->CR2 &= ~(1 << 24);
+
+			//Clear TCR bit
+			pI2Cx_h->pI2Cx->ISR &= ~(1 << 7);
+
+			//Set Number of Bytes to be transferred
+			pI2Cx_h->pI2Cx->CR2 &= ~(0xFF << 16); //clear NBYTES
+			pI2Cx_h->pI2Cx->CR2 |= ((uint8_t)(pI2Cx_h->TxLen & 0xFF) << 16);
+		}
+
+		//Update peripheral state
+		pI2Cx_h->I2Cx_state = I2C_BUSY_IN_TX;
+
+		//Start communication
+		pI2Cx_h->pI2Cx->CR2 |= (1 << 13);
+
+		//Enable Interrupt generation
+		pI2Cx_h->pI2Cx->CR1 |= ((1 << I2C_CR1_TXIE) |
+								(1 << I2C_CR1_TCIE) |
+								(1 << I2C_CR1_NACKIE)|
+								(1 << I2C_CR1_STOPIE));
 	}
-	//Send with AUTO-END mode
-	else
+}
+
+void __I2C_MasterReceive_IT(I2C_handle *pI2Cx_h, uint8_t *pRxBuf, uint32_t Len, uint8_t SAddr, uint8_t StartRpt)
+{
+	if(pI2Cx_h->I2Cx_state == I2C_FREE)
 	{
-		//Set Number of Bytes to be transferred
-		pI2Cx_h->pI2Cx->CR2 |= ((uint8_t)(pI2Cx_h->TxLen & 0xFF) << 16);
+		//Copy RX data into I2Cx handle
+		pI2Cx_h->pRxBuf = pRxBuf;
+		pI2Cx_h->RxLen  = Len;
+		pI2Cx_h->StartRpt = StartRpt;
 
-		//Set Auto-End mode
-		pI2Cx_h->pI2Cx->CR2 |= (1 << 25);
+		//Set Slave Address
+		pI2Cx_h->pI2Cx->CR2 |= (SAddr << 1);
+		pI2Cx_h->pI2Cx->CR2 |= (1 << 10); //Set Read operation
+
+		//Receive with RELOAD mode
+		if(pI2Cx_h->RxLen > 255)
+		{
+			//Set 255 as Number of Bytes to be received
+			pI2Cx_h->pI2Cx->CR2 |= (0xFF << 16);
+
+			//Clear TCR bit
+			pI2Cx_h->pI2Cx->ISR &= ~(1 << 7);
+
+			//Set RELOAD bit
+			pI2Cx_h->pI2Cx->CR2 |= (1 << 24);
+
+		}
+		//Receive without RELOAD mode
+		else
+		{
+			//Clear RELOAD bit
+			pI2Cx_h->pI2Cx->CR2 &= ~(1 << 24);
+
+			//Clear TCR bit
+			pI2Cx_h->pI2Cx->ISR &= ~(1 << 7);
+
+			//Set Number of Bytes to be received
+			pI2Cx_h->pI2Cx->CR2 &= ~(0xFF << 16); //clear NBYTES
+			pI2Cx_h->pI2Cx->CR2 |= ((uint8_t)(pI2Cx_h->RxLen & 0xFF) << 16);
+		}
+
+		//Update peripheral state
+		pI2Cx_h->I2Cx_state = I2C_BUSY_IN_RX;
+
+		//Start communication
+		pI2Cx_h->pI2Cx->CR2 |= (1 << 13);
+
+		//Enable Interrupt generation
+		pI2Cx_h->pI2Cx->CR1 |= ((1 << I2C_CR1_RXIE) |
+								(1 << I2C_CR1_TCIE) |
+								(1 << I2C_CR1_NACKIE)|
+								(1 << I2C_CR1_STOPIE));
 	}
+}
 
-	//Update peripheral state
-	pI2Cx_h->I2Cx_state = I2C_BUSY_IN_TX;
+void __I2C_SlaveSend_IT(I2C_handle *pI2Cx_h, uint8_t *pTxBuf, uint32_t Len)
+{
+	if(pI2Cx_h->I2Cx_state == I2C_FREE)
+	{
+		//Copy TX data into I2Cx handle
+		pI2Cx_h->pTxBuf = pTxBuf;
+		pI2Cx_h->TxLen  = Len;
 
-	//Start communication
-	pI2Cx_h->pI2Cx->CR2 |= (1 << 13);
+		//Update peripheral state
+		pI2Cx_h->I2Cx_state = I2C_BUSY_IN_TX;
+
+		//Enable Interrupt generation
+		pI2Cx_h->pI2Cx->CR1 |= ((1 << I2C_CR1_ADDRIE) |
+								(1 << I2C_CR1_NACKIE) |
+								(1 << I2C_CR1_STOPIE));
+	}
+}
+
+void __I2C_SlaveReceive_IT(I2C_handle *pI2Cx_h, uint8_t *pRxBuf, uint32_t Len)
+{
+	if(pI2Cx_h->I2Cx_state == I2C_FREE)
+	{
+		//Copy TX data into I2Cx handle
+		pI2Cx_h->pRxBuf = pRxBuf;
+		pI2Cx_h->TxLen  = Len;
+
+		//Update peripheral state
+		pI2Cx_h->I2Cx_state = I2C_BUSY_IN_RX;
+
+		//Enable Interrupt generation
+		pI2Cx_h->pI2Cx->CR1 |= ((1 << I2C_CR1_ADDRIE) |
+								(1 << I2C_CR1_STOPIE));
+	}
 }
 
 static void __I2C_handleTXIS_IT(I2C_handle *pI2Cx_h)
 {
-
+	if(pI2Cx_h->TxLen > 0)
+	{
+		//Fill TXDR with new byte
+		*((uint8_t *)&pI2Cx_h->pI2Cx->TXDR) = *((uint8_t *)pI2Cx_h->pTxBuf);
+		pI2Cx_h->pTxBuf++;
+		pI2Cx_h->TxLen--;
+	}
 }
 
 static void __I2C_handleRXNE_IT(I2C_handle *pI2Cx_h)
 {
-
+	if(pI2Cx_h->RxLen > 0)
+	{
+		//Read new byte from RXDR
+		*((uint8_t *)pI2Cx_h->pRxBuf) = *((uint8_t *)&pI2Cx_h->pI2Cx->RXDR);
+		pI2Cx_h->pRxBuf++;
+		pI2Cx_h->RxLen--;
+	}
 }
 
 static void __I2C_handleADDR_IT(I2C_handle *pI2Cx_h)
 {
+	if(pI2Cx_h->I2Cx_state == I2C_BUSY_IN_TX)
+	{
+		//Flush TXDR
+		pI2Cx_h->pI2Cx->ISR |= ( 1 << 0 );
 
+		//Enable TXIS Interrupt generation
+		pI2Cx_h->pI2Cx->CR1 |= (1 << I2C_CR1_TXIE);
+	}
+	else if(pI2Cx_h->I2Cx_state == I2C_BUSY_IN_RX)
+	{
+		//Enable RXNE Interrupt generation
+		pI2Cx_h->pI2Cx->CR1 |= (1 << I2C_CR1_RXIE);
+	}
+
+	//Clear ADDR Flag
+	pI2Cx_h->pI2Cx->ICR |= (1 << 3);
+	pI2Cx_h->pI2Cx->ICR &= ~(1 << 3);
 }
 
 static void __I2C_handleTC_IT(I2C_handle *pI2Cx_h)
 {
+	//Disable Interrupt generation
+	if(pI2Cx_h->I2Cx_state == I2C_BUSY_IN_TX)
+	{
+		//Clear TXIS interrupt enable
+		pI2Cx_h->pI2Cx->CR1 &= ~(1 << I2C_CR1_TXIE);
+	}
+	else if(pI2Cx_h->I2Cx_state == I2C_BUSY_IN_RX)
+	{
+		//read last byte if present
+		__I2C_handleRXNE_IT(pI2Cx_h);
+		//Clear RXNE interrupt enable
+		pI2Cx_h->pI2Cx->CR1 &= ~(1 << I2C_CR1_RXIE);
+	}
+
+	//Clear TC interrupt enable
+	pI2Cx_h->pI2Cx->CR1 &= ~(1 << I2C_CR1_TCIE);
+
+	//Send stop request if Start Repeat is disabled
+	if(pI2Cx_h->StartRpt == I2C_DISABLE_SR)
+		pI2Cx_h->pI2Cx->CR2 |= (1 << I2C_CR2_STOP);
+
+	//Free the I2Cx state
+	pI2Cx_h->I2Cx_state = I2C_FREE;
+
+	//Inform Application Transaction is completed
+	__I2C_AppEventCallback(pI2Cx_h, I2C_EVENT_TC);
+}
+
+static void __I2C_handleTCR_IT(I2C_handle *pI2Cx_h)
+{
+	if(pI2Cx_h->I2Cx_state == I2C_BUSY_IN_TX)
+	{
+		//Send with RELOAD mode
+		if(pI2Cx_h->TxLen > 255)
+		{
+			//Set 255 as Number of Bytes to be transferred
+			pI2Cx_h->pI2Cx->CR2 |= (0xFF << 16);
+
+			//Clear TCR bit
+			pI2Cx_h->pI2Cx->ISR &= ~(1 << 7);
+
+			//Set RELOAD bit
+			pI2Cx_h->pI2Cx->CR2 |= (1 << 24);
+		}
+		//Send without RELOAD mode
+		else
+		{
+			//Clear RELOAD bit
+			pI2Cx_h->pI2Cx->CR2 &= ~(1 << 24);
+
+			//Set Number of Bytes to be transferred
+			pI2Cx_h->pI2Cx->CR2 &= ~(0xFF << 16); //clear NBYTES
+			pI2Cx_h->pI2Cx->CR2 |= ((uint8_t)(pI2Cx_h->TxLen & 0xFF) << 16);
+		}
+	}
+	else if(pI2Cx_h->I2Cx_state == I2C_BUSY_IN_RX)
+	{
+		//Receive with RELOAD mode
+		if(pI2Cx_h->RxLen > 255)
+		{
+			//Set 255 as Number of Bytes to be transferred
+			pI2Cx_h->pI2Cx->CR2 |= (0xFF << 16);
+
+			//Clear TCR bit
+			pI2Cx_h->pI2Cx->ISR &= ~(1 << 7);
+
+			//Set RELOAD bit
+			pI2Cx_h->pI2Cx->CR2 |= (1 << 24);
+
+		}
+		//Receive without RELOAD mode
+		else
+		{
+			//Clear RELOAD bit
+			pI2Cx_h->pI2Cx->CR2 &= ~(1 << 24);
+
+			//Set Number of Bytes to be received
+			pI2Cx_h->pI2Cx->CR2 &= ~(0xFF << 16); //clear NBYTES
+			pI2Cx_h->pI2Cx->CR2 |= ((uint8_t)(pI2Cx_h->RxLen & 0xFF) << 16);
+		}
+	}
+
+	//Restart communication
+	pI2Cx_h->pI2Cx->CR2 |= (1 << 13);
 
 }
 
+static void __I2C_handleSTOPF_IT(I2C_handle *pI2Cx_h)
+{
+	//Clear STOPF
+	pI2Cx_h->pI2Cx->ICR |= (1 << I2C_ICR_STOPCF);
+	pI2Cx_h->pI2Cx->ICR &= ~(1 << I2C_ICR_STOPCF);
+
+	//Disable Interrupt generation
+	pI2Cx_h->pI2Cx->CR1 &= ~((1 << I2C_CR1_TXIE) |
+							 (1 << I2C_CR1_RXIE) |
+							 (1 << I2C_CR1_TCIE) |
+							(1 << I2C_CR1_NACKIE)|
+							(1 << I2C_CR1_STOPIE));
+
+	//Free the I2Cx state
+	pI2Cx_h->I2Cx_state = I2C_FREE;
+
+	//Inform Application transaction is closed
+	__I2C_AppEventCallback(pI2Cx_h, I2C_EVENT_STOPF);
+}
+
+static void __I2C_handleNACKF_IT(I2C_handle *pI2Cx_h)
+{
+	//Clear NACKF
+	pI2Cx_h->pI2Cx->ICR |= (1 << I2C_ICR_NACKCF);
+	pI2Cx_h->pI2Cx->ICR &= ~(1 << I2C_ICR_NACKCF);
+
+	//Inform Application NACK is received
+	__I2C_AppEventCallback(pI2Cx_h, I2C_EVENT_NACKF);
+}
 
 
 void __I2C_IRQconfig(I2C_handle *pI2Cx_h, uint8_t EnOrDis, uint8_t Priority)
@@ -469,7 +711,7 @@ void __I2C_IRQconfig(I2C_handle *pI2Cx_h, uint8_t EnOrDis, uint8_t Priority)
 	*(NVIC_IPR + iprx) |= (Priority << shift_amount);
 }
 
-void __I2C_IRQhandle(I2C_handle *pI2Cx_h)
+void __I2C_EV_IRQhandle(I2C_handle *pI2Cx_h)
 {
 	uint8_t temp1;
 	uint8_t temp2;
@@ -504,10 +746,43 @@ void __I2C_IRQhandle(I2C_handle *pI2Cx_h)
 	temp1 = __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_TC);
 	temp2 = __I2C_get_CR1flag(pI2Cx_h, I2C_CR1_TCIE);
 
-	//Handle ADDR interrupt
+	//Handle TC interrupt
 	if(temp1 && temp2)
 	{
 		__I2C_handleTC_IT(pI2Cx_h);
 	}
 
+	temp1 = __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_TCR);
+	temp2 = __I2C_get_CR1flag(pI2Cx_h, I2C_CR1_TCIE);
+
+	//Handle TCR interrupt
+	if(temp1 && temp2)
+	{
+		__I2C_handleTCR_IT(pI2Cx_h);
+	}
+
+	temp1 = __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_STOPF);
+	temp2 = __I2C_get_CR1flag(pI2Cx_h, I2C_CR1_STOPIE);
+
+	//Handle STOPF interrupt
+	if(temp1 && temp2)
+	{
+		__I2C_handleSTOPF_IT(pI2Cx_h);
+	}
+
+	temp1 = __I2C_get_ISRflag(pI2Cx_h, I2C_ISR_NACKF);
+	temp2 = __I2C_get_CR1flag(pI2Cx_h, I2C_CR1_NACKIE);
+
+	//Handle NACKF interrupt
+	if(temp1 && temp2)
+	{
+		__I2C_handleNACKF_IT(pI2Cx_h);
+	}
+
+}
+
+
+__weak void __I2C_AppEventCallback(I2C_handle *pI2Cx_h, uint8_t AppEv)
+{
+	//define in Application code
 }
