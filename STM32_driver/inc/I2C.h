@@ -14,78 +14,79 @@
  *  							I2C Registers Bit
  ****************************************************************************/
 //Control Register 1
-#define I2C_CR1_TXIE		1
-#define I2C_CR1_RXIE		2
-#define I2C_CR1_ADDRIE		3
-#define I2C_CR1_NACKIE		4
-#define I2C_CR1_STOPIE		5
-#define I2C_CR1_TCIE		6
+#define I2C_CR1_TXIE		1		/*TX interrupt enable					*/
+#define I2C_CR1_RXIE		2       /*RX interrupt enable					*/
+#define I2C_CR1_ADDRIE		3       /*Address match interrupt enable		*/
+#define I2C_CR1_NACKIE		4       /*Not ACK received interrupt enable		*/
+#define I2C_CR1_STOPIE		5       /*STOP detection interrupt enable		*/
+#define I2C_CR1_TCIE		6       /*Transfer Complete interrupt enable	*/
 //Control Register 2
-#define I2C_CR2_RD_WRN		10
-#define I2C_CR2_ADD10		11
-#define I2C_CR2_START		13
-#define I2C_CR2_STOP		14
-#define I2C_CR2_NACK		15
-#define I2C_CR2_NBYTES		16
-#define I2C_CR2_RELOAD		24
-#define I2C_CR2_AUTOEND		25
+#define I2C_CR2_RD_WRN		10      /*Transfer direction (Master Mode)		*/
+#define I2C_CR2_ADD10		11      /*10-bit Addressing mode (Master Mode)	*/
+#define I2C_CR2_START		13      /*START generation						*/
+#define I2C_CR2_STOP		14      /*STOP generation (Master Mode)			*/
+#define I2C_CR2_NACK		15      /*NACK generation (Slave Mode)			*/
+#define I2C_CR2_NBYTES		16      /*Number of bytes (Master Mode)			*/
+#define I2C_CR2_RELOAD		24      /*NBYTES Reload mode					*/
+#define I2C_CR2_AUTOEND		25      /*Automatic End mode (Master Mode)		*/
 //Own Address Register 1
-#define I2C_OAR1_OA1_0		0
-#define I2C_OAR1_OA1_7_1	1
-#define I2C_OAR1_OA1_9_8	8
-#define I2C_OAR1_OA1MODE	10
-#define I2C_OAR1_OA1EN		15
-//Interrupt and Statur Register
-#define I2C_ISR_TXE			0
-#define I2C_ISR_TXIS		1
-#define I2C_ISR_RXNE		2
-#define I2C_ISR_ADDR		3
-#define I2C_ISR_NACKF		4
-#define I2C_ISR_STOPF		5
-#define I2C_ISR_TC			6
-#define I2C_ISR_TCR			7
-#define I2C_ISR_BUSY		15
-#define I2C_ISR_DIR			16
+#define I2C_OAR1_OA1_0		0       /*Own Address 1 bit 0					*/
+#define I2C_OAR1_OA1_7_1	1       /*Own Address 1 bit 7 to 1				*/
+#define I2C_OAR1_OA1_9_8	8       /*Own Address 1 bit 9 to 8				*/
+#define I2C_OAR1_OA1MODE	10      /*Own Address 1 10-bit mode				*/
+#define I2C_OAR1_OA1EN		15      /*Own Address 1 enable					*/
+//Interrupt and Status Register
+#define I2C_ISR_TXE			0       /*Transmit data register empty			*/
+#define I2C_ISR_TXIS		1       /*Transmit interrupt status				*/
+#define I2C_ISR_RXNE		2       /*Receive data register not empty		*/
+#define I2C_ISR_ADDR		3       /*Address matched (Slave mode)			*/
+#define I2C_ISR_NACKF		4       /*Not ACK received flag					*/
+#define I2C_ISR_STOPF		5       /*STOP detection flag					*/
+#define I2C_ISR_TC			6       /*Transfer complete flag (Master Mode)	*/
+#define I2C_ISR_TCR			7       /*Transfer complete reload				*/
+#define I2C_ISR_BUSY		15      /*Bus is busy							*/
+#define I2C_ISR_DIR			16      /*Transfer direction (Slave Mode)		*/
 //Interrupt Clear Register
-#define I2C_ICR_ADDRCF		3
-#define I2C_ICR_NACKCF		4
-#define I2C_ICR_STOPCF		5
-
-
+#define I2C_ICR_ADDRCF		3       /*Address matched flag clear			*/
+#define I2C_ICR_NACKCF		4       /*Not ACK flag clear					*/
+#define I2C_ICR_STOPCF		5       /*STOP detection flag clear				*/
 /****************************************************************************
  * 				I2Cx State\Callback\Configuration defines
  ****************************************************************************/
-//I2Cx state for Interrupt-based transaction
-#define I2C_FREE			0
-#define I2C_BUSY_IN_TX		1
-#define I2C_BUSY_IN_RX		2
-//Start Repeat disable\enable
-#define I2C_DISABLE_SR		0
-#define I2C_ENABLE_SR		1
-//Application Callback Event
-#define I2C_EVENT_NACKF		0
-#define I2C_EVENT_STOPF		1
-#define I2C_EVENT_TC		2
-
-#define I2C_PC_SEND			0
-#define I2C_PC_RECEIVE		1
+//I2Cx state for Interrupt-based operation (@I2CxState)
+#define I2C_FREE			0	/*Peripheral is free						*/
+#define I2C_BUSY_IN_TX		1	/*Peripheral is busy in Master transmission	*/
+#define I2C_BUSY_IN_RX		2	/*Peripheral is busy in Master reception	*/
+#define I2C_SLAVE_MODE		3	/*Peripheral is working in Slave mode		*/
+//Start Repeat disable\enable	(@StartRepeat)
+#define I2C_DISABLE_SR		0	/*STOP after Master transfer				*/
+#define I2C_ENABLE_SR		1	/*Repeat START after Master transfer		*/
+//Application Callback Event	(@AppEvent)
+#define I2C_EVENT_NACKF		0	/*NACK received in byte transmission		*/
+#define I2C_EVENT_STOPF		1	/*STOP condition is detected				*/
+#define I2C_EVENT_TC		2	/*Transfer Complete (Master Mode)			*/
+#define I2C_EVENT_DATA_REQ	3	/*Slave is requested to send byte			*/
+#define I2C_EVENT_DATA_RCV	4	/*Slave has received a new byte				*/
+//Slave Transfer direction
+#define I2C_SLAVE_RECEIVE	0	/*Slave Receiver mode						*/
+#define I2C_SLAVE_TRANSMIT	1	/*Slave Transmitter mode					*/
 /****************************************************************************
  *  	 			I2Cx Configuration and Handle structure
  ****************************************************************************/
 typedef struct{
-	uint32_t Speed;	//SCLK freq in Hz (max 100kHz)
-	uint8_t Addr;	//Own address when Slave
+	uint32_t Speed;			/*SCLK frequency in Hz, up to 400kHz			*/
+	uint8_t Addr;			/*Own address when Slave, 7 bit only (0-127)	*/
 }I2C_Config;
 
 typedef struct{
-	I2C_t *pI2Cx;
-	I2C_Config pI2Cx_conf;
-	uint8_t *pTxBuf;
-	uint8_t *pRxBuf;
-	uint16_t TxLen;
-	uint16_t RxLen;
-	uint8_t  I2Cx_state;
-	uint8_t  StartRpt;
+	I2C_t *pI2Cx;			/*Base address of I2Cx peripheral 				*/
+	I2C_Config pI2Cx_conf;	/*I2Cx configuration 							*/
+	uint8_t *pTxBuf;		/*Pointer to TX buffer							*/
+	uint8_t *pRxBuf;		/*Pointer to RX buffer							*/
+	uint16_t TxLen;			/*Number of byte to be received in Master TX	*/
+	uint16_t RxLen;			/*Number of byte to be received in Master RX	*/
+	uint8_t  I2Cx_state;	/*@I2CxState									*/
+	uint8_t  StartRpt;		/*@StartRepeat									*/
 }I2C_handle;
 
 /****************************************************************************
@@ -239,9 +240,31 @@ void __I2C_MasterReceive_IT(I2C_handle *pI2Cx_h,
  *
  * @note		-
  ****************************************************************************/
+void __I2C_enableSlaveOp(I2C_handle *pI2Cx_h);
+
+
+/****************************************************************************
+ * @fn			-
+ *
+ * @brief 		-
+ * @param[ ] 	-
+ *
+ * @note		-
+ ****************************************************************************/
+void __I2C_disableSlaveOp(I2C_handle *pI2Cx_h);
+
+
+/****************************************************************************
+ * @fn			-
+ *
+ * @brief 		-
+ * @param[ ] 	-
+ *
+ * @note		-
+ ****************************************************************************/
 void __I2C_SlaveSend(I2C_handle *pI2Cx_h,
-					 uint8_t 	*pTxBuf,
-					 uint32_t 	 Len);
+					 uint8_t 	 data);
+
 
 /****************************************************************************
  * @fn			-
@@ -252,36 +275,7 @@ void __I2C_SlaveSend(I2C_handle *pI2Cx_h,
  * @note		-
  ****************************************************************************/
 void __I2C_SlaveReceive(I2C_handle *pI2Cx_h,
-						uint8_t    *pRxBuf,
-						uint32_t 	Len);
-
-
-/****************************************************************************
- * @fn			-
- *
- * @brief 		-
- * @param[ ] 	-
- *
- * @note		-
- ****************************************************************************/
-void __I2C_SlaveSend_IT(I2C_handle *pI2Cx_h,
-					 	uint8_t    *pTxBuf,
-						uint32_t 	Len);
-
-
-/****************************************************************************
- * @fn			-
- *
- * @brief 		-
- * @param[ ] 	-
- *
- * @note		-
- ****************************************************************************/
-void __I2C_SlaveReceive_IT(I2C_handle *pI2Cx_h,
-						   uint8_t    *pRxBuf,
-						   uint32_t    Len);
-
-
+						uint8_t    *data);
 
 /****************************************************************************
  * @fn			-
@@ -316,6 +310,6 @@ void __I2C_EV_IRQhandle(I2C_handle *pI2Cx_h);
  * @note		-
  ****************************************************************************/
 void __I2C_AppEventCallback(I2C_handle *pI2Cx_h,
-							uint8_t     AppEv);
+							uint8_t     AppEv);		/*@AppEvent				*/
 
 #endif /* INC_I2C_H_ */
