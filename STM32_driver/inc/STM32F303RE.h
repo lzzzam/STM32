@@ -475,4 +475,13 @@ typedef struct{
 	__IO uint32_t	CDR;
 }ADC_common_t;
 
+/********************************************************************************/
+/*								include driver headers							*/
+/********************************************************************************/
+#include <RCC.h>
+#include <GPIO.h>
+#include <SPI.h>
+#include <I2S.h>
+#include <I2C.h>
+
 #endif

@@ -53,6 +53,9 @@ typedef SPI_t 	I2S_t;
 //@ChLen
 #define I2S_CHLEN_16BIT		0
 #define I2S_CHLEN_32BIT		1
+//@Odd
+#define I2S_ODD_LOW			0
+#define I2S_ODD_HIGH		1
 //@Cpol
 #define I2S_CPOL_LOW		0
 #define I2S_CPOL_HIGH		1
@@ -66,6 +69,20 @@ typedef SPI_t 	I2S_t;
 #define I2S_MCLK_EN			1
 
 /****************************************************************************
+ * 			I2Sx Tx and Rx State for Interrupt based communication
+ ****************************************************************************/
+//@TX_State
+#define I2S_TX_FREE		0		/*I2S is not transmitting data				*/
+#define I2S_TX_BUSY		1		/*I2S is busy in transmitting  data			*/
+//@RX_State
+#define I2S_RX_FREE		0		/*I2S is not receiving data					*/
+#define I2S_RX_BUSY		1		/*I2S is busy in receiving data				*/
+
+//SPIx TX and RX complete event (@I2S_EVENT)
+#define I2S_EVENT_TX_COMPLETE	0 /*Interrupt-based TX operation is complete*/
+#define I2S_EVENT_RX_COMPLETE	1 /*Interrupt-based RX operation is complete*/
+
+/****************************************************************************
  *  	 			I2Sx Configuration and Handle structure
  ****************************************************************************/
 typedef struct{
@@ -73,6 +90,7 @@ typedef struct{
 	uint32_t Fs;		//@SampFreq
 	uint8_t DataSize;	//@DataSize
 	uint8_t ChLen;		//@ChLen
+	uint8_t Odd;		//@Odd
 	uint8_t Cpol;		//@Cpol
 	uint8_t Std;		//@Std
 	uint8_t MCLK;		//@Mclk
@@ -81,6 +99,14 @@ typedef struct{
 typedef struct{
 	I2S_t *pI2Sx;
 	I2S_Config pI2Sx_conf;
+	uint16_t *pTxBuf_L;
+	uint16_t *pTxBuf_R;
+	uint16_t *pRxBuf_L;
+	uint16_t *pRxBuf_R;
+	uint32_t TxLen;
+	uint32_t RxLen;
+	uint8_t TxState;	//@TX_State
+	uint8_t RxState;	//@RX_State
 }I2S_Handle;
 
 /****************************************************************************
@@ -144,8 +170,7 @@ void __I2S_disable(I2S_Handle *pI2Sx_h);/*I2Sx handle address				*/
  *
  * @note					-
  ****************************************************************************/
-void __I2S_sendData(I2S_Handle *pI2Sx_h,	/*I2Sx handle address			*/
-					int16_t     data);		/*								*/
+void __I2S_sendData(I2S_Handle *pI2Sx_h, uint16_t *pTxBuf_L, uint16_t *pTxBuf_R, uint32_t Len);
 
 
 /****************************************************************************
@@ -156,8 +181,7 @@ void __I2S_sendData(I2S_Handle *pI2Sx_h,	/*I2Sx handle address			*/
  *
  * @note					-
  ****************************************************************************/
-void __I2S_receiveData(I2S_Handle *pI2Sx_h,	/*I2Sx handle address			*/
-					   int16_t    *data);	/*								*/
+void __I2S_receiveData(I2S_Handle *pI2Sx_h, uint16_t *pRxBuf_L, uint16_t *pRxBuf_R, uint32_t Len);
 
 /****************************************************************************
  * @fn						- __I2S_IRQconfig

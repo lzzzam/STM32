@@ -103,3 +103,56 @@ void __RCC_Enable_ADC12(){
 	RCC->AHBENR	|= RCC_AHBENR_ADC12EN;
 
 }
+
+uint32_t __RCC_getSYSCLK()
+{
+	uint32_t hsi = 8000000;
+	uint32_t hse = 0;
+	uint32_t sysclk;
+
+	//Read Switch Status
+	uint8_t sws = ((RCC->CFGR >> 2) & 0x2);
+
+	if(sws == 0)//HSI
+	{
+		//SYSCLK equal to High Speed Internal oscillator
+		sysclk = hsi;
+	}
+	else if(sws == 1)//HSE
+	{
+		//SYSCLK equal to High Speed External oscillator
+		sysclk = hse;
+	}
+	else if(sws == 2)//PLL
+	{
+		uint8_t pllsrc = ((RCC->CFGR >> 15) & 0x2);	//read register flags
+		uint8_t prediv = (RCC->CFGR2 & 0xF) + 1; 	//read register flags & compute PREDIV factor
+		uint8_t pllmul = ((RCC->CFGR >> 18) & 0xF); //read register
+		uint32_t pllclk;
+
+		//compute PLL multiplication factor
+		//from register configuration
+		if(pllmul < 0xF)
+			pllmul += 2;
+		else if(pllmul == 0xF)
+			pllmul += 1;
+
+		if(pllsrc == 0)//HSI/2 and PREDIV = 2
+		{
+			pllclk = ((hsi/2)/2)*pllmul;
+		}
+		else if(pllsrc == 1)//HSI/2
+		{
+			pllclk = ((hsi/2)/prediv)*pllmul;
+		}
+		else if(pllsrc == 2)//HSE
+		{
+			pllclk = ((hse/2)/prediv)*pllmul;
+		}
+
+		//SYSCLK equal to PLL
+		sysclk = pllclk;
+	}
+
+	return sysclk;
+}

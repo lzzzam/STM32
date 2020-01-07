@@ -34,4 +34,6 @@ void __RCC_PLL_Is_Ready();
 
 void __RCC_Enable_ADC12();
 
+uint32_t __RCC_getSYSCLK();
+
 #endif /* RCC_H_ */
