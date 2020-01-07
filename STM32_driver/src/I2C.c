@@ -508,7 +508,8 @@ static void __I2C_handleADDR_IT(I2C_handle *pI2Cx_h)
 
 	//Clear ADDR Flag (send Address ACK to Master)
 	pI2Cx_h->pI2Cx->ICR |= (1 << I2C_ICR_ADDRCF);
-	pI2Cx_h->pI2Cx->ICR &= ~(1 << I2C_ICR_ADDRCF);
+	//pI2Cx_h->pI2Cx->ICR &= ~(1 << I2C_ICR_ADDRCF);
+
 }
 
 static void __I2C_handleTC_IT(I2C_handle *pI2Cx_h)
