@@ -170,7 +170,7 @@ void __I2S_disable(I2S_Handle *pI2Sx_h);/*I2Sx handle address				*/
  *
  * @note					-
  ****************************************************************************/
-void __I2S_sendData(I2S_Handle *pI2Sx_h, uint16_t *pTxBuf_L, uint16_t *pTxBuf_R, uint32_t Len);
+void __I2S_sendData(I2S_Handle *pI2Sx_h, uint16_t Left, uint16_t Right);
 
 
 /****************************************************************************

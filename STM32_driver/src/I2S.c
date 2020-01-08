@@ -56,23 +56,23 @@ void __I2S_init(I2S_Handle *pI2Sx_h)
 	//Compute prescaler
 	if(pI2Sx_h->pI2Sx_conf.MCLK == I2S_MCLK_EN)//MCKOE is set
 	{
-		i2sdiv = (uint8_t)((sysclk/(256*pI2Sx_h->pI2Sx_conf.Fs)) - pI2Sx_h->pI2Sx_conf.Odd);
+		i2sdiv = (uint8_t)(((sysclk/(256*pI2Sx_h->pI2Sx_conf.Fs)) - pI2Sx_h->pI2Sx_conf.Odd)/2);
 	}
 	else//MCKOE is cleared
 	{
 		if(pI2Sx_h->pI2Sx_conf.DataSize > I2S_DS_16BIT)//channel frame is 32-bit
 		{
-			i2sdiv = (uint8_t)((sysclk/(64*pI2Sx_h->pI2Sx_conf.Fs)) - pI2Sx_h->pI2Sx_conf.Odd);
+			i2sdiv = (uint8_t)(((sysclk/(64*pI2Sx_h->pI2Sx_conf.Fs)) - pI2Sx_h->pI2Sx_conf.Odd)/2);
 		}
 		else
 		{
 			if(pI2Sx_h->pI2Sx_conf.ChLen == I2S_CHLEN_16BIT)//channel frame is 16-bit
 			{
-				i2sdiv = (uint8_t)((sysclk/(32*pI2Sx_h->pI2Sx_conf.Fs)) - pI2Sx_h->pI2Sx_conf.Odd);
+				i2sdiv = (uint8_t)(((sysclk/(32*pI2Sx_h->pI2Sx_conf.Fs)) - pI2Sx_h->pI2Sx_conf.Odd)/2);
 			}
 			else//channel frame is 32-bit
 			{
-				i2sdiv = (uint8_t)((sysclk/(64*pI2Sx_h->pI2Sx_conf.Fs)) - pI2Sx_h->pI2Sx_conf.Odd);
+				i2sdiv = (uint8_t)(((sysclk/(64*pI2Sx_h->pI2Sx_conf.Fs)) - pI2Sx_h->pI2Sx_conf.Odd)/2);
 			}
 		}
 	}
@@ -109,36 +109,19 @@ void __I2S_disable(I2S_Handle *pI2Sx_h)
 	pI2Sx_h->pI2Sx->CR1 &= ~(1 << SPI_I2SCFGR_I2SE);
 }
 
-void __I2S_sendData(I2S_Handle *pI2Sx_h, uint16_t *pTxBuf_L, uint16_t *pTxBuf_R, uint32_t Len)
+void __I2S_sendData(I2S_Handle *pI2Sx_h, uint16_t Left, uint16_t Right)
 {
-	//while(Len > 0){
+	//wait until TX buffer is empty
+	while(!__SPI_get_SRflag((SPI_Handle *) pI2Sx_h, SPI_SR_TXE));
 
-		//wait until TX buffer is empty
-		while(!__SPI_get_SRflag((SPI_Handle *) pI2Sx_h, SPI_SR_TXE));
+	//Write into TXFIFO buffer
+	*((uint16_t *)&pI2Sx_h->pI2Sx->DR) = Left;
 
-		//Write into TXFIFO buffer
-		*((uint16_t *)&pI2Sx_h->pI2Sx->DR) = *((uint16_t *)pTxBuf_L);
+	//wait until TX buffer is empty
+	while(!__SPI_get_SRflag((SPI_Handle *) pI2Sx_h, SPI_SR_TXE));
 
-		//wait until TX buffer is empty
-		while(!__SPI_get_SRflag((SPI_Handle *) pI2Sx_h, SPI_SR_TXE));
-
-		*((uint16_t *)&pI2Sx_h->pI2Sx->DR) = *((uint16_t *)pTxBuf_R);
-
-//		if(__SPI_get_SRflag((SPI_Handle *) pI2Sx_h, SPI_SR_CHSIDE) == FALSE)//transmit Left Channel
-//		{
-//			//Write into TXFIFO buffer
-//			*((uint16_t *)&pI2Sx_h->pI2Sx->DR) = *((uint16_t *)pTxBuf_L);
-//			(uint16_t *)pTxBuf_L++;
-//			Len--;
-//		}
-//		else//transmit Right Channel
-//		{
-//			//Write into TXFIFO buffer
-//			*((uint16_t *)&pI2Sx_h->pI2Sx->DR) = *((uint16_t *)pTxBuf_R);
-//			(uint16_t *)pTxBuf_R++;
-//			Len--;
-//		}
-//	}
+	//Write into TXFIFO buffer
+	*((uint16_t *)&pI2Sx_h->pI2Sx->DR) = Right;
 }
 
 void __I2S_receiveData(I2S_Handle *pI2Sx_h, uint16_t *pRxBuf_L, uint16_t *pRxBuf_R, uint32_t Len)

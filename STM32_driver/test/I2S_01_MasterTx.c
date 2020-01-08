@@ -11,16 +11,10 @@
 
 int main(void)
 {
-	//Set PLL as SYSCLK source
-	RCC->CFGR |= (0x2 << 0);
+	//Set SYSCLK to 72MHz
+	__RCC_setSYSCLK(SYSCLK_72MHZ);
 
-	//Set PLLMUL to 16
-	RCC->CFGR |= (0xE << 18);
-
-	//Turn on PLL
-	RCC->CR |= (1 << 24);
-
-
+	//Enable GPIO peripheral clock
 	__GPIO_EnPCLK(GPIOA);
 	__GPIO_EnPCLK(GPIOB);
 
@@ -40,9 +34,9 @@ int main(void)
 
 	I2S_handle.pI2Sx = I2S3;
 	I2S_handle.pI2Sx_conf.Mode = I2S_MODE_MASTER_TX;
-	I2S_handle.pI2Sx_conf.Fs   = I2S_FS_96KHZ;
+	I2S_handle.pI2Sx_conf.Fs   = I2S_FS_44KHZ;
 	I2S_handle.pI2Sx_conf.Std  = I2S_STD_PHILIP;
-	I2S_handle.pI2Sx_conf.DataSize = I2S_DS_32BIT;
+	I2S_handle.pI2Sx_conf.DataSize = I2S_DS_16BIT;
 	I2S_handle.pI2Sx_conf.ChLen = I2S_CHLEN_16BIT;
 	I2S_handle.pI2Sx_conf.Cpol = I2S_CPOL_LOW;
 	I2S_handle.pI2Sx_conf.MCLK = I2S_MCLK_DIS;
@@ -54,12 +48,13 @@ int main(void)
 	//enable I2S2 peripheral
 	__I2S_enable(&I2S_handle);
 
-	int16_t val = 0;
+	uint32_t sc = __RCC_getSYSCLK();
+
+	uint16_t val = 0;
 
 	while(1)
 	{
-		//(int16_t)(65535*sin(tmp));
-		__I2S_sendData(&I2S_handle, (uint16_t *)&val, (uint16_t *)&val, 2);
+		__I2S_sendData(&I2S_handle, val, val);
 		val++;
 	}
 }

@@ -8,6 +8,16 @@
 #ifndef RCC_H_
 #define RCC_H_
 
+//@SYSCLK_FREQ
+#define SYSCLK_16MHZ	0
+#define SYSCLK_24MHZ	1
+#define SYSCLK_32MHZ	2
+#define SYSCLK_40MHZ	3
+#define SYSCLK_48MHZ	4
+#define SYSCLK_56MHZ	5
+#define SYSCLK_64MHZ	6
+#define SYSCLK_72MHZ	7
+
 typedef enum{
 	ADC12_CLK_DIS,
 	ADC12_PRESCALER_1,
@@ -35,5 +45,7 @@ void __RCC_PLL_Is_Ready();
 void __RCC_Enable_ADC12();
 
 uint32_t __RCC_getSYSCLK();
+
+void __RCC_setSYSCLK(uint8_t sysclk);	//@SYSCLK_FREQ
 
 #endif /* RCC_H_ */

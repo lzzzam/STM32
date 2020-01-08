@@ -111,7 +111,7 @@ uint32_t __RCC_getSYSCLK()
 	uint32_t sysclk;
 
 	//Read Switch Status
-	uint8_t sws = ((RCC->CFGR >> 2) & 0x2);
+	uint8_t sws = ((RCC->CFGR >> 2) & 0x3);
 
 	if(sws == 0)//HSI
 	{
@@ -125,7 +125,7 @@ uint32_t __RCC_getSYSCLK()
 	}
 	else if(sws == 2)//PLL
 	{
-		uint8_t pllsrc = ((RCC->CFGR >> 15) & 0x2);	//read register flags
+		uint8_t pllsrc = ((RCC->CFGR >> 15) & 0x3);	//read register flags
 		uint8_t prediv = (RCC->CFGR2 & 0xF) + 1; 	//read register flags & compute PREDIV factor
 		uint8_t pllmul = ((RCC->CFGR >> 18) & 0xF); //read register
 		uint32_t pllclk;
@@ -143,7 +143,7 @@ uint32_t __RCC_getSYSCLK()
 		}
 		else if(pllsrc == 1)//HSI/2
 		{
-			pllclk = ((hsi/2)/prediv)*pllmul;
+			pllclk = (hsi/prediv)*pllmul;
 		}
 		else if(pllsrc == 2)//HSE
 		{
@@ -155,4 +155,43 @@ uint32_t __RCC_getSYSCLK()
 	}
 
 	return sysclk;
+}
+
+void __RCC_setSYSCLK(uint8_t sysclk)
+{
+	//Configure FLASH prefetch buffer latency in FLASH Interface
+	if(sysclk <= SYSCLK_24MHZ)
+	{
+		//Zero Wait state
+		FLITF->ACR &= ~(0xF << 0);
+	}
+	else if(sysclk <= SYSCLK_48MHZ)
+	{
+		//One Wait state
+		FLITF->ACR |= (1 << 0);
+	}
+	else if(sysclk <= SYSCLK_72MHZ)
+	{
+		//Two Wait state
+		FLITF->ACR |= (2 << 0);
+	}
+
+
+	//Set PLL source as HSI
+	RCC->CFGR |= (1 << 15);
+
+	//Set PLL PREDIV to 0
+	RCC->CFGR2 &= ~(0xF << 0);
+
+	//Set PLLMUL
+	RCC->CFGR |= (sysclk << 18);
+
+	//Turn on PLL
+	RCC->CR |= (1 << 24);
+
+	//wait until PLL is steady
+	while(!((RCC->CR >> 25) & 0x1));
+
+	//Set PLL as SYSCLK source
+	RCC->CFGR |= (0x2 << 0);
 }
