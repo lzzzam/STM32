@@ -109,44 +109,64 @@ void __I2S_disable(I2S_Handle *pI2Sx_h)
 	pI2Sx_h->pI2Sx->CR1 &= ~(1 << SPI_I2SCFGR_I2SE);
 }
 
-void __I2S_sendData(I2S_Handle *pI2Sx_h, uint16_t Left, uint16_t Right)
+void __I2S_sendData(I2S_Handle *pI2Sx_h, uint16_t *pTxBuf, uint16_t Len)
 {
-	//wait until TX buffer is empty
-	while(!__SPI_get_SRflag((SPI_Handle *) pI2Sx_h, SPI_SR_TXE));
+	while(Len > 0)
+	{
+		//wait until TX buffer is empty
+		while(!__SPI_get_SRflag((SPI_Handle *) pI2Sx_h, SPI_SR_TXE));
 
-	//Write into TXFIFO buffer
-	*((uint16_t *)&pI2Sx_h->pI2Sx->DR) = Left;
+		//Write into TXFIFO buffer
+		*((uint16_t *)&pI2Sx_h->pI2Sx->DR) = *pTxBuf;
 
-	//wait until TX buffer is empty
-	while(!__SPI_get_SRflag((SPI_Handle *) pI2Sx_h, SPI_SR_TXE));
-
-	//Write into TXFIFO buffer
-	*((uint16_t *)&pI2Sx_h->pI2Sx->DR) = Right;
-}
-
-void __I2S_receiveData(I2S_Handle *pI2Sx_h, uint16_t *pRxBuf_L, uint16_t *pRxBuf_R, uint32_t Len)
-{
-	while(Len > 0){
-
-		//wait until RX buffer is NOT empty
-		while(!__SPI_get_SRflag((SPI_Handle *) pI2Sx_h, SPI_SR_RXNE));
-
-		if(__SPI_get_SRflag((SPI_Handle *) pI2Sx_h, SPI_SR_CHSIDE) == FALSE)//receive Left Channel
-		{
-			//Read RXFIFO buffer
-			*((uint16_t *)pRxBuf_L) = *((uint16_t *)&pI2Sx_h->pI2Sx->DR);
-			(uint16_t *)pRxBuf_L++;
-			Len--;
-		}
-		else//receive Right Channel
-		{
-			//Read RXFIFO buffer
-			*((uint16_t *)pRxBuf_R) = *((uint16_t *)&pI2Sx_h->pI2Sx->DR);
-			(uint16_t *)pRxBuf_R++;
-			Len--;
-		}
+		pTxBuf++;
+		Len--;
 	}
 }
+
+void __I2S_sendData_IT(I2S_Handle *pI2Sx_h, uint16_t *pTxBuf, uint16_t Len)
+{
+	if(pI2Sx_h->TxState == I2S_TX_FREE)
+	{
+		//update I2Sx handle
+		pI2Sx_h->TxState = I2S_TX_BUSY;
+		pI2Sx_h->pTxBuf = pTxBuf;
+		pI2Sx_h->TxLen = Len;
+
+		//Enable  TXE Interrupt
+		pI2Sx_h->pI2Sx->CR2 |= (1 << SPI_CR2_TXEIE);
+	}
+}
+
+void __I2S_receiveData(I2S_Handle *pI2Sx_h, uint16_t *pRxBuf, uint16_t Len)
+{
+	while(Len > 0)
+	{
+		//wait until RX buffer is not empty
+		while(!__SPI_get_SRflag((SPI_Handle *) pI2Sx_h, SPI_SR_RXNE));
+
+		//Read from RXFIFO buffer
+		*pRxBuf = *((uint16_t *)&pI2Sx_h->pI2Sx->DR);
+
+		pRxBuf++;
+		Len--;
+	}
+}
+
+void __I2S_receiveData_IT(I2S_Handle *pI2Sx_h, uint16_t *pRxBuf, uint16_t Len)
+{
+	if(pI2Sx_h->RxState == I2S_TX_FREE)
+	{
+		//update I2Sx handle
+		pI2Sx_h->RxState = I2S_RX_BUSY;
+		pI2Sx_h->pRxBuf = pRxBuf;
+		pI2Sx_h->RxLen = Len;
+
+		//Enable  RXNE Interrupt
+		pI2Sx_h->pI2Sx->CR2 |= (1 << SPI_CR2_RXNEIE);
+	}
+}
+
 
 void __I2S_IRQconfig(I2S_Handle *pI2Sx_h, uint8_t EnOrDis, uint8_t Priority)
 {
@@ -195,9 +215,74 @@ void __I2S_IRQconfig(I2S_Handle *pI2Sx_h, uint8_t EnOrDis, uint8_t Priority)
 	*(NVIC_IPR + iprx) |= (Priority << shift_amount);
 }
 
+static void __I2S_handleTXE_IT(I2S_Handle *pI2Sx_h){
+
+	//Write into TXFIFO buffer
+	*((uint16_t *)&pI2Sx_h->pI2Sx->DR) = *((uint16_t *)pI2Sx_h->pTxBuf);
+	(uint16_t *)pI2Sx_h->pTxBuf++;
+	pI2Sx_h->TxLen--;
+
+	if(pI2Sx_h->TxLen == 0){
+
+		//Close Transmission
+		pI2Sx_h->pTxBuf = NULL;
+		pI2Sx_h->TxLen = 0;
+		pI2Sx_h->TxState = I2S_TX_FREE;
+
+		//Disable TXE Interrupt
+		pI2Sx_h->pI2Sx->CR2 &= ~(1 << SPI_CR2_TXEIE);
+
+		//Inform Application transmission is complete
+		__I2S_AppEventCallback(pI2Sx_h, I2S_EVENT_TX_COMPLETE);
+	}
+
+}
+
+static void __I2S_handleRXNE_IT(I2S_Handle *pI2Sx_h){
+
+	//Read from RXFIFO buffer
+	*((uint16_t *)pI2Sx_h->pRxBuf) = *((uint16_t *)&pI2Sx_h->pI2Sx->DR);
+	(uint16_t *)pI2Sx_h->pRxBuf++;
+	pI2Sx_h->RxLen--;
+
+	if(pI2Sx_h->RxLen == 0){
+
+		//Close Transmission
+		pI2Sx_h->pRxBuf = NULL;
+		pI2Sx_h->RxLen = 0;
+		pI2Sx_h->RxState = I2S_RX_FREE;
+
+		//Disable TXE Interrupt
+		pI2Sx_h->pI2Sx->CR2 &= ~(1 << SPI_CR2_RXNEIE);
+
+		//Inform Application transmission is complete
+		__I2S_AppEventCallback(pI2Sx_h, I2S_EVENT_RX_COMPLETE);
+	}
+
+}
+
 void __I2S_IRQhandle(I2S_Handle *pI2Sx_h)
 {
+	uint8_t temp1;
+	uint8_t temp2;
 
+	temp1 = __SPI_get_SRflag((SPI_Handle *)pI2Sx_h, SPI_SR_TXE);
+	temp2 = pI2Sx_h->pI2Sx->CR2 & (1 << SPI_CR2_TXEIE);
+
+	//Handle TXFIFO empty
+	if(temp1 && temp2){
+		//Handle TXE interrupt
+		__I2S_handleTXE_IT(pI2Sx_h);
+	}
+
+	temp1 = __SPI_get_SRflag((SPI_Handle *)pI2Sx_h, SPI_SR_RXNE);
+	temp2 = pI2Sx_h->pI2Sx->CR2 & (1 << SPI_CR2_RXNEIE);
+
+	//Handle RXFIFO not empty
+	if(temp1 && temp2){
+		//Handle RXNE interrupt
+		__I2S_handleRXNE_IT(pI2Sx_h);
+	}
 }
 
 __weak void __I2S_AppEventCallback(I2S_Handle *pI2Sx_h, uint8_t AppEv)

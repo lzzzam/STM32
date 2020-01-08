@@ -45,7 +45,8 @@ typedef SPI_t 	I2S_t;
 #define I2S_FS_192KHZ		192000
 #define I2S_FS_96KHZ		96000
 #define I2S_FS_48KHZ		48000
-#define I2S_FS_44KHZ		44000
+#define I2S_FS_44KHZ		44100
+#define I2S_FS_32KHZ		32000
 //@DataSize
 #define I2S_DS_16BIT		0
 #define I2S_DS_24BIT		1
@@ -99,10 +100,8 @@ typedef struct{
 typedef struct{
 	I2S_t *pI2Sx;
 	I2S_Config pI2Sx_conf;
-	uint16_t *pTxBuf_L;
-	uint16_t *pTxBuf_R;
-	uint16_t *pRxBuf_L;
-	uint16_t *pRxBuf_R;
+	uint16_t *pTxBuf;
+	uint16_t *pRxBuf;
 	uint32_t TxLen;
 	uint32_t RxLen;
 	uint8_t TxState;	//@TX_State
@@ -170,7 +169,17 @@ void __I2S_disable(I2S_Handle *pI2Sx_h);/*I2Sx handle address				*/
  *
  * @note					-
  ****************************************************************************/
-void __I2S_sendData(I2S_Handle *pI2Sx_h, uint16_t Left, uint16_t Right);
+void __I2S_sendData(I2S_Handle *pI2Sx_h, uint16_t *pTxBuf, uint16_t Len);
+
+/****************************************************************************
+ * @fn						- __I2S_sendData
+ *
+ * @param[*pI2Sx_h] 		- I2Sx handle address
+ * @param[data] 			- Data to be transmitted
+ *
+ * @note					-
+ ****************************************************************************/
+void __I2S_sendData_IT(I2S_Handle *pI2Sx_h, uint16_t *pTxBuf, uint16_t Len);
 
 
 /****************************************************************************
@@ -181,7 +190,18 @@ void __I2S_sendData(I2S_Handle *pI2Sx_h, uint16_t Left, uint16_t Right);
  *
  * @note					-
  ****************************************************************************/
-void __I2S_receiveData(I2S_Handle *pI2Sx_h, uint16_t *pRxBuf_L, uint16_t *pRxBuf_R, uint32_t Len);
+void __I2S_receiveData(I2S_Handle *pI2Sx_h, uint16_t *pRxBuf, uint16_t Len);
+
+
+/****************************************************************************
+ * @fn						- __I2S_sendData
+ *
+ * @param[*pI2Sx_h] 		- I2Sx handle address
+ * @param[*data] 			- Pointer to store received value
+ *
+ * @note					-
+ ****************************************************************************/
+void __I2S_receiveData(I2S_Handle *pI2Sx_h, uint16_t *pRxBuf, uint16_t Len);
 
 /****************************************************************************
  * @fn						- __I2S_IRQconfig
