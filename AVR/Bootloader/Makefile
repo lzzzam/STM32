@@ -43,6 +43,7 @@ BOOT_FILE = /Users/luca/Documents/GitHub/Embedded-Software/AVR/Bootloader/Boot.h
 APP_FILE = /Users/luca/Documents/GitHub/Embedded-Software/AVR/Bootloader/test/App.hex
 CONF = /Users/luca/Library/Arduino15/packages/MiniCore/hardware/avr/2.0.7/avrdude.conf
 
+#bootloader USART baudrate
 BAUD_RATE= 38400
 F_CPU = 8000000
 #################################################################################################
@@ -87,7 +88,7 @@ flash: all
 
 # write fuses to mcu
 fuse:
-	avrdude -C$(CONF) -v -p$(MCU) -c$(PRG) -P$(ICSP_PORT) -b$(BAUD_RATE) -e -Ulock:w:$(LOCK):m -Uefuse:w:$(EFU):m -Uhfuse:w:$(HFU):m -Ulfuse:w:$(LFU):m
+	avrdude -C$(CONF) -v -p$(MCU) -c$(PRG) -P$(ICSP_PORT) -b19200 -e -Ulock:w:$(LOCK):m -Uefuse:w:$(EFU):m -Uhfuse:w:$(HFU):m -Ulfuse:w:$(LFU):m
 
 burn: Boot.hex
 	$(AVRDUDE) -P$(ICSP_PORT) -b19200 -Uf:w:$(BOOT_FILE):i -Ulock:w:0x0F:m
@@ -102,7 +103,7 @@ disasm: $(PRJ).elf
 
 # remove compiled files
 clean:
-	rm -f *.o
+	rm -f *.o *.elf *.hex
 	$(foreach dir, $(EXT), rm -f $(dir)/*.o;)
 
 # other targets
