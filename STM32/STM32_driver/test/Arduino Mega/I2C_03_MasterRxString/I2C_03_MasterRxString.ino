@@ -23,9 +23,13 @@ void loop() {
 
   while(!Serial.available());
   char in_read=Serial.read();
-
+  
   if(in_read == 's')
   {
+    data_len = 0;
+    for(int i=0; i<32; i++)
+      rcv_buf[i] = 0;
+    
     Serial.println("****************************************");
     Serial.println("command: s");
     Wire.beginTransmission(SLAVE_ADDR);
@@ -50,8 +54,9 @@ void loop() {
       if(Wire.available())
         rcv_buf[i] = Wire.read(); // Reads the data 
     }
+
     rcv_buf[i] = '\0';
-  
+
     Serial.print("Received string ==> ");
     Serial.println((char*)rcv_buf);
   }
