@@ -29,6 +29,7 @@ try:
     ih.loadhex(file)
 except:
     print sign, ": Error: can't open file ", file
+    serial.close()
     sys.exit()
 
 #number of byte in a Flash page
@@ -99,6 +100,7 @@ for i in range(0,nbyte_pageAligned, ATmega328P_pagesize):
             print ''
             print sign, ': Error! Cant communicate with target device'
             print sign, ': Serial Programmer closing'
+            serial.close()
             sys.exit()
 
         #convert to int
@@ -112,6 +114,7 @@ for i in range(0,nbyte_pageAligned, ATmega328P_pagesize):
             print sign, ': Serial Programmer closing'
             print ''
             sys.exit()
+            serial.close()
         else:
             bar.update(i+j)
 
@@ -137,6 +140,7 @@ for i in range(0,nbyte_pageAligned, ATmega328P_pagesize):
             print ''
             print sign, ': Error! Cant communicate with target device'
             print sign, ': Serial Programmer closing'
+            serial.close()
             sys.exit()
 
         #convert to int
@@ -149,6 +153,7 @@ for i in range(0,nbyte_pageAligned, ATmega328P_pagesize):
             print sign, ': Error at address ', hex(flash_address),' --> ', hex(int(buff[i+j])), ' != ', hex(rx)
             print sign, ': Serial Programmer closing'
             print ''
+            serial.close()
             sys.exit()
 
         bar.update(i+j)
