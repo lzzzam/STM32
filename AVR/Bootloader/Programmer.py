@@ -169,3 +169,6 @@ serial.close()
 print sign, ': Program stored correctly'
 
 print ''
+
+
+gay sei tutto gay
