@@ -13,7 +13,7 @@ int main(void)
   {
     uint8_t c = usart_getch();
 
-    if(c == 'R')°
+    if(c == 'R')
     {
       boot_start();
     }

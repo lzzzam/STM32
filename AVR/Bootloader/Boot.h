@@ -1,5 +1,5 @@
-#ifndef WASP_BOOT
-#define WASP_BOOT
+#ifndef AVR_BOOT
+#define AVR_BOOT
 
 //define for enabling automatic jump to Application after timeout expire
 //#define BOOT_AUTO_RST

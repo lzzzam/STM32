@@ -1,6 +1,6 @@
 #include<avr/io.h>
 #include<util/delay.h>
-#include "../WaspBoot.h"
+#include "../Boot.h"
 
 #define USART_BAUDRATE BAUD_RATE
 #define USART_TIMEOUT	BOOT_TIMEOUT

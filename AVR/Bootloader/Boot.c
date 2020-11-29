@@ -4,7 +4,7 @@
 #include <avr/pgmspace.h>
 #include <avr/boot.h>
 #include <util/delay.h>
-#include "WaspBoot.h"
+#include "Boot.h"
 #include "Serial.h"
 #include "Timer.h"
 
@@ -91,7 +91,7 @@ int main ( void )
 				}
 
 				//fast toogle led when receiveing datas
-				if((TCNT1) > 100)
+				if((TCNT1) > 150)
 				{
 					PORTB ^= 1;		//toogle status led
 					TCNT1  = 0;		//reset TC1 value
@@ -125,11 +125,19 @@ int main ( void )
 		}
 		else if (c == 'R')
 		{
-			uint8_t i;
+			uint32_t i;
 			for(i = 0; i < byte_count; i++)
 			{
 				uint8_t data = pgm_read_byte_near(start_address + i);
 				usart_putch(data);
+
+				_delay_ms(1);
+				//fast toogle led when receiveing datas
+				if((TCNT1) > 150)
+				{
+					PORTB ^= 1;		//toogle status led
+					TCNT1  = 0;		//reset TC1 value
+				}
 			}
 		}
 		else if(c == 'Q')//Quit and go to Application

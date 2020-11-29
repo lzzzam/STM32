@@ -15,7 +15,7 @@
 
 # parameters (change this stuff accordingly)
 # project name
-PRJ = WaspBoot
+PRJ = Boot
 # avr mcu
 MCU = atmega328p
 # mcu clock frequency
@@ -34,11 +34,13 @@ EFU  = 0xFD
 SRC = $(PRJ).cpp
 # where to look for external libraries (consisting of .c/.cpp files and .h files)
 # e.g. EXT = ../../EyeToSee ../../YouSART
-EXT = /Users/luca/Documents/Wasp/Software/Utility/Wasp_Bootloader/lib
+EXT = /Users/luca/Documents/GitHub/Embedded-Software/AVR/Bootloader/lib
 
-PORT = /dev/cu.usbmodem14221
-BOOT_FILE = /Users/luca/Documents/Wasp/Software/Utility/Wasp_Bootloader/WaspBoot.hex
-APP_FILE = /Users/luca/Documents/Wasp/Software/Utility/Wasp_Bootloader/App.hex
+
+ICSP_PORT = /dev/cu.usbmodem14221
+USART_PORT = /dev/cu.SLAB_USBtoUART
+BOOT_FILE = /Users/luca/Documents/GitHub/Embedded-Software/AVR/Bootloader/Boot.hex
+APP_FILE = /Users/luca/Documents/GitHub/Embedded-Software/AVR/Bootloader/test/App.hex
 CONF = /Users/luca/Library/Arduino15/packages/MiniCore/hardware/avr/2.0.7/avrdude.conf
 
 BAUD_RATE= 38400
@@ -76,7 +78,7 @@ all: $(PRJ).hex
 test:
 	$(AVRDUDE) -v
 
-serial:
+console:
 	screen /dev/cu.SLAB_USBtoUART $(BAUD_RATE)
 
 # flash program to mcu
@@ -85,14 +87,14 @@ flash: all
 
 # write fuses to mcu
 fuse:
-	avrdude -C$(CONF) -v -p$(MCU) -c$(PRG) -P$(PORT) -b$(BAUD_RATE) -e -Ulock:w:$(LOCK):m -Uefuse:w:$(EFU):m -Uhfuse:w:$(HFU):m -Ulfuse:w:$(LFU):m
+	avrdude -C$(CONF) -v -p$(MCU) -c$(PRG) -P$(ICSP_PORT) -b$(BAUD_RATE) -e -Ulock:w:$(LOCK):m -Uefuse:w:$(EFU):m -Uhfuse:w:$(HFU):m -Ulfuse:w:$(LFU):m
 
-burn: WaspBoot.hex
-	$(AVRDUDE) -P$(PORT) -b19200 -Uf:w:$(BOOT_FILE):i -Ulock:w:0x0F:m
+burn: Boot.hex
+	$(AVRDUDE) -P$(ICSP_PORT) -b19200 -Uf:w:$(BOOT_FILE):i -Ulock:w:0x0F:m
 
-burnApp: App.hex
-	python ./WaspProgrammer.py $(APP_FILE) $(PORT) $(BAUD_RATE)
-	$(AVRDUDE) -P$(PORT) -b19200 -Uhfuse:w:0xD1:m
+burnApp: ./test/App.hex
+	python ./Programmer.py $(APP_FILE) $(USART_PORT) $(BAUD_RATE)
+#$(AVRDUDE) -P$(ICSP_PORT) -b19200 -Uhfuse:w:0xD1:m
 
 # generate disassembly files for debugging
 disasm: $(PRJ).elf
@@ -100,7 +102,7 @@ disasm: $(PRJ).elf
 
 # remove compiled files
 clean:
-	rm -f *.hex *.elf *.o
+	rm -f *.o
 	$(foreach dir, $(EXT), rm -f $(dir)/*.o;)
 
 # other targets
@@ -118,7 +120,5 @@ $(PRJ).elf: $(OBJ)
 
 # hex file
 $(PRJ).hex: $(PRJ).elf
-	rm *.o ./lib/*.o
-	rm -f $(PRJ).hex
 	$(OBJCOPY) -j .text -j .data -O ihex $(PRJ).elf $(PRJ).hex
 	$(SIZE) $(PRJ).elf
