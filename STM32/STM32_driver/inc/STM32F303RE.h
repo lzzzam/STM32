@@ -238,6 +238,7 @@
 /*						Peripheral addresses									*/
 /********************************************************************************/
 //Peripheral base addresses
+#define FLITF_BASE_ADDR			0x40022000U
 #define RCC_BASE_ADDR			0x40021000U
 #define GPIOx_BASE_ADDR			0x48000000U
 #define ADC12_BASE_ADDR			0x50000000U
@@ -253,6 +254,7 @@
 #define I2C3_BASE_ADDR			0x40007800U
 
 //Peripheral address offset
+#define FLITF_OFFSET			0X00000000U
 #define RCC_OFFSET				0x00000000U
 #define GPIOA_OFFSET			0x00000000U
 #define GPIOB_OFFSET			0x00000400U
@@ -277,6 +279,7 @@
 
 
 //Peripheral address
+#define FLITF_ADDR				(FLITF_BASE_ADDR + FLITF_OFFSET)
 #define RCC_ADDR				(RCC_BASE_ADDR + RCC_OFFSET)
 #define GPIOA_ADDR				(GPIOx_BASE_ADDR + GPIOA_OFFSET)
 #define GPIOB_ADDR				(GPIOx_BASE_ADDR + GPIOB_OFFSET)
@@ -304,6 +307,7 @@
 /********************************************************************************/
 /*						Peripheral access method								*/
 /********************************************************************************/
+#define FLITF	((FLITF_t *)FLITF_ADDR)
 #define RCC		((RCC_t *)RCC_ADDR)
 #define GPIOA	((GPIO_t *)GPIOA_ADDR)
 #define GPIOB	((GPIO_t *)GPIOB_ADDR)
@@ -416,6 +420,17 @@ typedef struct{
 	__IO uint32_t	TXDR;
 }I2C_t;
 
+typedef struct{
+	__IO uint32_t 	ACR;
+	__IO uint32_t	KEYR;
+	__IO uint32_t	OPTKEYR;
+	__IO uint32_t	SR;
+	__IO uint32_t	CR;
+	__IO uint32_t	AR;
+	__IO uint32_t	OBR;
+	__IO uint32_t	WRPR;
+}FLITF_t;
+
 //ADC
 typedef struct {
 	__IO uint32_t 	ISR;
@@ -474,5 +489,14 @@ typedef struct{
 	__IO uint32_t	CCR;
 	__IO uint32_t	CDR;
 }ADC_common_t;
+
+/********************************************************************************/
+/*								include driver headers							*/
+/********************************************************************************/
+#include <RCC.h>
+#include <GPIO.h>
+#include <SPI.h>
+#include <I2S.h>
+#include <I2C.h>
 
 #endif

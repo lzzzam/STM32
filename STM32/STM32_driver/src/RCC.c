@@ -103,3 +103,95 @@ void __RCC_Enable_ADC12(){
 	RCC->AHBENR	|= RCC_AHBENR_ADC12EN;
 
 }
+
+uint32_t __RCC_getSYSCLK()
+{
+	uint32_t hsi = 8000000;
+	uint32_t hse = 0;
+	uint32_t sysclk;
+
+	//Read Switch Status
+	uint8_t sws = ((RCC->CFGR >> 2) & 0x3);
+
+	if(sws == 0)//HSI
+	{
+		//SYSCLK equal to High Speed Internal oscillator
+		sysclk = hsi;
+	}
+	else if(sws == 1)//HSE
+	{
+		//SYSCLK equal to High Speed External oscillator
+		sysclk = hse;
+	}
+	else if(sws == 2)//PLL
+	{
+		uint8_t pllsrc = ((RCC->CFGR >> 15) & 0x3);	//read register flags
+		uint8_t prediv = (RCC->CFGR2 & 0xF) + 1; 	//read register flags & compute PREDIV factor
+		uint8_t pllmul = ((RCC->CFGR >> 18) & 0xF); //read register
+		uint32_t pllclk;
+
+		//compute PLL multiplication factor
+		//from register configuration
+		if(pllmul < 0xF)
+			pllmul += 2;
+		else if(pllmul == 0xF)
+			pllmul += 1;
+
+		if(pllsrc == 0)//HSI/2 and PREDIV = 2
+		{
+			pllclk = ((hsi/2)/2)*pllmul;
+		}
+		else if(pllsrc == 1)//HSI/2
+		{
+			pllclk = (hsi/prediv)*pllmul;
+		}
+		else if(pllsrc == 2)//HSE
+		{
+			pllclk = ((hse/2)/prediv)*pllmul;
+		}
+
+		//SYSCLK equal to PLL
+		sysclk = pllclk;
+	}
+
+	return sysclk;
+}
+
+void __RCC_setSYSCLK(uint8_t sysclk)
+{
+	//Configure FLASH prefetch buffer latency in FLASH Interface
+	if(sysclk <= SYSCLK_24MHZ)
+	{
+		//Zero Wait state
+		FLITF->ACR &= ~(0xF << 0);
+	}
+	else if(sysclk <= SYSCLK_48MHZ)
+	{
+		//One Wait state
+		FLITF->ACR |= (1 << 0);
+	}
+	else if(sysclk <= SYSCLK_72MHZ)
+	{
+		//Two Wait state
+		FLITF->ACR |= (2 << 0);
+	}
+
+
+	//Set PLL source as HSI
+	RCC->CFGR |= (1 << 15);
+
+	//Set PLL PREDIV to 0
+	RCC->CFGR2 &= ~(0xF << 0);
+
+	//Set PLLMUL
+	RCC->CFGR |= (sysclk << 18);
+
+	//Turn on PLL
+	RCC->CR |= (1 << 24);
+
+	//wait until PLL is steady
+	while(!((RCC->CR >> 25) & 0x1));
+
+	//Set PLL as SYSCLK source
+	RCC->CFGR |= (0x2 << 0);
+}
