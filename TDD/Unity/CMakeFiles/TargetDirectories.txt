@@ -1,0 +1,7 @@
+/Users/luca/Documents/GitHub/Embedded-Software/TDD/Unity/CMakeFiles/install/local.dir
+/Users/luca/Documents/GitHub/Embedded-Software/TDD/Unity/CMakeFiles/rebuild_cache.dir
+/Users/luca/Documents/GitHub/Embedded-Software/TDD/Unity/CMakeFiles/edit_cache.dir
+/Users/luca/Documents/GitHub/Embedded-Software/TDD/Unity/CMakeFiles/install/strip.dir
+/Users/luca/Documents/GitHub/Embedded-Software/TDD/Unity/CMakeFiles/install.dir
+/Users/luca/Documents/GitHub/Embedded-Software/TDD/Unity/CMakeFiles/list_install_components.dir
+/Users/luca/Documents/GitHub/Embedded-Software/TDD/Unity/CMakeFiles/unity.dir
