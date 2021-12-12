@@ -60,15 +60,15 @@ typedef enum{
 	ADC12_HCLK_DIV_4
 }ADC12_CKMODE;
 
-void __ADC1_Enable_VR();
+void __ADC1_Enable_VR(void);
 
-void __ADC1_Disable_VR();
+void __ADC1_Disable_VR(void);
 
-void __ADC1_Enable();
+void __ADC1_Enable(void);
 
-void __ADC1_Disable();
+void __ADC1_Disable(void);
 
-void __ADC1_Is_Ready();
+void __ADC1_Is_Ready(void);
 
 void __ADC1_Conversion_Mode(ADC_CONV_MODE convmode);
 
@@ -76,16 +76,16 @@ void __ADC1_Set_Sequence_Length(ADC_REG_SEQ_LENGTH seqlength);
 
 void __ADC1_Set_Sequence_1(ADC1_CHANNEL_NUM channel);
 
-void __ADC1_StarConversion();
+void __ADC1_StarConversion(void);
 
-void __ADC1_Wait_End_Of_Conversion();
+void __ADC1_Wait_End_Of_Conversion(void);
 
-uint16_t __ADC1_Result_Of_Conversion();
+uint16_t __ADC1_Result_Of_Conversion(void);
 
 void __ADC1_2_Set_ClockMode(ADC12_CKMODE ckmode);
 
-void __ADC1_2_Enable_TempSensor();
+void __ADC1_2_Enable_TempSensor(void);
 
-void __ADC1_2_Enable_VRef_Internal();
+void __ADC1_2_Enable_VRef_Internal(void);
 
 #endif /* ADC_H_ */

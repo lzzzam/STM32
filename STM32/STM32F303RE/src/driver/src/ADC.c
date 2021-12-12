@@ -5,8 +5,8 @@
  *      Author: luca
  */
 #include <stdio.h>
-#include <STM32F303RE.h>
-#include <ADC.h>
+#include "STM32F303RE.h"
+#include "ADC.h"
 
 void __ADC1_Enable_VR(){
 
