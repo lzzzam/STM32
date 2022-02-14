@@ -15,35 +15,30 @@ CFLAGS += -Wstrict-prototypes -Wuninitialized -Wall -Wextra -Wmissing-declaratio
 CFLAGS += $(foreach file,$(INC),-I"$(file)")
 
 INC = \
-./inc
+./driver/inc
 
 SRC += \
-./src/ADC.c \
-./src/GPIO.c \
-./src/I2C.c \
-./src/I2S.c \
-./src/RCC.c \
-./src/SPI.c 
+driver/src/ADC.c \
+driver/src/GPIO.c \
+driver/src/I2C.c \
+driver/src/I2S.c \
+driver/src/RCC.c \
+driver/src/SPI.c
 
-BUILD_DIR = ./out
-TARGETS  += $(foreach file, $(SRC),$(notdir $(file)))
-OBJS      = $(foreach file, $(TARGETS),$(BUILD_DIR)/$(file:%.c=%.o))
+TARGET = test/GPIO_01_Read_UserButton.c
 
-DEPS += \
-./src/ADC.d \
-./src/GPIO.d \
-./src/I2C.d \
-./src/I2S.d \
-./src/RCC.d \
-./src/SPI.d 
+BUILD_DIR	= ../out
+OUT_DIRS  	= $(foreach file, $(SRC),$(BUILD_DIR)/$(dir $(file)))
+OBJS 		= $(foreach file, $(SRC),$(BUILD_DIR)/$(file:%.c=%.o))
 
-all: $(BUILD_DIR) $(OBJS)
+
+all: $(BUILD_DIR) $(OBJS) $(TARGET)
 
 # Each subdirectory must supply rules for building sources it contributes
-$(BUILD_DIR)/%.o: ./src/%.c
+$(BUILD_DIR)/%.o: %.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: GNU ARM Cross C Compiler'
-	$(CC) $(CFLAGS) $(CWARN) $(CINC) -c "$<" -o "$@" 
+	$(CC) $(CFLAGS) -c "$<" -o "$@" 
 	@echo 'Finished building: $<'
 	@echo ' '
 
@@ -51,11 +46,16 @@ $(BUILD_DIR):
 	@echo 'Creating build directory'
 	@mkdir -p $(BUILD_DIR)
 	@echo '$(BUILD_DIR) created'
+	@echo 'Creating sub-directories'
+	@mkdir -p $(OUT_DIRS)
+	@echo '$(OUT_DIRS) created'
 	@echo ' '
 
+.PHONY: clean
 clean:
-	rm -f ./out/*.o
+	rm -r $(BUILD_DIR)
 
+.PHONY: foo
 foo:
 	@echo $(OBJS)
 
