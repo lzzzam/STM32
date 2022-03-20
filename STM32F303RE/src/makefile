@@ -1,63 +1,46 @@
 .SECONDARY:
-ROOT   = ../..
-CC_DIR = $(ROOT)/Toolchain/gcc-arm-none-eabi
-#CC     = $(CC_DIR)/bin/arm-none-eabi-gcc
-CC = arm-none-eabi-gcc
+ROOT   = /Users/luca/Documents/GitHub/Embedded-Software/Toolchain/Compilers
+CC_DIR = $(ROOT)/gcc-arm-none-eabi/bin
+CC     = $(CC_DIR)/arm-none-eabi-gcc
+SIZE   = $(CC_DIR)/arm-none-eabi-size
+OBJCOPY = $(CC_DIR)/arm-none-eabi-objcopy
+OBJDUMP = $(CC_DIR)/arm-none-eabi-objdump
 
-CFLAGS += -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 \
-		  -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -flto -fno-move-loop-invariants 
-		 
-CFLAGS += -Wuninitialized -Wall -Wextra -Wpointer-arith -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal -Wbad-function-cast
+CFLAGS += -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -flto \
+		  -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wshadow -Wlogical-op \
+		  -Waggregate-return -Wfloat-equal -Wmissing-prototypes -Wstrict-prototypes -Wbad-function-cast -g3
 
-#CFLAGS += -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wunused -Werror -Wpadded -Wconversion 
 
 CFLAGS += $(foreach file,$(INC),-I"$(file)")
 
-CFLAGS += -D__NO_SYSTEM_INIT
-
-# Link for code size
-GC=-Wl,--gc-sections
-
-# Create map file
-MAP=-Wl,-Map=$(BUILD_DIR)/out.map
-
-# Use newlib-nano. To disable it, specify USE_NANO=
-USE_NANO=--specs=nano.specs
-
-# Use seimhosting or not
-USE_SEMIHOST=--specs=rdimon.specs
-USE_NOHOST=--specs=nosys.specs
-
-LDSCRIPTS=-L. -L./system -T mem.ld
-
-LFLAGS=$(USE_NANO) $(USE_NOHOST) $(LDSCRIPTS) $(GC) $(MAP)
-
-STARTUP = ./system/startup.S
+LFLAGS = -L"./ldscript" -T mem.ld -nostartfiles -Xlinker --gc-sections -Wl,-Map=$(OUTPUT).map
 
 INC = \
 ./driver/inc
 
-SRC += \
-driver/src/ADC.c \
-driver/src/GPIO.c \
-driver/src/I2C.c \
-driver/src/I2S.c \
-driver/src/RCC.c \
-driver/src/SPI.c \
+STARTUP = system/startup.c
 
+SRC += \
+$(STARTUP) \
+# driver/src/ADC.c \
+# driver/src/GPIO.c \
+# driver/src/I2C.c \
+# driver/src/I2S.c \
+# driver/src/RCC.c \
+# driver/src/SPI.c \
 
 BUILD_DIR = ./bin
-
-PROJECTS = test/GPIO_01_Read_UserButton.c
-
-
-OUTPUTS   = $(foreach file, $(PROJECTS),$(BUILD_DIR)/$(file:%.c=%))
+TARGET    = test/test.c
+OUTPUT    = $(foreach file, $(TARGET),$(BUILD_DIR)/$(file:%.c=%))
 OBJS	  = $(foreach file, $(SRC),$(BUILD_DIR)/$(file:%.c=%.o))
 
-all: $(BUILD_DIR) $(OUTPUTS).elf
+all: $(BUILD_DIR) $(OUTPUT).elf $(OUTPUT).hex
+
+%.hex: %.elf
+	$(OBJCOPY) $^ $@
 
 %.elf: %.o $(OBJS)
-	$(CC) $(STARTUP) $^ $(CFLAGS) $(LFLAGS) -o $@
+	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
 
 $(BUILD_DIR)/%.o: %.c
 	@echo 'Building file: $<'
@@ -69,16 +52,26 @@ $(BUILD_DIR)/%.o: %.c
 $(BUILD_DIR):
 	@echo 'Creating build directories'
 	@mkdir -p $(BUILD_DIR)/driver/src
+	@mkdir -p $(BUILD_DIR)/system
 	@mkdir -p $(BUILD_DIR)/test
 	@echo '$(BUILD_DIR) created'
-	@echo 'Creating sub-directories'
 
 .PHONY: clean
 clean:
 	rm -r $(BUILD_DIR)
 
+
+.PHONY: size
+size: $(OUTPUT).hex
+	$(SIZE) $(OUTPUT).hex
+
+.PHONY: symbol
+symbol: $(OUTPUT).hex
+	$(OBJDUMP) --syms $^
+
 .PHONY: foo
-foo:
-	@echo $(OBJS)
+foo: $(OBJS)
+	@echo $^
+	@echo $@
 
 	
