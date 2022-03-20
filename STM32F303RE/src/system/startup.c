@@ -1,9 +1,9 @@
-#include <stdio.h>
+#include <STM32F303RE.h>
 
 #define __WEAK_FUNCTION__ __attribute__((weak))
 #define __RESET_HANDLER__ __attribute__ ((section(".reset_handler")))
 #define __DEFAULT_HANDLER__ __attribute__ ((weak, alias ("Default_Handler"), section(".irq_handlers")))
-#define __VECTOR_TABLE__ __attribute__ ((section(".isr_vector")))
+#define __VECTOR_TABLE__ __attribute__ ((section(".isr_vector"),used))
 #define __STACK__ __attribute__((section(".stack"))) 
 
 // Boundaries of .text, .data and .bss sections as declared in linker script
@@ -15,13 +15,12 @@ extern uint32_t __bss_end__;
 
 // Boundaris of Stack section declared in linker script
 extern uint32_t __StackTop;
-extern uint32_t __StackLimit;
-#define __STACK_SIZE 0xc00
 
-uint32_t *pStack[]
+#define __STACK_SIZE 0xc00
+uint32_t Main_Stack[__STACK_SIZE] __attribute__ ((section(".stack"), used));
 
 // Entry point to Application
-extern void main(void);
+extern int main(void);
 
 // Define default handler as a weak function
 void __WEAK_FUNCTION__ Default_Handler(void);
@@ -111,14 +110,11 @@ void __DEFAULT_HANDLER__ USB_LP_IRQHandler(void);
 void __DEFAULT_HANDLER__ USBWakeUp_RMP_IRQHandler(void);
 void __DEFAULT_HANDLER__ FPU_IRQHandler(void);
 
-// Top of stack declared in linker script
-extern unsigned int __StackTop;
-
 // IRQ Handler type used to declare vector table
 typedef void (* const pHandler)(void);
 
 // ISR vector table
-__VECTOR_TABLE__ pHandler __isr_vectors[] = 
+__VECTOR_TABLE__ pHandler __vector_table[] = 
 {
     (pHandler) &__StackTop,                     // Top of Stack
     Reset_Handler,                              // The reset handler
@@ -229,8 +225,8 @@ void Reset_Handler(void)
 {
     uint8_t *src;
     uint8_t *dst;
-    uint8_t data_size =  __data_end__ - __data_start__;
-    uint8_t bss_size =  __bss_end__ - __bss_start__; 
+    uint32_t data_size =  (uint32_t)(&__data_end__ - &__data_start__);
+    uint32_t bss_size =  (uint32_t)(&__bss_end__ - &__bss_start__);
 
     // Copy .data section from FLASH to RAM
     src = (uint8_t *)&__etext;
@@ -242,12 +238,17 @@ void Reset_Handler(void)
 
     // Initialize .bss section with zero
     dst = (uint8_t *) &__bss_start__;
-    for (uint8_t i=0; i<bss_size; i++)
+    for (uint32_t i=0; i<bss_size; i++)
     {
         *dst++ = 0;
     }
 
-    // Jump to main application
+    for (uint32_t i=0; i<__STACK_SIZE; i++)
+    {
+        Main_Stack[i] = 0xFF;
+    }
+
+    // // Jump to main application
     main();
 
     while(1)
@@ -257,7 +258,7 @@ void Reset_Handler(void)
 
 // Processor ends up here if an unexpected interrupt occurs or a specific
 // handler is not present in the application code.
-void Default_Handler(void)
+void __attribute__ ((section(".irq_handlers"))) Default_Handler(void)
 {
   while (1)
     ; // Infinite Loop

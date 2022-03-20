@@ -220,7 +220,7 @@ Reset_Handler:
 #endif
 
 #ifndef __START
-#define __START _start
+#define __START main
 #endif
 	bl	__START
 
