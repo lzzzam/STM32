@@ -12,38 +12,11 @@ MEMORY
 /* Define the Stack Size in Words*/
 __stack_size = 0xC00;
 
-/* Linker script to place sections and symbol values.
- * It references following symbols, which must be defined in code:
- *   Reset_Handler : Entry of reset handler
- * 
- * It defines following symbols, which code can use without definition:
- *   __exidx_start
- *   __exidx_end
- *   __copy_table_start__
- *   __copy_table_end__
- *   __zero_table_start__
- *   __zero_table_end__
- *   __etext
- *   __data_start__
- *   __preinit_array_start
- *   __preinit_array_end
- *   __init_array_start
- *   __init_array_end
- *   __fini_array_start
- *   __fini_array_end
- *   __data_end__
- *   __bss_start__
- *   __bss_end__
- *   __end__
- *   end
- *   __HeapLimit
- *   __StackLimit
- *   __StackTop
- *   __stack
- */
 
 ENTRY(Reset_Handler)
 
+/* Set stack top to end of RAM, and stack limit move down by
+ * size of stack section */
 __stack_section_start = ORIGIN(RAM) + LENGTH(RAM) - __stack_size*4;
 
 SECTIONS
@@ -69,15 +42,15 @@ SECTIONS
 
     } >FLASH
 
+	/* Instruction and RO data sections */
 	.text :
 	{
 		*(.text*)
 		*(.rodata*)
 	} > FLASH
 
-	/* To copy multiple ROM to RAM sections,
-	 * uncomment .copy.table section and,
-	 * define __STARTUP_COPY_MULTIPLE in startup_ARMCMx.S */
+	/* To copy multiple ROM to RAM sections
+	 * uncomment .copy.table section */
 	/*
 	.copy.table :
 	{
@@ -94,8 +67,7 @@ SECTIONS
 	*/
 
 	/* To clear multiple BSS sections,
-	 * uncomment .zero.table section and,
-	 * define __STARTUP_CLEAR_BSS_MULTIPLE in startup_ARMCMx.S */
+	 * uncomment .zero.table section */
 	/*
 	.zero.table :
 	{
@@ -114,6 +86,7 @@ SECTIONS
 	   which must be 4byte aligned */
 	__etext = ALIGN (4);
 
+	/* Initialized global variables */
 	.data : AT (__etext)
 	{
 		FILL(0xFF)
@@ -127,6 +100,7 @@ SECTIONS
 
 	} > RAM
 
+	/* Unitialized global variables */
 	.bss :
 	{
 		FILL(0xFF)
