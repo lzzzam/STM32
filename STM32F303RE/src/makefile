@@ -5,8 +5,9 @@ CC     = $(CC_DIR)/arm-none-eabi-gcc
 SIZE   = $(CC_DIR)/arm-none-eabi-size
 OBJCOPY = $(CC_DIR)/arm-none-eabi-objcopy
 OBJDUMP = $(CC_DIR)/arm-none-eabi-objdump
+READELF = $(CC_DIR)/arm-none-eabi-readelf
 
-CFLAGS += -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -flto \
+CFLAGS += -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -flto \
 		  -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wshadow -Wlogical-op \
 		  -Waggregate-return -Wfloat-equal -Wmissing-prototypes -Wstrict-prototypes -Wbad-function-cast -g3
 
@@ -15,10 +16,14 @@ CFLAGS += $(foreach file,$(INC),-I"$(file)")
 
 LFLAGS = -L"./ldscript" -T mem.ld -nostartfiles -Xlinker --gc-sections -Wl,-Map=$(OUTPUT).map
 
-INC = \
-./driver/inc
+BUILD_DIR = ./bin
+
+TARGET    = test/test.c
 
 STARTUP = system/startup.c
+
+INC = \
+./driver/inc
 
 SRC += \
 $(STARTUP) \
@@ -29,8 +34,6 @@ $(STARTUP) \
 # driver/src/RCC.c \
 # driver/src/SPI.c \
 
-BUILD_DIR = ./bin
-TARGET    = test/test.c
 OUTPUT    = $(foreach file, $(TARGET),$(BUILD_DIR)/$(file:%.c=%))
 OBJS	  = $(foreach file, $(SRC),$(BUILD_DIR)/$(file:%.c=%.o))
 
@@ -67,7 +70,11 @@ size: $(OUTPUT).hex
 
 .PHONY: symbol
 symbol: $(OUTPUT).hex
-	$(OBJDUMP) --syms $^
+	$(READELF) -s $^
+
+.PHONY: sections
+sections: $(OUTPUT).hex
+	$(READELF) -S $^
 
 .PHONY: foo
 foo: $(OBJS)
