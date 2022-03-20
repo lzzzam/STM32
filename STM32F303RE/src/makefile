@@ -1,62 +1,77 @@
-ROOT   = ../..
-CC_DIR = $(ROOT)/toolchain/gcc-arm-none-eabi-10-2020-q4-major
-#CC     = $(CC_DIR)/bin/arm-none-eabi-gcc
-CC = arm-none-eabi-gcc
+.SECONDARY:
+ROOT   = /Users/luca/Documents/GitHub/Embedded-Software/Toolchain/Compilers
+CC_DIR = $(ROOT)/gcc-arm-none-eabi/bin
+CC     = $(CC_DIR)/arm-none-eabi-gcc
+SIZE   = $(CC_DIR)/arm-none-eabi-size
+OBJCOPY = $(CC_DIR)/arm-none-eabi-objcopy
+OBJDUMP = $(CC_DIR)/arm-none-eabi-objdump
 
-CFLAGS += -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 \
-		  -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -flto -fno-move-loop-invariants 
-		 
-CFLAGS += -Wstrict-prototypes -Wuninitialized -Wall -Wextra -Wmissing-declarations \
-		  -Wpointer-arith -Wshadow -Wlogical-op -Waggregate-return -Wfloat-equal -Wmissing-prototypes  \
-		  -Wbad-function-cast
+CFLAGS += -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -flto \
+		  -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wshadow -Wlogical-op \
+		  -Waggregate-return -Wfloat-equal -Wmissing-prototypes -Wstrict-prototypes -Wbad-function-cast -g3
 
-#CFLAGS += -Wunused -Werror -Wpadded -Wconversion 
 
 CFLAGS += $(foreach file,$(INC),-I"$(file)")
 
+LFLAGS = -L"./ldscript" -T mem.ld -nostartfiles -Xlinker --gc-sections -Wl,-Map=$(OUTPUT).map
+
 INC = \
-./inc
+./driver/inc
+
+STARTUP = system/startup.c
 
 SRC += \
-./src/ADC.c \
-./src/GPIO.c \
-./src/I2C.c \
-./src/I2S.c \
-./src/RCC.c \
-./src/SPI.c 
+$(STARTUP) \
+# driver/src/ADC.c \
+# driver/src/GPIO.c \
+# driver/src/I2C.c \
+# driver/src/I2S.c \
+# driver/src/RCC.c \
+# driver/src/SPI.c \
 
-BUILD_DIR = ./out
-TARGETS  += $(foreach file, $(SRC),$(notdir $(file)))
-OBJS      = $(foreach file, $(TARGETS),$(BUILD_DIR)/$(file:%.c=%.o))
+BUILD_DIR = ./bin
+TARGET    = test/test.c
+OUTPUT    = $(foreach file, $(TARGET),$(BUILD_DIR)/$(file:%.c=%))
+OBJS	  = $(foreach file, $(SRC),$(BUILD_DIR)/$(file:%.c=%.o))
 
-DEPS += \
-./src/ADC.d \
-./src/GPIO.d \
-./src/I2C.d \
-./src/I2S.d \
-./src/RCC.d \
-./src/SPI.d 
+all: $(BUILD_DIR) $(OUTPUT).elf $(OUTPUT).hex
 
-all: $(BUILD_DIR) $(OBJS)
+%.hex: %.elf
+	$(OBJCOPY) $^ $@
 
-# Each subdirectory must supply rules for building sources it contributes
-$(BUILD_DIR)/%.o: ./src/%.c
+%.elf: %.o $(OBJS)
+	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
+
+$(BUILD_DIR)/%.o: %.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: GNU ARM Cross C Compiler'
-	$(CC) $(CFLAGS) $(CWARN) $(CINC) -c "$<" -o "$@" 
+	$(CC) $(CFLAGS) -c "$<" -o "$@" 
 	@echo 'Finished building: $<'
 	@echo ' '
 
 $(BUILD_DIR):
-	@echo 'Creating build directory'
-	@mkdir -p $(BUILD_DIR)
+	@echo 'Creating build directories'
+	@mkdir -p $(BUILD_DIR)/driver/src
+	@mkdir -p $(BUILD_DIR)/system
+	@mkdir -p $(BUILD_DIR)/test
 	@echo '$(BUILD_DIR) created'
-	@echo ' '
 
+.PHONY: clean
 clean:
-	rm -f ./out/*.o
+	rm -r $(BUILD_DIR)
 
-foo:
-	@echo $(OBJS)
+
+.PHONY: size
+size: $(OUTPUT).hex
+	$(SIZE) $(OUTPUT).hex
+
+.PHONY: symbol
+symbol: $(OUTPUT).hex
+	$(OBJDUMP) --syms $^
+
+.PHONY: foo
+foo: $(OBJS)
+	@echo $^
+	@echo $@
 
 	
