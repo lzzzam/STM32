@@ -1,6 +1,6 @@
 /* 
  * Linker script to configure memory regions. 
- * Modief from template of ARM GCC compiler 
+ * Modified from template of ARM GCC compiler 
  */
 
 MEMORY
@@ -8,6 +8,9 @@ MEMORY
   FLASH (rx) : ORIGIN = 0x08000000, LENGTH = 512K
   RAM   (rwx): ORIGIN = 0x20000000, LENGTH = 64K
 }
+
+/* Define the Stack Size in Words*/
+__stack_size = 0xC00;
 
 /* Linker script to place sections and symbol values.
  * It references following symbols, which must be defined in code:
@@ -41,48 +44,36 @@ MEMORY
 
 ENTRY(Reset_Handler)
 
+__stack_section_start = ORIGIN(RAM) + LENGTH(RAM) - __stack_size*4;
+
 SECTIONS
 {
-	.text :
-	{
+	/* Interrupt vectors */
+	.isr_vector : ALIGN(4)
+    {
+        FILL(0xFF)
+
+        __vectors_start = ABSOLUTE(.) ;
 		KEEP(*(.isr_vector))
+
+    } >FLASH
+	
+	/* IRQ handlers */
+	.irq_handlers : ALIGN(4)
+    {
+        FILL(0xFF)
+
+        __handlers_start = ABSOLUTE(.) ;
 		*(.reset_handler)
 		*(.irq_handlers)
+
+    } >FLASH
+
+	.text :
+	{
 		*(.text*)
-
-		*(.init)
-		*(.fini)
-
-		/* .ctors */
-		*crtbegin.o(.ctors)
-		*crtbegin?.o(.ctors)
-		*(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
-		*(SORT(.ctors.*))
-		*(.ctors)
-
-		/* .dtors */
- 		*crtbegin.o(.dtors)
- 		*crtbegin?.o(.dtors)
- 		*(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
- 		*(SORT(.dtors.*))
- 		*(.dtors)
-
 		*(.rodata*)
-
-		*(.eh_frame*)
 	} > FLASH
-
-	.ARM.extab : 
-	{
-		*(.ARM.extab* .gnu.linkonce.armextab.*)
-	} > FLASH
-
-	__exidx_start = .;
-	.ARM.exidx :
-	{
-		*(.ARM.exidx* .gnu.linkonce.armexidx.*)
-	} > FLASH
-	__exidx_end = .;
 
 	/* To copy multiple ROM to RAM sections,
 	 * uncomment .copy.table section and,
@@ -125,33 +116,12 @@ SECTIONS
 
 	.data : AT (__etext)
 	{
+		FILL(0xFF)
 		__data_start__ = .;
-		*(vtable)
 		*(.data*)
 
 		. = ALIGN(4);
-		/* preinit data */
-		PROVIDE_HIDDEN (__preinit_array_start = .);
-		*(.preinit_array)
-		PROVIDE_HIDDEN (__preinit_array_end = .);
 
-		. = ALIGN(4);
-		/* init data */
-		PROVIDE_HIDDEN (__init_array_start = .);
-		*(SORT(.init_array.*))
-		*(.init_array)
-		PROVIDE_HIDDEN (__init_array_end = .);
-
-
-		. = ALIGN(4);
-		/* finit data */
-		PROVIDE_HIDDEN (__fini_array_start = .);
-		*(SORT(.fini_array.*))
-		*(.fini_array)
-		PROVIDE_HIDDEN (__fini_array_end = .);
-
-		*(.jcr)
-		. = ALIGN(4);
 		/* All data end */
 		__data_end__ = .;
 
@@ -159,36 +129,24 @@ SECTIONS
 
 	.bss :
 	{
+		FILL(0xFF)
 		. = ALIGN(4);
 		__bss_start__ = .;
 		*(.bss*)
-		*(COMMON)
 		. = ALIGN(4);
 		__bss_end__ = .;
 	} > RAM
-	
-	.heap (COPY):
-	{
-		__end__ = .;
-		PROVIDE(end = .);
-		*(.heap*)
-		__HeapLimit = .;
-	} > RAM
 
-	/* .stack_dummy section doesn't contains any symbols. It is only
-	 * used for linker to calculate size of stack sections, and assign
-	 * values to stack symbols later */
-	.stack_dummy (COPY):
+	/* Stack */
+	.stack __stack_section_start :
 	{
-		*(.stack*)
+		FILL(0xFF)
+		*(.stack)
 	} > RAM
 
 	/* Set stack top to end of RAM, and stack limit move down by
-	 * size of stack_dummy section */
+	 * size of stack section */
 	__StackTop = ORIGIN(RAM) + LENGTH(RAM);
-	__StackLimit = __StackTop - SIZEOF(.stack_dummy);
+	__StackLimit = __StackTop - SIZEOF(.stack);
 	PROVIDE(__stack = __StackTop);
-	
-	/* Check if data + heap + stack exceeds RAM limit */
-	ASSERT(__StackLimit >= __HeapLimit, "region RAM overflowed with stack")
 }
