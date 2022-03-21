@@ -14,17 +14,23 @@ CFLAGS += -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunctio
 
 CFLAGS += $(foreach file,$(INC),-I"$(file)")
 
+# Linker options
 LFLAGS = -L"./ldscript" -T mem.ld -nostartfiles -Xlinker --gc-sections -Wl,-Map=$(OUTPUT).map
 
-BUILD_DIR = ./bin
+# Define here your main target
+TARGET  = test/test.c
 
-TARGET    = test/test.c
-
+# Startup file to boot-up system
 STARTUP = system/startup.c
 
+# Main output directory
+BUILD_DIR = ./bin
+
+# Include paths
 INC = \
 ./driver/inc
 
+# Source files to compile
 SRC += \
 $(STARTUP) \
 # driver/src/ADC.c \
@@ -33,6 +39,7 @@ $(STARTUP) \
 # driver/src/I2S.c \
 # driver/src/RCC.c \
 # driver/src/SPI.c \
+
 
 OUTPUT    = $(foreach file, $(TARGET),$(BUILD_DIR)/$(file:%.c=%))
 OBJS	  = $(foreach file, $(SRC),$(BUILD_DIR)/$(file:%.c=%.o))
