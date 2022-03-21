@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "stdio.h": "c",
-        "stm32f303re.h": "c"
-    }
-}

@@ -4,3 +4,5 @@ STM32F303RE/src/.project
 STM32F303RE/src/.settings/language.settings.xml
 .vscode/c_cpp_properties.json
 STM32F303RE/src/.settings/org.eclipse.cdt.core.prefs
+STM32F303RE/src/system/startup.S
+STM32F303RE/src/driver/.vscode/settings.json
