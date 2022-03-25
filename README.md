@@ -34,7 +34,7 @@ After installation and setup of Eclipse MCU, open your project and:
 * Select *Debug as > Debug Configurations*
 * Create a new **GDB Segger J-Link Debugging** session:
   - *Main Tab*: insert *Project* name + *your_target.elf* file as C\C++ application to debug.
-  - *Debugger Tab*: ![](Img/readme/eclipse_mcu_debug_debugger_tab.png | width=80)
+  - *Debugger Tab*: ![](Img/readme/eclipse_mcu_debug_debugger_tab.png)
   
   Insert STM32F303RE as device name and select SWD\JTAG interface.
 
