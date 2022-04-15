@@ -107,7 +107,6 @@
 #define RCC_AHBENR_ADC12EN			 BIT28
 #define RCC_AHBENR_ADC34EN			 BIT29
 
-
 //Enable Peripheral clock
 #define RCC_EN_CLK_GPIOA()			(RCC->AHBENR |= (1 << 17))
 #define RCC_EN_CLK_GPIOB()			(RCC->AHBENR |= (1 << 18))
@@ -128,7 +127,7 @@
 #define RCC_EN_CLK_I2C3()			(RCC->APB1ENR |= (1 << 30))
 
 
-
+/*********GPIOx Peripheral***********/
 //@GPIO_PinMode
 #define GPIO_MODE_IN				0
 #define GPIO_MODE_OUT				1
@@ -165,6 +164,235 @@
 #define GPIO_ALT_FNC_13				13
 #define GPIO_ALT_FNC_14				14
 #define GPIO_ALT_FNC_15				15
+
+/*********USARTx/UARTx Peripheral***********/
+#define USART_CR1_UE_Pos			0
+#define USART_CR1_UESM_Pos			1
+#define USART_CR1_RE_Pos			2
+#define USART_CR1_TE_Pos			3
+#define USART_CR1_IDLEIE_Pos		4
+#define USART_CR1_RXNEIE_Pos		5
+#define USART_CR1_TCIE_Pos			6
+#define USART_CR1_TXEIE_Pos			7
+#define USART_CR1_PEIE_Pos			8
+#define USART_CR1_PS_Pos			9
+#define USART_CR1_PCE_Pos			10
+#define USART_CR1_WAKE_Pos			11
+#define USART_CR1_M0_Pos			12
+#define USART_CR1_MME_Pos			13
+#define USART_CR1_CMIE_Pos			14
+#define USART_CR1_OVER8_Pos			15
+#define USART_CR1_DEDT_Pos			16
+#define USART_CR1_DEAT_Pos			21
+#define USART_CR1_RTOIE_Pos			26
+#define USART_CR1_EOBIE_Pos			27
+#define USART_CR1_M1_Pos			28
+
+#define USART_CR1_UE_Msk			(0x01 << USART_CR1_UE_Pos)
+#define USART_CR1_UESM_Msk			(0x01 << USART_CR1_UESM_Pos)
+#define USART_CR1_RE_Msk			(0x01 << USART_CR1_RE_Pos)
+#define USART_CR1_TE_Msk			(0x01 << USART_CR1_TE_Pos)
+#define USART_CR1_IDLEIE_Msk		(0x01 << USART_CR1_IDLEIE_Pos)
+#define USART_CR1_RXNEIE_Msk		(0x01 << USART_CR1_RXNEIE_Pos)
+#define USART_CR1_TCIE_Msk			(0x01 << USART_CR1_TCIE_Pos)
+#define USART_CR1_TXEIE_Msk			(0x01 << USART_CR1_TXEIE_Pos)
+#define USART_CR1_PEIE_Msk			(0x01 << USART_CR1_PEIE_Pos)
+#define USART_CR1_PS_Msk			(0x01 << USART_CR1_PS_Pos)
+#define USART_CR1_PCE_Msk			(0x01 << USART_CR1_PCE_Pos)
+#define USART_CR1_WAKE_Msk			(0x01 << USART_CR1_WAKE_Pos)
+#define USART_CR1_M0_Msk			(0x01 << USART_CR1_M0_Pos)
+#define USART_CR1_MME_Msk			(0x01 << USART_CR1_MME_Pos)
+#define USART_CR1_CMIE_Msk			(0x01 << USART_CR1_CMIE_Pos)
+#define USART_CR1_OVER8_Msk			(0x01 << USART_CR1_OVER8_Pos)
+#define USART_CR1_DEDT_Msk			(0x1F << USART_CR1_DEDT_Pos)
+#define USART_CR1_DEAT_Msk			(0x1F << USART_CR1_DEAT_Pos)
+#define USART_CR1_RTOIE_Msk			(0x01 << USART_CR1_RTOIE_Pos)
+#define USART_CR1_EOBIE_Msk			(0x01 << USART_CR1_EOBIE_Pos)
+#define USART_CR1_M1_Msk			(0x01 << USART_CR1_M1_Pos)
+
+#define USART_CR2_ADDM7_Pos			4
+#define USART_CR2_LBDL_Pos			5
+#define USART_CR2_LBDIE_Pos			6
+#define USART_CR2_LBCL_Pos			8
+#define USART_CR2_CPHA_Pos			9
+#define USART_CR2_CPOL_Pos			10
+#define USART_CR2_CLKEN_Pos			11
+#define USART_CR2_STOP_Pos			12
+#define USART_CR2_LINEN_Pos			14
+#define USART_CR2_SWAP_Pos			15
+#define USART_CR2_RXINV_Pos			16
+#define USART_CR2_TXINV_Pos			17
+#define USART_CR2_DATAINV_Pos		18
+#define USART_CR2_MSBFIRST_Pos		19
+#define USART_CR2_ABREN_Pos			20
+#define USART_CR2_ABRMOD_Pos		21
+#define USART_CR2_RTOEN_Pos			23
+#define USART_CR2_ADD_Pos			24
+
+#define USART_CR2_ADDM7_Msk			(0x01 << USART_CR2_ADDM7_Pos)
+#define USART_CR2_LBDL_Msk			(0x01 << USART_CR2_LBDL_Pos)
+#define USART_CR2_LBDIE_Msk			(0x01 << USART_CR2_LBDIE_Pos)
+#define USART_CR2_LBCL_Msk			(0x01 << USART_CR2_LBCL_Pos)
+#define USART_CR2_CPHA_Msk			(0x01 << USART_CR2_CPHA_Pos)
+#define USART_CR2_CPOL_Msk			(0x01 << USART_CR2_CPOL_Pos)
+#define USART_CR2_CLKEN_Msk			(0x01 << USART_CR2_CLKEN_Pos)
+#define USART_CR2_STOP_Msk			(0x03 << USART_CR2_STOP_Pos)
+#define USART_CR2_LINEN_Msk			(0x01 << USART_CR2_LINEN_Pos)
+#define USART_CR2_SWAP_Msk			(0x01 << USART_CR2_SWAP_Pos)
+#define USART_CR2_RXINV_Msk			(0x01 << USART_CR2_RXINV_Pos)
+#define USART_CR2_TXINV_Msk			(0x01 << USART_CR2_TXINV_Pos)
+#define USART_CR2_DATAINV_Msk		(0x01 << USART_CR2_DATAINV_Pos)
+#define USART_CR2_MSBFIRST_Msk		(0x01 << USART_CR2_MSBFIRST_Pos)
+#define USART_CR2_ABREN_Msk			(0x01 << USART_CR2_ABREN_Pos)
+#define USART_CR2_ABRMOD_Msk		(0x03 << USART_CR2_ABRMOD_Pos)
+#define USART_CR2_RTOEN_Msk			(0x01 << USART_CR2_RTOEN_Pos)
+#define USART_CR2_ADD_Msk			(0x0F << USART_CR2_ADD_Pos)
+
+#define USART_CR3_EIE_Pos			0
+#define USART_CR3_IREN_Pos			1
+#define USART_CR3_IRLP_Pos			2
+#define USART_CR3_HDSEL_Pos			3
+#define USART_CR3_NACK_Pos			4
+#define USART_CR3_SCEN_Pos			5
+#define USART_CR3_DMAR_Pos			6
+#define USART_CR3_DMAT_Pos			7
+#define USART_CR3_RTSE_Pos			8
+#define USART_CR3_CTSE_Pos			9
+#define USART_CR3_CTSIE_Pos			10
+#define USART_CR3_ONEBIT_Pos		11
+#define USART_CR3_OVRDIS_Pos		12
+#define USART_CR3_DDRE_Pos			13
+#define USART_CR3_DEM_Pos			14
+#define USART_CR3_DEP_Pos			15
+#define USART_CR3_SCARCNT_Pos		17
+#define USART_CR3_WUS_Pos			20
+#define USART_CR3_WUFIE_Pos			21
+
+#define USART_CR3_EIE_Msk			(0x01 << USART_CR3_EIE_Pos)
+#define USART_CR3_IREN_Msk			(0x01 << USART_CR3_IREN_Pos)
+#define USART_CR3_IRLP_Msk			(0x01 << USART_CR3_IRLP_Pos)
+#define USART_CR3_HDSEL_Msk			(0x01 << USART_CR3_HDSEL_Pos)
+#define USART_CR3_NACK_Msk			(0x01 << USART_CR3_NACK_Pos)
+#define USART_CR3_SCEN_Msk			(0x01 << USART_CR3_SCEN_Pos)
+#define USART_CR3_DMAR_Msk			(0x01 << USART_CR3_DMAR_Pos)
+#define USART_CR3_DMAT_Msk			(0x01 << USART_CR3_DMAT_Pos)
+#define USART_CR3_RTSE_Msk			(0x01 << USART_CR3_RTSE_Pos)
+#define USART_CR3_CTSE_Msk			(0x01 << USART_CR3_CTSE_Pos)
+#define USART_CR3_CTSIE_Msk			(0x01 << USART_CR3_CTSIE_Pos)
+#define USART_CR3_ONEBIT_Msk		(0x01 << USART_CR3_ONEBIT_Pos)
+#define USART_CR3_OVRDIS_Msk		(0x01 << USART_CR3_OVRDIS_Pos)
+#define USART_CR3_DDRE_Msk			(0x01 << USART_CR3_DDRE_Pos)
+#define USART_CR3_DEM_Msk			(0x01 << USART_CR3_DEM_Pos)
+#define USART_CR3_DEP_Msk			(0x01 << USART_CR3_DEP_Pos)
+#define USART_CR3_SCARCNT_Msk		(0x07 << USART_CR3_SCARCNT_Pos)
+#define USART_CR3_WUS_Msk			(0x03 << USART_CR3_WUS_Pos)
+#define USART_CR3_WUFIE_Msk			(0x01 << USART_CR3_WUFIE_Pos)
+
+#define USART_BRR_BRR_Pos			0
+#define USART_BRR_BRR_Msk			(0xFFFF << USART_BRR_BRR_Pos)
+
+#define USART_GTPR_PSC_Pos			0
+#define USART_GTPR_GT_Pos			8
+
+#define USART_GTPR_PSC_Msk			(0xFF << USART_GTPR_PSC_Pos)
+#define USART_GTPR_GT_Msk			(0xFF << USART_GTPR_GT_Pos)
+
+#define USART_RTOR_RTO_Pos			0
+#define USART_RTOR_BLEN_Pos			24
+
+#define USART_RTOR_RTO_Msk			(0x00FFFFFF << USART_RTOR_RTO_Pos)
+#define USART_RTOR_BLEN_Msk			(0xFF << USART_RTOR_BLEN_Pos)
+
+#define USART_RQR_ABRRQ_Pos			0
+#define USART_RQR_SBKRQ_Pos			1
+#define USART_RQR_MMRQ_Pos			2
+#define USART_RQR_RXFRQ_Pos			3
+#define USART_RQR_TXFRQ_Pos			4
+
+#define USART_RQR_ABRRQ_Msk			(0x01 << USART_RQR_ABRRQ_Pos)
+#define USART_RQR_SBKRQ_Msk			(0x01 << USART_RQR_SBKRQ_Pos)
+#define USART_RQR_MMRQ_Msk			(0x01 << USART_RQR_MMRQ_Pos)
+#define USART_RQR_RXFRQ_Msk			(0x01 << USART_RQR_RXFRQ_Pos)
+#define USART_RQR_TXFRQ_Msk			(0x01 << USART_RQR_TXFRQ_Pos)
+
+#define USART_ISR_PE_Pos			0
+#define USART_ISR_FE_Pos			1
+#define USART_ISR_NF_Pos			2
+#define USART_ISR_ORE_Pos			3
+#define USART_ISR_IDLE_Pos			4
+#define USART_ISR_RXNE_Pos			5
+#define USART_ISR_TC_Pos			6
+#define USART_ISR_TXE_Pos			7
+#define USART_ISR_LBDF_Pos			8
+#define USART_ISR_CTSIF_Pos			9
+#define USART_ISR_CTS_Pos			10
+#define USART_ISR_RTOF_Pos			11
+#define USART_ISR_EOBF_Pos			12
+#define USART_ISR_ABRE_Pos			14
+#define USART_ISR_ABRF_Pos			15
+#define USART_ISR_BUSY_Pos			16
+#define USART_ISR_CMF_Pos			17
+#define USART_ISR_SBKF_Pos			18
+#define USART_ISR_RWU_Pos			19
+#define USART_ISR_WUF_Pos			20
+#define USART_ISR_TEAK_Pos			21
+#define USART_ISR_REAK_Pos			22
+
+#define USART_ISR_PE_Msk			(0x01 << USART_ISR_PE_Pos)
+#define USART_ISR_FE_Msk			(0x01 << USART_ISR_FE_Pos)
+#define USART_ISR_NF_Msk			(0x01 << USART_ISR_NF_Pos)
+#define USART_ISR_ORE_Msk			(0x01 << USART_ISR_ORE_Pos)
+#define USART_ISR_IDLE_Msk			(0x01 << USART_ISR_IDLE_Pos)
+#define USART_ISR_RXNE_Msk			(0x01 << USART_ISR_RXNE_Pos)
+#define USART_ISR_TC_Msk			(0x01 << USART_ISR_TC_Pos)
+#define USART_ISR_TXE_Msk			(0x01 << USART_ISR_TXE_Pos)
+#define USART_ISR_LBDF_Msk			(0x01 << USART_ISR_LBDF_Pos)
+#define USART_ISR_CTSIF_Msk			(0x01 << USART_ISR_CTSIF_Pos)
+#define USART_ISR_CTS_Msk			(0x01 << USART_ISR_CTS_Pos)
+#define USART_ISR_RTOF_Msk			(0x01 << USART_ISR_RTOF_Pos)
+#define USART_ISR_EOBF_Msk			(0x01 << USART_ISR_EOBF_Pos)
+#define USART_ISR_ABRE_Msk			(0x01 << USART_ISR_ABRE_Pos)
+#define USART_ISR_ABRF_Msk			(0x01 << USART_ISR_ABRF_Pos)
+#define USART_ISR_BUSY_Msk			(0x01 << USART_ISR_BUSY_Pos)
+#define USART_ISR_CMF_Msk			(0x01 << USART_ISR_CMF_Pos)
+#define USART_ISR_SBKF_Msk			(0x01 << USART_ISR_SBKF_Pos)
+#define USART_ISR_RWU_Msk			(0x01 << USART_ISR_RWU_Pos)
+#define USART_ISR_WUF_Msk			(0x01 << USART_ISR_WUF_Pos)
+#define USART_ISR_TEAK_Msk			(0x01 << USART_ISR_TEAK_Pos)
+#define USART_ISR_REAK_Msk			(0x01 << USART_ISR_REAK_Pos)
+
+#define USART_ICR_PECF_Pos			0
+#define USART_ICR_FECF_Pos			1
+#define USART_ICR_NCF_Pos			2
+#define USART_ICR_ORECF_Pos			3
+#define USART_ICR_IDLECF_Pos		4
+#define USART_ICR_TCCF_Pos			6
+#define USART_ICR_LBDFCF_Pos		8
+#define USART_ICR_CTSCF_Pos			9
+#define USART_ICR_RTOCF_Pos			11
+#define USART_ICR_EOBCF_Pos			12
+#define USART_ICR_CMFCF_Pos			17
+#define USART_ICR_WUFCF_Pos			20
+
+#define USART_ICR_PECF_Msk			(0x01 << USART_ICR_PECF_Pos)
+#define USART_ICR_FECF_Msk			(0x01 << USART_ICR_FECF_Pos)
+#define USART_ICR_NCF_Msk			(0x01 << USART_ICR_NCF_Pos)
+#define USART_ICR_ORECF_Msk			(0x01 << USART_ICR_ORECF_Pos)
+#define USART_ICR_IDLECF_Msk		(0x01 << USART_ICR_IDLECF_Pos)
+#define USART_ICR_TCCF_Msk			(0x01 << USART_ICR_TCCF_Pos)
+#define USART_ICR_LBDFCF_Msk		(0x01 << USART_ICR_LBDFCF_Pos)
+#define USART_ICR_CTSCF_Msk			(0x01 << USART_ICR_CTSCF_Pos)
+#define USART_ICR_RTOCF_Msk			(0x01 << USART_ICR_RTOCF_Pos)
+#define USART_ICR_EOBCF_Msk			(0x01 << USART_ICR_EOBCF_Pos)
+#define USART_ICR_CMFCF_Msk			(0x01 << USART_ICR_CMFCF_Pos)
+#define USART_ICR_WUFCF_Msk			(0x01 << USART_ICR_WUFCF_Pos)
+
+#define USART_RDR_RDR_Pos			0
+#define USART_RDR_RDR_Msk			(0x01 << USART_RDR_RDR_Pos)
+
+#define USART_TDR_RDR_Pos			0
+#define USART_TDR_RDR_Msk			(0x01 << USART_RDR_RDR_Pos)
+
 
 /*********ADC Peripheral***********/
 #define ADC1_ISR_ADRDY				 BIT0
@@ -252,6 +480,11 @@
 #define I2C1_BASE_ADDR			0x40005400U
 #define I2C2_BASE_ADDR			0x40005800U
 #define I2C3_BASE_ADDR			0x40007800U
+#define USART1_BASE_ADDR		0x40013800U
+#define USART2_BASE_ADDR		0x40004400U
+#define USART3_BASE_ADDR		0x40004800U
+#define UART4_BASE_ADDR			0x40004C00U
+#define UART5_BASE_ADDR			0x40005000U
 
 //Peripheral address offset
 #define FLITF_OFFSET			0X00000000U
@@ -304,6 +537,12 @@
 #define I2C1_ADDR				(I2C1_BASE_ADDR + I2C1_OFFSET)
 #define I2C2_ADDR				(I2C2_BASE_ADDR + I2C2_OFFSET)
 #define I2C3_ADDR				(I2C3_BASE_ADDR + I2C3_OFFSET)
+#define USART1_ADDR				(USART1_BASE_ADDR)
+#define USART2_ADDR				(USART2_BASE_ADDR)
+#define USART3_ADDR				(USART3_BASE_ADDR)
+#define UART4_ADDR				(UART4_BASE_ADDR)
+#define UART5_ADDR				(UART5_BASE_ADDR)
+
 /********************************************************************************/
 /*						Peripheral access method								*/
 /********************************************************************************/
@@ -332,6 +571,11 @@
 #define I2C1	((I2C_t *)I2C1_ADDR)
 #define I2C2	((I2C_t *)I2C2_ADDR)
 #define I2C3	((I2C_t *)I2C3_ADDR)
+#define USART1	((USART_t *)USART1_ADDR)
+#define USART2	((USART_t *)USART2_ADDR)
+#define USART3	((USART_t *)USART3_ADDR)
+#define UART4	((USART_t *)UART4_ADDR)
+#define UART5	((USART_t *)UART5_ADDR)
 
 /********************************************************************************/
 /*						Peripheral structure overlay							*/
@@ -431,6 +675,22 @@ typedef struct{
 	__IO uint32_t	WRPR;
 }FLITF_t;
 
+
+typedef struct{
+	__IO uint32_t CR1;
+	__IO uint32_t CR2;
+	__IO uint32_t CR3;
+	__IO uint32_t BRR;
+	__IO uint32_t GTPR;
+	__IO uint32_t RTOR;
+	__IO uint32_t RQR;
+	__IO uint32_t ISR;
+	__IO uint32_t ICR;
+	__IO uint32_t RDR;
+	__IO uint32_t TDR;
+}USART_t;
+
+
 //ADC
 typedef struct {
 	__IO uint32_t 	ISR;
@@ -498,5 +758,6 @@ typedef struct{
 #include <SPI.h>
 #include <I2S.h>
 #include <I2C.h>
+#include <USART.h>
 
 #endif

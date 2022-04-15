@@ -33,11 +33,13 @@ INC = \
 # Source files to compile
 SRC += \
 $(STARTUP) \
-# driver/src/ADC.c \
-# driver/src/GPIO.c \
+driver/src/GPIO.c \
+driver/src/RCC.c \
+driver/src/USART.c
+# driver/src/ADC.c \ 
 # driver/src/I2C.c \
 # driver/src/I2S.c \
-# driver/src/RCC.c \
+
 # driver/src/SPI.c \
 
 
