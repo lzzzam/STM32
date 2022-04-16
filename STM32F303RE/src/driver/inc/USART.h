@@ -39,11 +39,6 @@ typedef struct{
 typedef struct{
 	USART_t     *pUSARTx;		   /*Base address of USARTx peripheral 			*/
 	USART_Config pUSARTx_config;   /*USARTx configuration 						*/
-	uint8_t     *pTxBuf;		   /*Pointer to TX buffer						*/
-	uint8_t     *pRxBuf;		   /*Pointer to RX buffer						*/
-	uint16_t     TxLen;			   /*Number of byte to be received in Master TX	*/
-	uint16_t     RxLen;			   /*Number of byte to be received in Master RX	*/
-	uint8_t      USARTx_state;	   /*@USARTxState								*/
 } USART_handle;
 
 void __USART_EnPCLK(USART_t *pUSARTx);
