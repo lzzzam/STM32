@@ -1,7 +1,6 @@
 #include "STM32F303RE.h"
 #include "system.h"
 
-#define __WEAK_FUNCTION__ __attribute__((weak))
 #define __RESET_HANDLER__ __attribute__ ((section(".reset_handler")))
 #define __DEFAULT_HANDLER__ __attribute__ ((weak, alias ("Default_Handler"), section(".irq_handlers")))
 #define __VECTOR_TABLE__ __attribute__ ((section(".isr_vector"),used))

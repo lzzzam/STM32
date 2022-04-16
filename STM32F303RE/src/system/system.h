@@ -1,5 +1,5 @@
 #include <STM32F303RE.h>
 
-extern USART_handle USART3_handle;
+#define __WEAK_FUNCTION__ __attribute__((weak))
 
-void systemInit(void);
+void __WEAK_FUNCTION__ systemInit(void);
