@@ -7,7 +7,7 @@ OBJCOPY = $(CC_DIR)/arm-none-eabi-objcopy
 OBJDUMP = $(CC_DIR)/arm-none-eabi-objdump
 READELF = $(CC_DIR)/arm-none-eabi-readelf
 
-CFLAGS += -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -flto \
+CFLAGS += -mcpu=cortex-m4 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -flto \
 		  -Wunused -Wuninitialized -Wall -Wextra -Wmissing-declarations -Wconversion -Wpointer-arith -Wshadow -Wlogical-op \
 		  -Waggregate-return -Wfloat-equal -Wmissing-prototypes -Wstrict-prototypes -Wbad-function-cast -g3
 
@@ -28,11 +28,13 @@ BUILD_DIR = ./bin
 
 # Include paths
 INC = \
-./driver/inc
+./driver/inc \
+./system
 
 # Source files to compile
 SRC += \
 $(STARTUP) \
+system/system.c \
 driver/src/GPIO.c \
 driver/src/RCC.c \
 driver/src/USART.c
@@ -49,7 +51,7 @@ OBJS	  = $(foreach file, $(SRC),$(BUILD_DIR)/$(file:%.c=%.o))
 all: $(BUILD_DIR) $(OUTPUT).elf $(OUTPUT).hex
 
 %.hex: %.elf
-	$(OBJCOPY) $^ $@
+	$(OBJCOPY) -O ihex $^ $@
 
 %.elf: %.o $(OBJS)
 	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@

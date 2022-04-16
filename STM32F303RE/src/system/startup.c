@@ -1,4 +1,5 @@
-#include <STM32F303RE.h>
+#include "STM32F303RE.h"
+#include "system.h"
 
 #define __WEAK_FUNCTION__ __attribute__((weak))
 #define __RESET_HANDLER__ __attribute__ ((section(".reset_handler")))
@@ -241,14 +242,13 @@ void Reset_Handler(void)
         *dst = 0;
     }
 
+    // Initialize peripheral
+    systemInit();
+
     // Reset MSP
-    // asm ("mov r0, %0\n\t"
-    //      "msr msp, r0"
-    //      :
-    //      : "r" (&__StackTop));
     __setMSP((uint32_t)&__StackTop);
 
-    // Jump to main application
+    // Jump to main
     main();
 
     while(1)
@@ -268,3 +268,8 @@ void __attribute__ ((naked)) __setMSP(uint32_t address)
 {
     asm ("msr msp, r0");
 }
+
+// asm ("mov r0, %0\n\t"
+    //      "msr msp, r0"
+    //      :
+    //      : "r" (&__StackTop));

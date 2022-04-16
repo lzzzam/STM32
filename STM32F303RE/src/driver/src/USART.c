@@ -13,12 +13,10 @@
 #define RCC_APB1ENR_UART4EN_Pos     19
 #define RCC_APB1ENR_UART5EN_Pos     20
 
-void __USART_init(USART_handle *pUSARTx_h)
+void __USART_EnPCLK(USART_t *pUSARTx)
 {
-    /* Configure USARTx peripheral  */
-
     // 1. Enable peripheral clock
-    switch ((uint32_t)pUSARTx_h->pUSARTx)
+    switch ((uint32_t)pUSARTx)
     {
         case (uint32_t)USART1:
             // Enable APB1 USART2 peripheral clock
@@ -44,12 +42,17 @@ void __USART_init(USART_handle *pUSARTx_h)
             // Enable APB1 UART5 peripheral clock
             RCC->APB1ENR |= (1 << RCC_APB1ENR_UART5EN_Pos);
             break;
-    }
+    }   
+}
 
-    // 2. Disable USARTx peripheral
+void __USART_init(USART_handle *pUSARTx_h)
+{
+    /* Configure USARTx peripheral  */
+
+    // 1. Disable USARTx peripheral
     pUSARTx_h->pUSARTx->CR1 = pUSARTx_h->pUSARTx->CR1 & ~((uint32_t)USART_CR1_UE_Msk);
 
-    // 3. Configure Stop bit
+    // 2. Configure Stop bit
     switch (pUSARTx_h->pUSARTx_config.StopBit)
     {
         case USART_0_5_STOP_BITS:
@@ -73,7 +76,7 @@ void __USART_init(USART_handle *pUSARTx_h)
             break;
     }
     
-    // 4. Configure Parity bit
+    // 3. Configure Parity bit
     switch (pUSARTx_h->pUSARTx_config.ParityBit)
     {
         case USART_NO_PARITY:
@@ -92,7 +95,7 @@ void __USART_init(USART_handle *pUSARTx_h)
             break;
     }
     
-    // 5. Configure Word length
+    // 4. Configure Word length
     switch (pUSARTx_h->pUSARTx_config.WordLen)
     {
         case USART_WORD_7_BITS:
@@ -111,10 +114,10 @@ void __USART_init(USART_handle *pUSARTx_h)
             break;
     }
     
-    // 6. Configure Baudrate
+    // 5. Configure Baudrate
     uint32_t sysclk = __RCC_getSYSCLK();
     uint32_t baudrate = pUSARTx_h->pUSARTx_config.Speed;
-    uint16_t usart_div = (uint16_t)((2*sysclk)/baudrate);
+    uint16_t usart_div = (uint16_t)(sysclk/baudrate);
 
     pUSARTx_h->pUSARTx->BRR = usart_div << USART_BRR_BRR_Pos;
 
@@ -136,11 +139,11 @@ void __USART_write_char(USART_handle *pUSARTx_h, uint8_t data)
     pUSARTx_h->pUSARTx->TDR = data;
 }
 
-uint16_t __USART_read_char(USART_handle *pUSARTx_h)
+void __USART_read_char(USART_handle *pUSARTx_h, uint8_t *data)
 {
     while (!(pUSARTx_h->pUSARTx->ISR & USART_ISR_RXNE_Msk))
         ; // Wait till new byte is received
 
     // Read received data
-    return (uint16_t)pUSARTx_h->pUSARTx->RDR;
+    *data = pUSARTx_h->pUSARTx->RDR;
 }
