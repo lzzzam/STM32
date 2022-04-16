@@ -24,8 +24,6 @@ SECTIONS
 	/* Interrupt vectors */
 	.isr_vector : ALIGN(4)
     {
-        FILL(0xFF)
-
         __vectors_start = ABSOLUTE(.) ;
 		KEEP(*(.isr_vector))
 
@@ -34,8 +32,6 @@ SECTIONS
 	/* IRQ handlers */
 	.irq_handlers : ALIGN(4)
     {
-        FILL(0xFF)
-
         __handlers_start = ABSOLUTE(.) ;
 		*(.reset_handler)
 		*(.irq_handlers)
@@ -89,7 +85,7 @@ SECTIONS
 	/* Initialized global variables */
 	.data : AT (__etext)
 	{
-		FILL(0xFF)
+
 		__data_start__ = .;
 		*(.data*)
 
@@ -103,7 +99,6 @@ SECTIONS
 	/* Unitialized global variables */
 	.bss :
 	{
-		FILL(0xFF)
 		. = ALIGN(4);
 		__bss_start__ = .;
 		*(.bss*)
@@ -114,7 +109,6 @@ SECTIONS
 	/* Stack */
 	.stack __stack_section_start :
 	{
-		FILL(0xFF)
 		*(.stack)
 	} > RAM
 

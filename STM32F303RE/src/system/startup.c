@@ -1,4 +1,5 @@
-#include <STM32F303RE.h>
+#include "STM32F303RE.h"
+#include "system.h"
 
 #define __WEAK_FUNCTION__ __attribute__((weak))
 #define __RESET_HANDLER__ __attribute__ ((section(".reset_handler")))
@@ -15,6 +16,7 @@ extern uint32_t __bss_end__;
 
 // Boundaris of Stack section declared in linker script
 extern uint32_t __StackTop;
+extern uint32_t __StackLimit;
 
 #define __STACK_SIZE 0xc00
 uint32_t Main_Stack[__STACK_SIZE] __attribute__ ((section(".stack"), used));
@@ -24,6 +26,9 @@ extern int main(void);
 
 // Define default handler as a weak function
 void __WEAK_FUNCTION__ Default_Handler(void);
+
+// Intrinsic function to set Main Stack Pointer
+void __setMSP(uint32_t address);
 
 /* 
  * Forward declaration of the specific IRQ handlers. These are aliased
@@ -223,32 +228,27 @@ __VECTOR_TABLE__ pHandler __vector_table[] =
 // Main entry point after reset
 void Reset_Handler(void)
 {
-    uint8_t *src;
-    uint8_t *dst;
-    uint32_t data_size =  (uint32_t)(&__data_end__ - &__data_start__);
-    uint32_t bss_size =  (uint32_t)(&__bss_end__ - &__bss_start__);
-
     // Copy .data section from FLASH to RAM
-    src = (uint8_t *)&__etext;
-    dst = (uint8_t *)&__data_start__;
-    for (uint32_t i=0; i<data_size; i++)
+    uint8_t *src = (uint8_t *)&__etext;
+    for (uint8_t *dst=(uint8_t *)&__data_start__; dst<(uint8_t *)&__data_end__; dst++)
     {
-        *dst++ = *src++;
+        *dst = *src;
+        src++;
     }
 
     // Initialize .bss section with zero
-    dst = (uint8_t *) &__bss_start__;
-    for (uint32_t i=0; i<bss_size; i++)
+    for (uint8_t *dst=(uint8_t *)&__bss_start__; dst<(uint8_t *)&__bss_end__; dst++)
     {
-        *dst++ = 0;
+        *dst = 0;
     }
 
-    for (uint32_t i=0; i<__STACK_SIZE; i++)
-    {
-        Main_Stack[i] = 0xFF;
-    }
+    // Initialize peripheral
+    systemInit();
 
-    // // Jump to main application
+    // Reset MSP
+    __setMSP((uint32_t)&__StackTop);
+
+    // Jump to main
     main();
 
     while(1)
@@ -263,3 +263,13 @@ void __attribute__ ((section(".irq_handlers"))) Default_Handler(void)
   while (1)
     ; // Infinite Loop
 }
+
+void __attribute__ ((naked)) __setMSP(uint32_t address)
+{
+    asm ("msr msp, r0");
+}
+
+// asm ("mov r0, %0\n\t"
+    //      "msr msp, r0"
+    //      :
+    //      : "r" (&__StackTop));

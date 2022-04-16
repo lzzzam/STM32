@@ -36,15 +36,15 @@ typedef enum{
 
 void __RCC_SetPrescaler_ADC12_CLK(ADC12_CLK_Prescaler val);
 
-void __RCC_PLL_Enable();
+void __RCC_PLL_Enable(void);
 
-void __RCC_PLL_Disable();
+void __RCC_PLL_Disable(void);
 
-void __RCC_PLL_Is_Ready();
+void __RCC_PLL_Is_Ready(void);
 
-void __RCC_Enable_ADC12();
+void __RCC_Enable_ADC12(void);
 
-uint32_t __RCC_getSYSCLK();
+uint32_t __RCC_getSYSCLK(void);
 
 void __RCC_setSYSCLK(uint8_t sysclk);	//@SYSCLK_FREQ
 
