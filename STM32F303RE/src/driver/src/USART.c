@@ -145,5 +145,5 @@ void __USART_read_char(USART_handle *pUSARTx_h, uint8_t *data)
         ; // Wait till new byte is received
 
     // Read received data
-    *data = pUSARTx_h->pUSARTx->RDR;
+    *data = (uint8_t)pUSARTx_h->pUSARTx->RDR;
 }
