@@ -1,0 +1,14 @@
+{
+    "testMate.cpp.test.advancedExecutables": [
+        {
+            "pattern": "./**/{bin,build,Build,BUILD,out,Out,OUT}/**/*{test,Test,TEST}*"
+        }
+    ],
+    "testMate.cpp.log.logpanel": true,
+    "files.associations": {
+        "bitset": "cpp",
+        "type_traits": "cpp",
+        "stm32f303re.h": "c",
+        "stdio.h": "c"
+    }
+}
