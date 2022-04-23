@@ -70,7 +70,7 @@ TEST_CASE("Test onChip_receive_cmd")
     SECTION("Receive string with length=100")
     {   
         // Mock to receive length + endCmd char
-        When(Method(USART_mock, read_char)).Return(100 ,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF, \
+        When(Method(USART_mock, read_char)).Return(100 ,0x00,0x01,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF, \
                                                    0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF, \
                                                    0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF, \
                                                    0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF, \
@@ -87,6 +87,16 @@ TEST_CASE("Test onChip_receive_cmd")
         // Check for success and length matching
         REQUIRE(ONCHIP_STATUS_SUCCESS == status);
         REQUIRE(100 == ((onChip_in *)buf)->length);
+
+        // Check that Group\Id was received correctly
+        REQUIRE(0x00 == ((onChip_in *)buf)->command.group);
+        REQUIRE(0x01 == ((onChip_in *)buf)->command.id);
+
+        // Checl data field was received correctly
+        for (uint8_t i=0; i<97; i++)
+        {
+            REQUIRE(((onChip_in *)buf)->command.data[i] == 0xFF);
+        }  
     }
 
     SECTION("Fail with string empty -> length=0")
@@ -119,7 +129,6 @@ TEST_CASE( "Test onChip_transmit_rsp")
     onChip_Cfg cfg;
     onChip_Status status;
     onChip_out outString;
-    uint8_t buf[100];
 
     USART_mock.Reset();
     
@@ -138,7 +147,6 @@ TEST_CASE( "Test onChip_transmit_rsp")
         // Init response
         outString.status = ONCHIP_STATUS_SUCCESS;
         outString.response.length = (uint8_t) rspLength;
-        outString.response.data = buf;
 
         // Fill response with data
         for (uint32_t i=0; i<(uint8_t)rspLength; i++)
@@ -176,8 +184,6 @@ TEST_CASE( "Test onChip_command_handler")
     onChip_Status status;
     onChip_in  inString;
     onChip_out outString;
-    uint8_t inBuf[100];
-    uint8_t outBuf[100];
     uint8_t i;
 
     USART_mock.Reset();
@@ -188,10 +194,6 @@ TEST_CASE( "Test onChip_command_handler")
            USART_read_char};
 
     onChip_init(&cfg);
-
-    // Assign input\output buffer
-    inString.command.data   = inBuf;
-    outString.response.data = outBuf;
 
     SECTION("Call all entries in the CmdTable")
     {
@@ -224,26 +226,26 @@ TEST_CASE( "Test onChip_command_handler")
         inString.command.id    = ID;
 
         // First byte is length
-        inBuf[0] = LENGTH;
+        inString.command.data[0] = LENGTH;
 
         // Fill input buffer with random data
         for (i=1; i<= LENGTH; i++)
         {
-            inBuf[i] = (uint8_t)random();
+            inString.command.data[i] = (uint8_t)random();
         }
 
         // Decode input string and call handler
         onChip_command_handler(&inString, &outString);
 
         // Check that "Test<ID>" was called with right parameters
-        Verify(Method(Commands_mock, CmdTest).Using(ID, inString.command.data, &outString.response)).Exactly(1);
+        Verify(Method(Commands_mock, CmdTest).Using((uint8_t)ID, (uint8_t *)&inString.command.data[0], (onChip_Rsp *)&outString.response)).Exactly(1);
 
         // Check response and status returned
         REQUIRE(outString.response.length  == LENGTH);
         REQUIRE(outString.status == ONCHIP_STATUS_SUCCESS);
         for (i=1; i<=LENGTH; i++)
         {
-            REQUIRE(outString.response.data[i] == (uint8_t)~inBuf[i]);
+            REQUIRE(outString.response.data[i] == (uint8_t)~inString.command.data[i]);
         }
     }
 
@@ -270,7 +272,6 @@ TEST_CASE( "Test onChip_command_handler")
         // Check response and status returned
         REQUIRE(outString.status == ONCHIP_STATUS_ERROR_CMD_NOT_EXIST);
         REQUIRE(outString.response.length == 0);
-        REQUIRE(outString.response.data   == NULL);
     }
 }
 
@@ -279,14 +280,8 @@ TEST_CASE( "Test command receive + decoding + response transmit")
 {
     onChip_Cfg cfg;
     onChip_Status status;
-    onChip_in inString;
-    onChip_out outString;
     uint8_t inBuf[100];
     uint8_t outBuf[100];
-
-    // Assign input\output buffer
-    inString.command.data = inBuf;
-    outString.response.data = outBuf;
 
     // Reset mocks
     USART_mock.Reset();
@@ -302,11 +297,11 @@ TEST_CASE( "Test command receive + decoding + response transmit")
         uint8_t GROUP = 0x00;
         auto    ID    = GENERATE(0,1,2,3,4,5,6,7,8,9);
         
-        // Trigger command assigned to {Group=0, Id = <ID>}
+        // Trigger command assigned to {Group=0, Id = <ID>} with no data
         When(Method(USART_mock, read_char)).Return(0x03, GROUP, (uint8_t)ID, '\n');
         Fake(Method(USART_mock, write_char));
 
-        // Mock all test function to return with success
+        // Mock all test function to return with success and 0 length
         When(Method(Commands_mock, CmdTest)).Do([](uint8_t n, uint8_t *pInBuf, onChip_Rsp *pOutRsp)->onChip_Status
         {
             pOutRsp->length = 0;
@@ -314,23 +309,77 @@ TEST_CASE( "Test command receive + decoding + response transmit")
         });
 
         // Test complete receive + decode + transmit
-        status = onChip_transceive(&inString, &outString);
+        status = onChip_transceive(inBuf, outBuf);
 
+        // Check that return status is OK
         REQUIRE(status == ONCHIP_STATUS_SUCCESS);
 
         // Check that "Test<ID>" was called with right parameters
-        Verify(Method(Commands_mock, CmdTest).Using(ID, inString.command.data, &outString.response)).Exactly(1);
+        Verify(Method(Commands_mock, CmdTest).Using((uint8_t) ID, &((onChip_in *)inBuf)->command.data[0], &((onChip_out *)outBuf)->response)).Exactly(1);
 
         // Check that only length + status was trasnmitted
         Verify(Method(USART_mock,write_char)).Exactly(2);
 
         // Check that length + status was transmitted in the right order
-        Verify(Method(USART_mock,write_char).Using(outString.response.length +2) + \
-               Method(USART_mock,write_char).Using(outString.status)).Exactly(1);
+        Verify(Method(USART_mock,write_char).Using(((onChip_out *)outBuf)->response.length +2) + \
+               Method(USART_mock,write_char).Using(((onChip_out *)outBuf)->status)).Exactly(1);
 
         // Check response and status returned
-        REQUIRE(outString.response.length  == 0);
-        REQUIRE(outString.status == ONCHIP_STATUS_SUCCESS);
+        REQUIRE( ((onChip_out *)outBuf)->response.length == 0);
+        REQUIRE( ((onChip_out *)outBuf)->status == ONCHIP_STATUS_SUCCESS);
+    }
+
+    SECTION("Copy input string data to output response")
+    {
+        // Test all command in the CmdTable
+        uint8_t GROUP = 0x00;
+        auto    ID    = GENERATE(0,1,2,3,4,5,6,7,8,9);
+
+        uint8_t len  = 50;
+        
+        // Trigger command assigned to {Group=0, Id = <ID>} with data
+        When(Method(USART_mock, read_char)).Return(len , GROUP,   ID, 0x2F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+                                                   0xFF,  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,          
+                                                   0xFF,  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+                                                   0xFF,  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+                                                   0xFF,  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, '\n');
+        Fake(Method(USART_mock, write_char));
+
+        // Mock all test function to echo the input string data
+        When(Method(Commands_mock, CmdTest)).Do([](uint8_t n, uint8_t *pInBuf, onChip_Rsp *pOutRsp)->onChip_Status
+        {
+            // First byte is total number of data bytes
+            pOutRsp->length = pInBuf[0];
+
+            // Copy input to output
+            for (uint8_t i=0; i<pOutRsp->length; i++)
+            {
+                pOutRsp->data[i] = pInBuf[i];
+            }
+
+            return ONCHIP_STATUS_SUCCESS;
+        });
+
+        // Test complete receive + decode + transmit
+        status = onChip_transceive(inBuf, outBuf);
+
+        // Check that return status is OK
+        REQUIRE(status == ONCHIP_STATUS_SUCCESS);
+
+        // Check that "Test<ID>" was called with right parameters
+        Verify(Method(Commands_mock, CmdTest).Using((uint8_t) ID, &((onChip_in *)inBuf)->command.data[0], &((onChip_out *)outBuf)->response)).Exactly(1);
+
+        // Check that only length + status + data was trasnmitted
+        Verify(Method(USART_mock,write_char)).Exactly(49);
+
+        // Check that length + status + data was transmitted in the right order
+        Verify(Method(USART_mock,write_char).Using(((onChip_out *)outBuf)->response.length +2) + \
+               Method(USART_mock,write_char).Using(((onChip_out *)outBuf)->status)             + \
+               Method(USART_mock,write_char) * 0x2F).Exactly(1);
+
+        // Check response and status returned
+        REQUIRE(((onChip_out *)outBuf)->response.length  == 47);
+        REQUIRE(((onChip_out *)outBuf)->status == ONCHIP_STATUS_SUCCESS);
     }
 
 }

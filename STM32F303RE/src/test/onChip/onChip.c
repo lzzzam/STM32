@@ -102,7 +102,6 @@ onChip_Status onChip_command_handler(onChip_in *pInString, onChip_out *pOutStrin
     if (!cmdFound)
     {
         pOutString->status = ONCHIP_STATUS_ERROR_CMD_NOT_EXIST;
-        pOutString->response.data = (uint8_t *)NULL;
         pOutString->response.length = 0;
 
         return ONCHIP_STATUS_ERROR_CMD_NOT_EXIST;
@@ -111,28 +110,27 @@ onChip_Status onChip_command_handler(onChip_in *pInString, onChip_out *pOutStrin
     return ONCHIP_STATUS_SUCCESS;
 }
 
-onChip_Status onChip_transceive(onChip_in *pInString, onChip_out *pOutString)
+onChip_Status onChip_transceive(uint8_t *pInBuf, uint8_t *pOutBuf)
 {
     onChip_Status status;
 
     // Listen for new command
-    status = onChip_receive_cmd((uint8_t *)pInString);
+    status = onChip_receive_cmd(pInBuf);
 
     // Decode and execute
     if (status == ONCHIP_STATUS_SUCCESS)
     {
-        status = onChip_command_handler(pInString, pOutString);
+        status = onChip_command_handler((onChip_in *)pInBuf, (onChip_out *)pOutBuf);
     }
     else
     {
         // In case of error format response
-        pOutString->status = status;
-        pOutString->response.data = (uint8_t *)NULL;
-        pOutString->response.length = 0;
+        ((onChip_out *)pOutBuf)->status = status;
+        ((onChip_out *)pOutBuf)->response.length = 0;
     }
 
     // Send response
-    onChip_transmit_rsp(pOutString);
+    onChip_transmit_rsp(((onChip_out *)pOutBuf));
 
     return status;
 }
