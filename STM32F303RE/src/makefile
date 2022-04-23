@@ -29,15 +29,18 @@ BUILD_DIR = ./bin
 # Include paths
 INC = \
 ./driver/inc \
-./system
+./system \
+./test/onChip 
 
 # Source files to compile
 SRC += \
 $(STARTUP) \
+test/onChip/onChip.c \
+test/onChip/onChip_Cmd.c \
 system/system.c \
 driver/src/GPIO.c \
 driver/src/RCC.c \
-driver/src/USART.c
+driver/src/USART.c 
 # driver/src/ADC.c \ 
 # driver/src/I2C.c \
 # driver/src/I2S.c \
@@ -68,12 +71,13 @@ $(BUILD_DIR):
 	@mkdir -p $(BUILD_DIR)/driver/src
 	@mkdir -p $(BUILD_DIR)/system
 	@mkdir -p $(BUILD_DIR)/test
+	@mkdir -p $(BUILD_DIR)/test/onChip
+	@mkdir -p $(BUILD_DIR)/test/unittest
 	@echo '$(BUILD_DIR) created'
 
 .PHONY: clean
 clean:
 	rm -r $(BUILD_DIR)
-
 
 .PHONY: size
 size: $(OUTPUT).hex
@@ -92,4 +96,4 @@ foo: $(OBJS)
 	@echo $^
 	@echo $@
 
-	
+include test/unittest/makefile_ut.mk

@@ -245,7 +245,10 @@ void Reset_Handler(void)
     systemInit();
 
     // Reset MSP
-    __setMSP((uint32_t)&__StackTop);
+    asm ("mov r0, %0\n\t"
+        "msr msp, r0"
+        :
+        : "r" (&__StackTop));
 
     // Jump to main
     main();
@@ -267,8 +270,3 @@ void __attribute__ ((naked)) __setMSP(uint32_t address)
 {
     asm ("msr msp, r0");
 }
-
-// asm ("mov r0, %0\n\t"
-    //      "msr msp, r0"
-    //      :
-    //      : "r" (&__StackTop));
