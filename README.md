@@ -1,6 +1,6 @@
 # STM32 BSP - Embedded Project Reference
 Complete embedded C\C++ BSP for STM32 microcontrollers.
-The idea behind this project is to have a complete reference to build an embedded project based on the ARM GNU toolchain starting from complete scratch. All the files have been written from scratch and are fully documented in order to be easily reused in the future as fast refresh reference.
+The idea behind this project is to have a complete reference to build an embedded project based on the ARM GNU toolchain starting from complete scratch. All the files have been written from scratch and are fully documented in ordear to be easily reused in the future as fast refresh reference.
 
 This project contains a complete embedded application: 
 
